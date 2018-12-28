@@ -13,7 +13,7 @@
 
 /* Landing Page */
 Route::get('/', function () {
-    return view('landingpage.index');
+    return view('welcome');
 })->name('welcome');
 
 Route::get('/faq', function () {

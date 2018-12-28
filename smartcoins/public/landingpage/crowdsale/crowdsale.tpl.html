@@ -1,0 +1,331 @@
+<style>
+#clockdiv{
+	font-family: sans-serif;
+	color: #fff;
+	display: inline-block;
+	font-weight: 100;
+	text-align: center;
+	font-size: 50px;
+}
+
+#clockdiv > div{
+	padding: 20px;
+	border-radius: 3px;
+	background: #00d4eb;
+	display: inline-block;
+}
+
+#clockdiv div > span{
+	padding: 15px;
+	border-radius: 3px;
+	background: #030c27;
+	display: inline-block;
+}
+
+.smalltext{
+	padding-top: 5px;
+	font-size: 16px;
+}
+</style>
+
+<div id="parallax0" class="parallax">
+    <div class="content" style="opacity: 1;">
+        <div class="row crowdsale-vertical-wrapper">
+            <a name="home" class="pin">&nbsp;</a>
+            <img class="crowdsale-background" src="landingpage/img/crowdsale/background.png">
+            <div class="main-sale-wrapper crowdsale-vertical">
+                <div class="crowdsale-title-wrapper">
+                    <div class="crowdsale-header-wrapper">
+                        <div class="col-lg-6 col-md-12 float-left">
+                            <div class="crowdsale-title ng-binding">
+                                MAIN SALE STARTED!
+                            </div>
+                            <div class="crowdsale-bonus ng-binding">
+                                
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-12 float-left crowdsale-header-btn">
+                            <button class="crowdsale-title-btn" ng-style="crowd_sale_btn_status" ng-click="mainsale_open()" style="display: block;">
+                                JOIN SALE
+                            </button>
+                            <button class="crowdsale-title-btn color-orange" ng-style="$parent.kyc_btn_background" ng-click="tokyc($parent.kyc_status)" style="background-image: url('landingpage/img/crowdsale/kyc-btn.png');">
+                                KYC
+                                <span class="crowdsale-kyc-status ng-binding" ng-style="$parent.kyc_status_css">
+                                    
+                                </span>
+                            </button>
+<!--
+                            <a ng-href="https://medium.com/temcolabs/register-for-temcos-kyc-b7be009bd1b7" href="https://medium.com/temcolabs/register-for-temcos-kyc-b7be009bd1b7" target="_blank">
+                                <img class="question-img" src="landingpage/img/header/question.png">
+                            </a>
+-->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="countdown-raised-wrapper">
+                    <div class="countdown-wrapper" ng-style="countdown_status" style="display: block; vertical-align: middle;">
+                        <div id="clockdiv">
+                          <div>
+                            <span class="days"></span>
+                            <div class="smalltext">Days</div>
+                          </div>
+                          <div>
+                            <span class="hours"></span>
+                            <div class="smalltext">Hours</div>
+                          </div>
+                          <div>
+                            <span class="minutes"></span>
+                            <div class="smalltext">Minutes</div>
+                          </div>
+                          <div>
+                            <span class="seconds"></span>
+                            <div class="smalltext">Seconds</div>
+                          </div>
+                        </div>
+<!--
+                        <div class="flex-baseline">
+                            <div id="days" class="odometer odometer-auto-theme"><div class="odometer-inside"><span class="odometer-digit"><span class="odometer-digit-spacer">8</span><span class="odometer-digit-inner"><span class="odometer-ribbon"><span class="odometer-ribbon-inner"><span class="odometer-value">2</span></span></span></span></span><span class="odometer-digit"><span class="odometer-digit-spacer">8</span><span class="odometer-digit-inner"><span class="odometer-ribbon"><span class="odometer-ribbon-inner"><span class="odometer-value">6</span></span></span></span></span></div></div>
+                            <span class="days-text">
+                                DAYS
+                            </span>
+                        </div>
+-->
+<!--
+                        <div class="just-flex">
+                            <div>
+                                <div class="countdown-text">
+                                    HOURS
+                                </div>
+                                <div id="hours" class="odometer odometer-auto-theme"><div class="odometer-inside"><span class="odometer-digit"><span class="odometer-digit-spacer">8</span><span class="odometer-digit-inner"><span class="odometer-ribbon"><span class="odometer-ribbon-inner"><span class="odometer-value">2</span></span></span></span></span><span class="odometer-digit"><span class="odometer-digit-spacer">8</span><span class="odometer-digit-inner"><span class="odometer-ribbon"><span class="odometer-ribbon-inner"><span class="odometer-value">3</span></span></span></span></span></div></div>
+
+                            </div>
+                            <div class="seperate-time">:</div>
+                            <div>
+                                <div class="countdown-text">
+                                    MINUTES
+                                </div>
+                                <div id="minutes" class="odometer odometer-auto-theme"><div class="odometer-inside"><span class="odometer-digit"><span class="odometer-digit-spacer">8</span><span class="odometer-digit-inner"><span class="odometer-ribbon"><span class="odometer-ribbon-inner"><span class="odometer-value">5</span></span></span></span></span><span class="odometer-digit"><span class="odometer-digit-spacer">8</span><span class="odometer-digit-inner"><span class="odometer-ribbon"><span class="odometer-ribbon-inner"><span class="odometer-value">1</span></span></span></span></span></div></div>
+                            </div>
+                            <div class="seperate-time">:</div>
+                            <div>
+                                <div class="countdown-text">
+                                    SECONDS
+                                </div>
+                                <div id="seconds" class="odometer odometer-auto-theme   odometer-animating-down odometer-animating"><div class="odometer-inside"><span class="odometer-digit"><span class="odometer-digit-spacer">8</span><span class="odometer-digit-inner"><span class="odometer-ribbon"><span class="odometer-ribbon-inner"><div class="odometer-value odometer-last-value odometer-first-value">4</div></span></span></span></span><span class="odometer-digit"><span class="odometer-digit-spacer">8</span><span class="odometer-digit-inner"><span class="odometer-ribbon"><span class="odometer-ribbon-inner"><div class="odometer-value odometer-first-value">8</div><div class="odometer-value odometer-last-value">9</div></span></span></span></span></div></div>
+                            </div>
+                        </div>
+-->
+                    </div>
+
+<!--
+                    <div class="countdown-finish" ng-style="countdown_finish" style="display: none;">
+                        Thank you for support
+                    </div>
+-->
+                    <!-- <progress ng-value="prog_value" max="100"></progress> -->
+                    <div class="col-xs-8 progress-raised-wrapper">
+                        <div class="raised" ng-style="raised()" style="padding-right: 5.55556%;">
+                            <div ng-style="raised_ing" style="display: block;">
+                                <span class="raised_text">
+                                    TOTAL RAISED
+                                </span>
+                                <span class="raised_number ng-binding">
+                                    0.85
+                                </span>
+                                <span class="raised_number raised_m">
+                                    M
+                                </span>
+                            </div>
+                            <div ng-style="raised_finish" style="display: none;">
+                                <span class="raised_number">
+                                    85
+                                </span>
+                                <span class="raised_number raised_m">
+                                    %
+                                </span>
+                            </div>
+                        </div>
+                        <div class="progress ng-isolate-scope" value="prog_value" max="0.9">
+  <div class="progress-bar" ng-class="[type ? 'bg-' + type : '', striped ? 'progress-bar-striped' : '']" role="progressbar" aria-valuenow="0.85" aria-valuemin="0" aria-valuemax="0.9" ng-style="{width: (percent < 100 ? percent : 100) + '%'}" aria-valuetext="94%" aria-labelledby="progressbar" ng-transclude="" style="width: 94.44%;">
+                        </div>
+</div>
+                        <div class="hardcap_text_wrapper" ng-style="raised_ing" style="display: block;">
+                            <!-- <span class="hardcap_text">
+                                HARD CAP
+                            </span> -->
+                            <span class="hardcap_price">
+                                $0.9M
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="crowdsale-bottom-wrapper">
+    <div class="row crowd-section-2" style="position: relative; z-index: 400;">
+        <div ng-show="subscribe_email_error === false" class="crowdsale_subsciption_alert_wrapper ng-hide" role="alert">
+            <div class="crowdsale_subsciption_warning">
+                <img src="landingpage/img/warning.png">
+            </div>
+            <div class="crowdsale_subsciption_alert_text ng-scope ng-binding" translate="">Please enter a valid email address.</div>
+        </div>
+        <div ng-show="subscribe_email_exist_error === false" class="crowdsale_subsciption_alert_wrapper ng-hide" role="alert">
+            <div class="crowdsale_subsciption_warning">
+                <img src="landingpage/img/warning.png">
+            </div>
+            <div class="crowdsale_subsciption_alert_text ng-scope ng-binding" translate="">Email already existsd.</div>
+        </div>
+        <div class="col-lg-8 col-md-12" style="padding: 0">
+            <span class="input-group crowdsale-input-wrapper">
+                <input type="text" class="form-control crowdsale-input ng-pristine ng-untouched ng-valid ng-empty" ng-change="change()" ng-model="subscribe_email" placeholder="Enter email for updates">
+                <div class="input-group-append">
+                    <button class="crowdsale-btn-wrapper" type="button" ng-click="subscribe()">
+                        <div class="crowdsale-inside-btn ng-binding">
+                            <!-- SUBMIT -->
+                            SUBMIT
+                        </div>
+                    </button>
+                </div>
+            </span>
+<!--
+            <button class="crowdsale-telegram-btn" ng-style="crowdsale_btn_en" ng-click="open_btn()" style="display: inline-block;">
+                <div class="crowdsale-telegram-inside ng-binding">
+                    <img src="landingpage/img/crowdsale/telegram-icon.png" class="crowd-telegram-icon"> Join Telegram
+                </div>
+            </button>
+-->
+<!--
+            <button class="crowdsale-telegram-btn" ng-style="crowdsale_btn_kr" style="display: none;">
+                <div class="crowdsale-telegram-inside kakao-btn">
+                    <div class="kakao-btn-text">
+                        채팅방:
+                    </div>
+                    <div class="kakao-btn-wrapper">
+                        <a class="crowdsale-kakao-btn-a crowdsale-kakao-btn-a-left crowdsale-kakao-btn-border" href="https://open.kakao.com/o/gkG9IoK" target="_blank">
+                            <img class="crowdsale-kakaobtn-img" src="landingpage/img/crowdsale/kakao1.png">
+                        </a>
+                        <a class="crowdsale-kakao-btn-a crowdsale-kakao-btn-border" href="https://open.kakao.com/o/gRH7vt2" target="_blank">
+                            <img class="crowdsale-kakaobtn-img" src="landingpage/img/crowdsale/kakao2.png">
+                        </a>
+                        <a class="crowdsale-kakao-btn-a" href="https://open.kakao.com/o/grpZFN3" target="_blank">
+                            <img class="crowdsale-kakaobtn-img" src="landingpage/img/crowdsale/kakao3.png">
+                        </a>
+                    </div>
+                </div>
+            </button>
+-->
+        </div>
+        <div class="col-lg-4 col-md-12 text-align-right" style="padding: 0">
+            <!-- <div class="float-right"> -->
+            <div class="whitepaper-web-wrapper">
+                <span class="whitepaper-wrapper" ng-click="whitepaperSelect('whitepaper')" ng-mouseover="whitepaperSelect('whitepaper')" ng-mouseleave="whitepaperSelect('')">
+                    <div class="whitepaper-select" ng-style="whitepaperItem" style="display: none;">
+                        <a href="https://docsend.com/view/eiawynp" target="_blank">
+                            <div class="whitepaper-select-item">EN</div>
+                        </a>
+                        <a href="#" target="_blank">
+                            <div class="whitepaper-select-item">KR</div>
+                        </a>
+                        <a href="#" target="_blank">
+                            <div class="whitepaper-select-item">ID</div>
+                        </a>
+                         <a href="#" target="_blank">
+                            <div class="whitepaper-select-item">RS</div>
+                        </a>
+                    </div>
+                    White Paper
+                    <span class="up-path-wrapper">
+                        <img src="landingpage/img/crowdsale/up-path.png">
+                    </span>
+                </span>
+            </div>
+            <div class="whitepaper-mobile-wrapper">
+                <span style="display: inline-block;">
+                    <div class="whitepaper-mobile-text">
+                        White Paper
+                    </div>
+                    <div>
+                        <span class="whitepaper-select-item-wrapper">
+                            <a href="https://docsend.com/view/eiawynp" target="_blank">
+                                <span class="whitepaper-select-item">EN</span>
+                            </a>
+                        </span>
+                        <span class="whitepaper-select-item-wrapper">
+                            <a href="https://docsend.com/view/49j5ngu" target="_blank">
+                                <span class="whitepaper-select-item">KR</span>
+                            </a>
+                        </span>
+                        <span class="whitepaper-select-item-wrapper">
+                            <a href="https://docsend.com/view/w4z5kep" target="_blank">
+                                <span class="whitepaper-select-item">CN</span>
+                            </a>
+                        </span>
+                    </div>
+                </span>
+            </div>
+            <!-- </div> -->
+        </div>
+    </div>
+
+    <div>
+        <div class="crowdsale-item-wrapper">
+            <!-- <img src="../landingpage/img/crowdsale/crowdsale-bottom.png" class="crowdsale-bottom-img" /> -->
+            <img ng-src="landingpage/img/crowdsale/crowdsale-bottom.png" class="crowdsale-bottom-img" src="landingpage/img/crowdsale/crowdsale-bottom.png">
+        </div>
+        <div class="row crowdsale-logo-wrapper">
+            
+            <div class="col-lg-6 col-md-12">
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script>
+function getTimeRemaining(endtime) {
+  var t = Date.parse(endtime) - Date.parse(new Date());
+  var seconds = Math.floor((t / 1000) % 60);
+  var minutes = Math.floor((t / 1000 / 60) % 60);
+  var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+  var days = Math.floor(t / (1000 * 60 * 60 * 24));
+  return {
+    'total': t,
+    'days': days,
+    'hours': hours,
+    'minutes': minutes,
+    'seconds': seconds
+  };
+}
+
+function initializeClock(id, endtime) {
+  var clock = document.getElementById(id);
+  var daysSpan = clock.querySelector('.days');
+  var hoursSpan = clock.querySelector('.hours');
+  var minutesSpan = clock.querySelector('.minutes');
+  var secondsSpan = clock.querySelector('.seconds');
+
+  function updateClock() {
+    var t = getTimeRemaining(endtime);
+
+    daysSpan.innerHTML = t.days;
+    hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
+    minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
+    secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
+
+    if (t.total <= 0) {
+      clearInterval(timeinterval);
+    }
+  }
+
+  updateClock();
+  var timeinterval = setInterval(updateClock, 1000);
+}
+
+var deadline = new Date(Date.parse(new Date()) + 15 * 24 * 60 * 60 * 1000);
+initializeClock('clockdiv', deadline);
+</script>

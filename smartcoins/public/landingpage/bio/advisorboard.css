@@ -1,0 +1,598 @@
+
+
+.advisor-board-wrapper {
+	max-width: 1650px;
+	margin: 0 auto 100px auto;
+	text-align: center;
+	overflow: hidden;
+}
+
+.advisor-board-item {
+	width: 30%;
+	color: white;
+	display: inline-block;
+	margin: 0 10px;
+}
+
+.advisor-board-detail-wrapper {
+	max-width: 1000px;
+	margin: 0 auto;
+	/* padding: 0px 70px; */
+}
+
+.advisor-board-detail {
+	width: 100%;
+	text-align: left;
+	height: 47vw;
+    overflow: hidden;
+	transition: height 0.5s;
+	position: relative;
+}
+
+.advisor-board-image {
+	position: relative;
+	text-align: left;
+}
+
+.board-text-wrapper {
+	position: relative;
+    margin-left: 22%;
+    text-align: left;
+    top: -25px;
+}
+
+.advisor-board-detail-image {
+	width: 45%;
+    height: auto;
+    position: absolute;
+    left: 60px;
+    top: 85px;
+    z-index: 0;
+}
+
+.advisor-board-detail-bio {
+	margin-top: 4%;
+    font-size: 22.4px;
+    color: white;
+    line-height: 1.1;
+}
+
+.advisor-board-detail-image-wrapper {
+	text-align: center;
+}
+
+.advisor-board-detail-bio-wrapper {
+	margin-left: 55%;
+	margin-bottom: 1.4%;
+}
+
+.advisor-dot {
+	width: 10px;
+	float: left;
+	margin-top: 0.3vw;
+}
+
+.advisor-bio-detail {
+    margin-left: 22px;
+}
+
+.advisor-board-detail-linked {
+	width: 100%;
+}
+
+.advisor-board-detail-linked-click{
+	position: absolute;
+    top: 2%;
+    right: 4%;
+    z-index: 500;
+    cursor: pointer;
+    width: 140px;
+}
+
+.advisor-image {
+	position: absolute;
+	width: 68%;
+	top: 3%;
+	right: 12%;
+	z-index: 10;
+}
+
+.advisor-graphicset {
+	position: relative;
+    right: 0;
+    width: 85%;
+    z-index: 20;
+}
+
+.advisor-detail-graphicset {
+	position: absolute;
+	width: 100%;
+	top: 2%;
+	z-index: 10;
+}
+
+.advisor-frame {
+	position: absolute;
+    right: 1.95vw;
+    top: 10%;
+	width: 64%;
+	height: 76%;
+	z-index: 0;
+	border: solid 3px white;
+}
+
+.advisor-linkedin {
+	position: absolute;
+    right: 0;
+    top: 15%;
+    width: 13.3%;
+    z-index: 20;
+}
+
+.board-text-name {
+	font-size: 35px;
+	font-weight: 900;
+	color: white;
+}
+
+.board-text-position {
+	font-size: 18px;
+	font-weight: 900;
+	color: white;
+}
+
+.board-text-bio-line {
+	font-size: 21.75px;
+	font-weight: 900;
+	color: #00fff7;
+}
+
+.board-line {
+	width: 40px;
+	border: solid 0.2vw #00fff7;
+	margin: 1.3vw 0px 0.7vw 0px;
+}
+
+.advisor-board-logo {
+	position: absolute;
+    bottom: 11%;
+    right: 0;
+    z-index: 30;
+    width: 36.4%;
+}
+
+.advisor-detail-position {
+	color: #00fff7;
+    font-size: 36.8px;
+    margin-left: 7%;
+	font-weight: 900;
+}
+
+.advisor-detail-name {
+	color: white;
+    font-size: 40px;
+    font-weight: 900;
+    text-align: right;
+    margin-right: 5%;
+    margin-top: 3%;
+}
+
+@keyframes fadeRightLeft{
+	from{
+		opacity: 0;
+		transform: translate(40px, -40px);
+	}
+	to{
+		opacity: 1;
+		transform: translate(0px, 0px);
+	}
+}
+
+.fadeRightLeft {
+	animation-name: fadeRightLeft;
+}
+
+.advisor-company-logolist {
+	position: absolute;
+	top: 477px;
+    right: 80px;
+}
+
+.advisor-company-logo {
+	width: 100%
+}
+
+.logo-wrapper {
+	display: inline-block;
+	width: 350px;
+	margin-right: 4%;
+}
+
+.advisor-board-detail-wrapper-mobile {
+	display: none;
+}
+
+/* @media only screen and (max-width: 1650px) {
+
+	.logo-wrapper {
+		width: 22vw;
+	}
+
+	.advisor-bio-detail {
+		margin-left: 1.8vw;
+	}
+
+	.advisor-dot {
+		width: 0.8vw;
+		margin-top: 0.5vw;
+	}
+
+	.advisor-company-logolist {
+		position: absolute;
+		top: 31vw;
+		right: 5vw;
+	}
+
+	.advisor-board-detail-image {
+		left: 4vw;
+		top: 5.5vw;
+	}
+
+	.board-text-name {
+		font-size: 2.3vw;
+	}
+	
+	.board-text-position {
+		font-size: 1.5vw;
+	}
+
+	.advisor-board-detail-bio {
+		font-size: 23.1px;
+	}
+
+	.advisor-detail-name {
+		color: white;
+		font-size: 41.25px;
+		font-weight: 900;
+		text-align: right;
+		margin-right: 50px;
+		margin-top: 35px;
+	}
+
+	.advisor-detail-position {
+		font-size: 33px;
+	}
+
+	
+	.advisor-board-detail-linked-click{
+		width: 8.5vw;
+	}
+	
+} */
+/* 
+@media only screen and (max-width: 1450px) {
+	.logo-wrapper {
+		width: 22vw;
+	}
+
+	.advisor-bio-detail {
+		margin-left: 1.8vw;
+	}
+
+	.advisor-dot {
+		width: 0.8vw;
+		margin-top: 0.5vw;
+	}
+
+	.advisor-company-logolist {
+		position: absolute;
+		top: 31vw;
+		right: 5vw;
+	}
+
+	.advisor-board-detail-image {
+		left: 4.5vw;
+		top: 6vw;
+	}
+
+	.board-text-name {
+		font-size: 2.3vw;
+	}
+	
+	.board-text-position {
+		font-size: 1vw;
+	}
+
+	.board-text-bio-line {
+		font-size: 1.5vw;
+	}
+
+	.advisor-board-detail-bio {
+		font-size: 1.4vw;
+	}
+
+	.advisor-detail-name {
+		color: white;
+		font-size: 2.5vw;
+		font-weight: 900;
+		text-align: right;
+		margin-right: 5%;
+		margin-top: 3.5%;
+	}
+
+	.advisor-detail-position {
+		font-size: 2vw;
+	}
+
+	
+	.advisor-board-detail-linked-click{
+		width: 8.5vw;
+	}
+} */
+
+@media only screen and (max-width: 1650px) {
+	.board-text-name {
+		font-size: 2.1vw;
+	}
+
+	.board-text-position {
+		font-size: 1vw;
+	}
+}
+@media only screen and (max-width: 1160px) {
+	.logo-wrapper {
+		width: 29vw;
+	}
+
+	.advisor-bio-detail {
+		margin-left: 1.8vw;
+	}
+
+	.advisor-dot {
+		width: 0.8vw;
+		margin-top: 0.5vw;
+	}
+
+	.advisor-company-logolist {
+		position: absolute;
+		top: 41vw;
+		right: 5vw;
+	}
+
+	.advisor-board-detail-image {
+		left: 5.5vw;
+		top: 7vw;
+	}
+
+	.board-text-name {
+		font-size: 2.1vw;
+	}
+	
+	.board-text-position {
+		font-size: 1vw;
+	}
+
+	.board-text-bio-line {
+		font-size: 1.5vw;
+	}
+
+	.advisor-board-detail-bio {
+		font-size: 1.93vw;
+	}
+
+	.advisor-board-detail-bio {
+		margin-top: 4%;
+	}
+
+	.advisor-detail-name {
+		color: white;
+		font-size: 3.7vw;
+		font-weight: 900;
+		text-align: right;
+		margin-right: 5%;
+		margin-top: 2%;
+	}
+
+	.advisor-detail-position {
+		font-size: 2.9vw;
+	}
+
+	
+	.advisor-board-detail-linked-click{
+		width: 8.5vw;
+	}
+}
+@media only screen and (max-width: 1024px) {
+	
+	/* .advisor-board-detail-image {
+		float: none;
+		width: 39vw;
+		max-width: none;
+	} */
+
+	.advisor-board-item {
+		width: 50%;
+		margin: 0;
+	}
+
+	.advisor-frame {
+		right: 2.95vw;
+	}
+	/* .advisor-board-detail-image {
+		left: 6vw;
+		top: 8.5vw;
+	} */
+}
+
+
+@media only screen and (max-width: 600px) {
+
+	.board-text-name {
+		font-size: 6.5vw;
+	}
+
+	.board-text-position {
+		font-size: 4vw;
+	}
+
+	.advisor-board-detail-wrapper {
+		display: none;
+	}
+	.advisor-board-detail-wrapper-mobile {
+		display: block;
+	}
+
+	.advisor-board-wrapper {
+		margin: 0 auto;
+	}
+
+	.advisor-detail-image-wrapper-mobile {
+		text-align: center;
+	}
+
+	.advisor-board-position-mobile {
+		color: #00fff7;
+		font-weight: 900;
+		font-size: 16px;
+		margin-bottom: 10px;
+	}
+
+	.advisor-board-detail-mobile {
+		/* padding: 0 50px;
+		position: relative;
+		z-index: 1000;
+		width: 350px; */
+
+		position: relative;
+		z-index: 1000;
+		width: 250px;
+		margin: 0 auto;
+
+	}
+
+	.advisor-board-detail-profile-mobile {
+		width: 100%;
+		
+	}
+
+	.advisory-mobile-graphicset {
+		position: absolute;
+		width: 307px;
+		left: -36px;
+		top: -3px;
+	}
+
+	.advisor-board-detail-linked-click-mobile {
+		position: relative;
+		float: right;
+		text-align: right;
+		z-index: 100;
+	}
+
+	.advisor-board-detail-linked {
+		width: 110px;
+		margin-top: 32px;
+	}
+
+	.advisor-detail-name {
+		margin-top: 37%;
+		margin-right: 0;
+		font-size: 27px;
+	}
+
+	.advisor-board-detail-bio-wrapper {
+		margin-left: 0;
+		margin-bottom: 4%
+	}
+
+	.advisor-board-detail-bio {
+		font-size: 13px;
+		margin-top: 40px;
+	}
+
+	.advisor-dot {
+		width: 1.5vw;
+		margin-top: 0.7vw;
+		margin-right: 4px;
+	}
+
+	.advisor-company-logolist {
+		position: relative;
+		top: none;
+		right: none;
+	}
+	.logo-wrapper {
+		width: auto;
+	}
+
+	.advisor-bio-detail {
+		font-size: 15px;
+	}
+
+	.advisor-board-item {
+		width: 100%;
+		height: 450px;
+	}
+	
+	.advisor-board-image {
+		position: relative;
+		text-align: left;
+		width: 250px;
+		margin: -15px auto;
+	}
+
+	.advisor-image {
+		position: absolute;
+		width: 90%;
+		top: auto;
+		left: 5%;
+		right: auto;
+		z-index: 10;
+	}
+
+	.advisor-frame {
+		position: absolute;
+		right: -3px;
+		top: 31px;
+		width: 225px;
+		height: 212px;
+		z-index: 0;
+		border: solid 3px white;
+	}
+
+	.advisor-linkedin {
+		position: absolute;
+		right: -22px;
+		top: 47px;
+		width: 40px;
+		z-index: 20;
+	}
+
+	.board-text-wrapper {
+		position: relative;
+		margin-left: 15%;
+		text-align: left;
+		top: 6px;
+	}
+
+	.advisor-graphicset {
+		right: 27px;
+		width: 109%;
+	}
+
+	.advisor-board-logo {
+		right: -19px;
+		width: 44.4%;
+	}
+
+	.board-text-bio-line {
+		font-size: 4vw;
+	}
+}
+
+
+@media only screen and (max-width: 450px) {
+	.advisor-board-item {
+		height: 405px;
+	}
+}
