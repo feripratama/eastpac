@@ -1,0 +1,356 @@
+.crowdsale-modal-body {
+    color: #d8d8d8;
+    box-shadow: 0 0 100px 0 rgba(255, 255, 255, 0.2);
+    background-color: rgba(21, 16, 39, 0.97);
+    max-width: 540px;
+    width: 90vw;
+    padding: 42px 58px;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    overflow: auto;
+}
+
+.crowdsale-converter-body {
+    max-height: 100vh;
+    align-items: normal;
+}
+
+.dashboard-body {
+    max-height: 90vh;
+    border: solid 1.3px #4a535d;
+    background-color: #f6f6f7;
+    padding: 50px 20px 20px 20px;
+    color: #4a535d;
+}
+
+.dashboard-title {
+    font-size: 17.5px;
+    font-weight: 900;
+    margin-bottom: 11px;
+}
+
+.dashboard-subtitle {
+    font-size: 12px;
+    font-weight: 300;
+    margin-bottom: 10px;
+}
+
+.dashboard-value-wrapper {
+    border: solid 1px #4a535d;
+    background-color: #ffffff;
+    color: #4a535d;
+    padding: 12px 16px;
+    margin-bottom: 15px;
+    font-size: 12.5px;
+    font-weight: 900;
+}
+
+.crowdsale-modal-wrapper {
+    width: 100%;
+}
+
+.dashboard-modal-wrapper {
+    width: 100%;
+    max-height: 90vh;
+}
+
+.crowdsale-modal-title {
+    font-size: 30px;
+    /* height: 84px; */
+    line-height: 1.33;
+    word-break: keep-all;
+}
+
+.crowdsale-modal-title.margin-14 {
+    margin-bottom: 14px;
+}
+
+.crowdsale-modal-desc {
+    font-size: 15px;
+    line-height: 1.6;
+    word-break: keep-all;
+    display: inline-block;
+}
+
+.crowdsale-modal-desc.margin-14 {
+    margin-bottom: 30px;
+    margin-top: 10px;
+}
+
+.margin-top-30 {
+    margin-top: 30px;
+}
+
+.crowdsale-process-text {
+    background-color: #2c283d;
+    padding: 13px 17px 15px 17px;
+    line-height: 1.73;
+    font-size: 15px;
+    color: white;
+    margin: 15px 0;
+    height: 153px;
+    overflow: auto;
+}
+
+.crowdsale-modal-btn {
+    width: 100%;
+    height: 50px;
+    color: #faff6c;
+    border: solid 1px #faff6c;
+    text-align: center;
+    line-height: 50px;
+    cursor: pointer;
+}
+
+.crowdsale-modal-btn.margin-19 {
+    margin-bottom: 19px;
+}
+
+.crowdsale-prevbtn {
+    width: 48%;
+    color: #a2a0a9;
+    border: solid 1px #a2a0a9;
+    float: left;
+}
+
+.crowdsale-nextbtn {
+    width: 49%;
+    float: right;
+}
+
+.height-25 {
+    height: 25px;
+}
+
+.dismiss-modal {
+    cursor: pointer;
+    float: right;
+}
+
+.crowdsale-modal-input-wrapper {
+    position: relative;
+    margin: 5px auto 40px auto;
+}
+
+.calc-modal-input-margin {
+    margin: 10px auto 20px auto;
+}
+
+.modal-input-wrapper {
+    height: 44px;
+}
+
+.crowdsale-modal-input {
+    width: calc( 100% - 104px);
+    height: 100%;
+    border: 0;
+    font-size: 12px;
+    padding-left: 16px;
+    border-radius: 0;
+    z-index: 100;
+}
+
+.crowdsale-modal-input:focus {
+    outline: none;
+}
+
+.crowdsale-input-btn {
+    width: 104px;
+    font-size: 17px;
+    line-height: 44px;
+    text-align: center;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3);
+    background-color: #faff6c;
+    color: #000;
+    float: right;
+    cursor: pointer;
+    position: relative;
+    z-index: 200;
+}
+
+.crowdsale-modal-alert {
+    position: absolute;
+    top: 52px;
+}
+
+.calc-temco-wrapper {
+    border: solid 2px #3b3e4d;
+    display: inline-block;
+    width: 100%;
+    padding: 10px 19px 19px 19px;
+    margin-bottom: 35px;
+}
+
+.calc-main-title {
+    font-size: 12px;
+    color: #d8d8d8;
+}
+
+.calc-sub-title {
+    font-size: 11px;
+    color: #24cbca;
+}
+
+.calc-input-main-wrapper {
+    padding: 7px 0;
+}
+
+.calc-input-wrapper {
+    /* width: 40%; */
+    float: left;
+}
+
+.calc-input-icon {
+    width: 90px;
+    text-align: center;
+    float: left;
+    position: relative;
+    top: 16px;
+}
+
+.calc-input-div {
+    border-bottom: solid 0.6px #d8d8d8;
+    display: inline-block;
+    font-size: 13px;
+}
+
+.calc-input {
+    width: 81px;
+    height: 23px;
+    background-color: transparent;
+    color: #fff;
+    border: 0;
+    font-size: 16px;
+    outline: none;
+    /* border-bottom: solid 1px #d8d8d8; */
+}
+
+.calc-input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+@media only screen and (max-width: 450px) {
+
+    .crowdsale-modal-alert {
+        font-size: 12px;
+    }
+
+    .calc-input-icon {
+        position: none;
+        text-align: left;
+        margin: 10px 0;
+        top: 0;
+    } 
+
+    .calc-temco-wrapper {
+        max-width: 260px;
+        padding: 12px 20px 17px 20px;
+        margin-bottom: 25px;
+    }
+
+    .calc-text {
+        float: right;
+    }
+
+    .calc-input-div {
+        width: 100%;
+    }
+
+    .calc-input-wrapper { 
+        width: 100%;
+    }
+
+    .crowdsale-modal-input {
+        font-size: 10px;
+    }
+
+    .crowdsale-modal-body {
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .dismiss-modal {
+        position: absolute;
+        top: 38px;
+        right: 30px;
+    }
+
+    .crowdsale-modal-body {
+        padding: 42px 30px;
+        padding-top: 80px;
+        align-items: normal;
+    }
+
+    .calc-input-wrapper {
+        font-size: 14px;
+    }
+    
+    .modal-btn-wrapper {
+        height: 50px;
+        margin-bottom: 15px;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    .crowdsale-modal-title.choose-crypto {
+        width: auto;
+    }
+
+    .crowdsale-modal-body {
+        padding: 35px 20px;
+        /* padding-top: 35px; */
+    }
+
+    .crowdsale-process-text {
+        font-size: 12px;
+    }
+
+    .crowdsale-modal-title {
+        /* height: 80px; */
+        font-size: 18px;
+        line-height: 1.42;
+        width: 220px;
+    }
+
+    .crowdsale-modal-desc {
+        font-size: 13px;
+        line-height: 1.6;
+        word-break: normal;
+    }
+
+    .crowdsale-modal-desc.margin-14 {
+        margin-bottom: 20px;
+    }
+
+    .crowdsale-modal-input {
+        width: calc( 100% - 40px);
+        padding-left: 4px;
+    }
+
+    .crowdsale-input-btn {
+        width: 40px;
+        font-size: 12px;
+    }
+
+    .calc-modal-input-margin {
+        margin: 5px auto 10px auto;
+    }
+
+    .calc-temco-wrapper {
+        margin-bottom: 15px;
+    }
+    
+    .calc-input-main-wrapper {
+        padding: 7px 0px;
+    }
+
+    /* .calc-temco-wrapper {
+        padding: 10px 12px 14px 12px;
+    } */
+
+    .margin-top-30 {
+        margin-top: 15px;
+    }
+}

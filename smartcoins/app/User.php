@@ -6,12 +6,10 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Spatie\Permission\Traits\HasRoles;
-use Spatie\MediaLibrary\HasMedia\HasMedia;
-use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
 
-class User extends Authenticatable implements MustVerifyEmail,HasMedia
+class User extends Authenticatable implements MustVerifyEmail
 {
-    use Notifiable, HasRoles, HasMediaTrait;
+    use Notifiable, HasRoles;
 
     /**
      * The attributes that are mass assignable.

@@ -1,3 +1,7 @@
+@php
+    use App\Http\Controllers\MenuController;
+@endphp
+
 <!-- Left side column. contains the sidebar -->
 <aside class="main-sidebar">
     <!-- sidebar: style can be found in sidebar.less -->
@@ -48,6 +52,25 @@
             </span>
             </a>
         </li>
+        @foreach(MenuController::loadMenu()->where('level', 1)->get() as $menu)
+            @if(MenuController::loadMenu()->where('parent', $menu->id)->count() > 0)
+                <li class="treeview">
+                    <a href="#">
+                    <i class="fa fa-key"></i> <span>{{$menu->text}}</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        @foreach (MenuController::loadMenu()->where('parent', $menu->id)->get() as $submenu)
+                            <li class=""><a href="#"><i class="fa fa-circle-o"></i> {{$submenu->text}}</a></li>
+                        @endforeach
+                    </ul>
+                </li>
+            @else
+                <li class=""><a href="#"><i class="fa fa-gears"></i> <span>{{$menu->text}}</span></a></li>
+            @endif
+        @endforeach
         @role('administrator')
             <li class="treeview
                 {{ (Route::currentRouteName() == "admin.usermanage") ? 'active' : '' }}">

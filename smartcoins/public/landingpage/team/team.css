@@ -1,0 +1,173 @@
+#parallax11 {
+	background-color:transparent;
+	/* float:left; */
+	width:100%;
+}
+
+.portrait-container{
+	width:25%;
+	display:inline-block;
+	vertical-align: top;
+	padding:10px;
+	margin-bottom: 90px;
+}
+
+.portrait-container-advisor{
+	width:20%;
+	display:inline-block;
+	vertical-align: top;
+	padding:10px;
+	margin-bottom: 90px;
+}
+
+#teamDropContainer{
+	margin: 0 auto;
+	width: 100px;
+	margin-top: -209px;
+}
+
+.team-text-container{
+	font-size: 40px;
+	font-weight: 900;
+	text-align: center;
+	color: #ffffff;  
+	text-transform: uppercase;
+}
+
+.team-margin{
+	margin: 110px auto 80px auto;
+}
+
+.advisor-margin{
+	margin: 200px auto 80px auto;
+}
+
+@media only screen and (max-width: 1260px) {
+
+	.portrait-container-advisor{
+		width:25%;
+		display:inline-block;
+		vertical-align: top;
+		padding:10px;
+		margin-bottom: 90px;
+	}
+
+}
+
+@media only screen and (max-width: 1160px) {
+
+	.portrait-container{
+		width:33%;
+		display:inline-block;
+		vertical-align: top;
+		padding:10px;
+		margin-bottom: 90px;
+	}
+
+}
+
+@media only screen and (max-width: 1024px) {
+
+	.portrait-container{
+		width:33%;
+		display:inline-block;
+		vertical-align: top;
+		padding:10px;
+		margin-bottom: 90px;
+	}
+
+	.portrait-container-advisor{
+		width:33%;
+		display:inline-block;
+		vertical-align: top;
+		padding:10px;
+		margin-bottom: 90px;
+	}
+
+	.team-text-container{
+		font-size: 30px;
+	}
+	
+	.team-margin{
+		margin: 150px auto 70px auto;
+	}
+	
+	.advisor-margin{
+		margin: 150px auto 70px auto;
+	}
+
+}
+
+@media only screen and (max-width: 767px) {
+
+	.portrait-container{
+		width:50%;
+	
+	}
+
+	.portrait-container-advisor{
+		width:50%;
+		
+	}
+}
+
+@media only screen and (max-width: 610px) {
+
+	.portrait-container{
+		width:100%;
+		display:inline-block;
+		vertical-align: top;
+		padding:10px;
+		margin-bottom: 50px;
+	}
+
+	.portrait-container-advisor{
+		width:100%;
+		display:inline-block;
+		vertical-align: top;
+		padding:10px;
+		margin-bottom: 50px;
+	}
+
+	#teamDropImg{
+		height: 170px;
+		margin-left: 25px !important;
+    	width: 50px !important;
+    	margin-top: 0px;
+	}
+
+	#teamDropContainer{
+		margin-top: 0px;
+	}
+
+	#dot-img{
+		width: 7px !important;		
+		margin-right: 0px !important;		
+		margin-bottom: 10px;
+	}
+
+	#parallax11{
+		margin-bottom: 20px !important;
+	}
+
+}
+
+@media only screen and (max-width: 450px) {
+
+	.portrait-container{
+		width:100%;
+	}
+
+	.team-margin {
+		margin: 50px auto 20px auto;
+	}
+
+	.team-text-container {
+		font-size: 14px;
+		line-height: 1.71;
+	}
+
+	.advisor-margin {
+		margin: 100px auto 20px auto;
+	}
+}

@@ -13,7 +13,7 @@
 
 /* Landing Page */
 Route::get('/', function () {
-    return view('landingpage.index');
+    return view('welcome');
 })->name('welcome');
 
 Route::get('/faq', function () {
@@ -36,8 +36,19 @@ Auth::routes(['verify' => true]);
 
 Route::get('/home', 'HomeController@index')->name('home')->middleware('verified');
 
+Route::middleware(['auth', 'verified'])->prefix('home')->group(function() {
+    // home route
+    Route::get('contribution','HomeController@contribution')->name('home.contribution');
+    Route::get('transaction','HomeController@transaction')->name('home.transaction');
+    Route::get('referral','HomeController@referral')->name('home.referral');
+    Route::get('kycapp','HomeController@kycapp')->name('home.kycapp');
+    Route::get('kycapp-form','KycController@index')->name('home.kycapp.form');
+    Route::post('kycapp-form','KycController@store')->name('home.kycapp.store');
+});
+
 // member
 Route::middleware(['auth', 'verified'])->prefix('setting')->group(function() {
+    // profiel
     Route::get('profile','ProfileController@index')->name('profileIndex');
     Route::post('profile/full-name-save-edit', 'ProfileController@update')->name('profileUpdate');
     Route::post('profile/change-password-save', 'ProfileController@updatePassword')->name('profileUpdatePassword');

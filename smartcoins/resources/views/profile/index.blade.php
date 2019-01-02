@@ -1,113 +1,122 @@
 @extends('layouts.app')
 
+@section('css')
+
+<style>
+.user-bg .user-icon{
+    position: absolute;
+}
+
+.user-bg{
+    width: 75%;
+    position: absolute;
+    z-index: 0;
+    margin-left: 15%;
+}
+.user-icon{
+  position: absolute;
+	width: 80%;
+	margin-top: 20%;
+	left: 45%;
+	z-index: 10;
+}
+</style>
+
+@endsection
+
 @section('content')
-<!-- Content Wrapper. Contains page content -->
-<div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-        <h1>
-            {{ $title }}
-        </h1>
-        <ol class="breadcrumb">
-            <li><a href="{{ route('home') }}"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li><a href="#">Setting</a></li>
-            <li class="active">{{ $title }}</li>
-        </ol>
-    </section>
-    
-    <!-- Main content -->
-    <section class="content">
+
+<section class="content container-fluid" style="margin-top: 20px; margin-left:20px; margin-right:20px;">
+
+    <form class="form-horizontal" id="frm_transfer_eth" action="starter.html" method="post">
         <div class="row">
-            {{-- <div class="col-md-3"></div> --}}
-            <div class="col-md-3">
-                <div id="msg" class="alert text-center" style="display:none">
-                    <strong></strong>
-                </div>
-                <div class="box box-primary">
-                    <div class="box-header with-border">
-                        
-                        <h3 class="box-title">Photo Profile</h3>
-                    </div>
-                    
-                    <div class="box-body box-profile">
-                        <img class="profile-user-img img-responsive img-circle change-profile-photo" src="{{asset('dist/img/default-avatar.png')}}" alt="User profile picture">
-                        <br>
-                        
-                        <div class="text-muted text-center">
-                            <input type="file" name="photo_upload">
-                        </div>
-                        
-                        <ul class="list-group list-group-unbordered">
-                            
-                        </ul>
-                        <div class="btn btn-sm btn-primary btn-flat">Submit</div>
-                    </div>
-                </div>
+            <div class="col-sm-3">
+                <img src="{{asset('dist/img/bio-bg.png')}}" class="user-bg">
+                <img src="{{asset('dist/img/user-big.png')}}" class="user-icon">
             </div>
-            <div class="col-md-9">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-6">
                 <div id="msg" class="alert text-center" style="display:none">
                     <strong></strong>
                 </div>
-                <div class="box box-primary">
-                    <div class="box-header with-border">
-                        
-                        <h3 class="box-title">Profile</h3>
+                <div class="box box-warning">
+                    <div class="box-header">
+                    <h3 class="box-title">Account Information</h3>
                     </div>
-                    <div class="box-body box-profile">
-                        
-                        <p class="text-muted text-center"></p>
-                        
-                        <ul class="list-group list-group-unbordered">
-                            <li class="list-group-item">
-                                <b>Verifikasi</b> <a class="btn btn-xs btn-success pull-right">Terverifikasi <i class="fa fa-check"></i></a> </a>
-                            </li>
-                            <li class="list-group-item">
-                                <b class="text-full-name">Full Name</b> <a class="pull-right" id="full-name" onclick="showInputFullname()">{{ Auth::user()->name }}</a>
-                                <div class="input-group input-group-sm" id="full-name-input" style="display:none">
-                                    <input type="text" class="form-control" placeholder="Full Name" value="{{ Auth::user()->name }}">
-                                    <span class="input-group-btn">
-                                        <button type="button" class="btn btn-success btn-flat" id="btnok-submit-fullname"><i class="fa fa-check"></i></button>
-                                        <button type="button" class="btn btn-danger btn-flat" id="btncancel-submit-fullname"><i class="fa fa-times"></i></button>
-                                    </span>
-                                </div>
-                            </li>
-                            <li class="list-group-item">
-                                <b>User ID</b> <a class="pull-right">{{ Auth::user()->username }}</a>
-                            </li>
-                            <li class="list-group-item">
-                                <b>Email</b> <a class="pull-right" id="email">{{ Auth::user()->email }}</a>
-                            </li>
-                            <li class="list-group-item">
-                                <b>Change Password</b> <a class="pull-right" id="password" onclick="showInputPassword()">Click Here</a>
-                                <div class="form-group password-input" style="display:none">
-                                    <input type="password" id="password_old" class="form-control input-sm" autocomplete="off" placeholder="Old Password">
-                                </div>
-                                <div class="form-group password-input" style="display:none">
-                                    <input type="password" id="password_now" class="form-control input-sm" autocomplete="off" placeholder="New Password">
-                                </div>
-                                <div class="input-group input-group-sm password-input" style="display:none">
-                                    <input type="password" id="password_confirmation" class="form-control" placeholder="Confirm Password">
-                                    <span class="input-group-btn">
-                                        <button type="button" class="btn btn-success btn-flat" id="btnok-submit-password"><i class="fa fa-check"></i></button>
-                                        <button type="button" class="btn btn-danger btn-flat" id="btncancel-submit-password"><i class="fa fa-times"></i></button>
-                                    </span>
-                                </div>
-                            </li>
-                        </ul>
+                    <div class="box-body">
+                        <div class="form-group">
+                        <label for="fullname" class="col-sm-3 ">Full Name</label>
+                        <div class="col-sm-9">
+                            <a id="full-name" onclick="showInputFullname();">{{ Auth::user()->name }}</a>
+                            <div class="input-group input-group-sm" id="full-name-input" style="display:none">
+                                <input type="text" class="form-control" placeholder="Full Name" value="{{ Auth::user()->name }}">
+                                <span class="input-group-btn">
+                                    <button type="button" class="btn btn-success btn-flat" id="btnok-submit-fullname"><i class="fa fa-check"></i></button>
+                                    <button type="button" class="btn btn-danger btn-flat" id="btncancel-submit-fullname"><i class="fa fa-times"></i></button>
+                                </span>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="form-group">
+                        <label for="username" class="col-sm-3">Username</label>
+                        <div class="col-sm-9">
+                            <p>{{ Auth::user()->username }}</p>
+                        </div>
+                        </div>
+                        <div class="form-group">
+                        <label for="phone" class="col-sm-3">Mobile Phone</label>
+                        <div class="col-sm-9">
+                            <p>{{ Auth::user()->mobilenumber }}</p>
+                        </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputPassword3" class="col-sm-3">Email</label>
+                            <div class="col-sm-9">
+                            <p>{{ Auth::user()->email }}</p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputPassword3" class="col-sm-3">Change Password</label>
+                            <div class="col-sm-9">
+                                <a id="password" onclick="showInputPassword()">Click Here !</a>
+                            </div>
+                        </div>
+                        <div class="form-group password-input"  style="display:none" >
+                            <label for="password_old" class="col-sm-3">Old Password</label>
+                            <div class="col-sm-8 input-group input-group-sm">
+                                <input type="text" class="form-control" id="password_old" placeholder="">
+                            </div>
+                        </div>
+                        <div class="form-group password-input"  style="display:none">
+                            <label for="password_now" class="col-sm-3">New Password</label>
+                            <div class="col-sm-8 input-group input-group-sm">
+                                <input type="text" class="form-control" id="password_now" placeholder="">
+                            </div>
+                        </div>
+                        <div class="form-group password-input"  style="display:none">
+                            <label for="password_confirmation" class="col-sm-3">Confirm New Password</label>
+                            <div class="col-sm-8 input-group input-group-sm">
+                                <input type="password" id="password_confirmation" class="form-control" placeholder="Confirm Password">
+                                <span class="input-group-btn">
+                                    <button type="button" class="btn btn-success btn-flat" id="btnok-submit-password"><i class="fa fa-check"></i></button>
+                                    <button type="button" class="btn btn-danger btn-flat" id="btncancel-submit-password"><i class="fa fa-times"></i></button>
+                                </span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-    <!-- /.content -->
-</div>
-<!-- /.content-wrapper -->
+    </form>
+</section>
+
 @endsection
 
 @section('script')
+
 <script>
     $(document).ready(function(){
-        
+
         // btn full name
         $('#btnok-submit-fullname').click(function() {
             $.ajax({
@@ -128,14 +137,14 @@
                     $('#msg').addClass('alert-success');
                     $('#msg strong').text(datas.msg);
                     $('#msg').show();
-                    $('.text-full-name').text($('#full-name-input input').val());
+                    $('#full-name').text($('#full-name-input input').val());
                     $('#full-name-input').hide();
                     $('#full-name').show();
-                    
+
                 }
             })
         });
-        
+
         $('#btnok-submit-password').click(function() {
             $.ajax({
                 url: '/setting/profile/change-password-save',
@@ -157,55 +166,35 @@
                     $('#msg').addClass('alert-success');
                     $('#msg strong').text(datas.msg);
                     $('#msg').show();
-                    $('.text-full-name').text($('#full-name-input input').val());
-                    $('#full-name-input').hide();
-                    $('#full-name').show();
-                    
+
                 }
             })
         });
-        
+
         $('#btncancel-submit-fullname').click(function(){
             $('#full-name-input').hide();
             $('#full-name').show();
         });
-        
+
         $('#btncancel-submit-password').click(function(){
             $('.password-input').hide();
             $('#password').show();
         });
     });
-    
+
     function showInputFullname() {
         $('#full-name').hide();
         $('#full-name-input').show();
         $('#full-name-input input').focus();
     }
-    
+
     function showInputPassword() {
         $('#password').hide();
         $('.password-input').show();
         $('#password-input input').focus();
     }
-    
-    $('input[name=photo_upload]').change(function() {
-        var input = this;
-        var url = $(this).val();
-        var ext = url.substring(url.lastIndexOf('.') + 1).toLowerCase();
-        if (input.files && input.files[0]&& (ext == "gif" || ext == "png" || ext == "jpeg" || ext == "jpg"))
-        {
-            var reader = new FileReader();
-            
-            reader.onload = function (e) {
-                $('.change-profile-photo').attr('src', e.target.result);
-            }
-            reader.readAsDataURL(input.files[0]);
-        }
-        else
-        {
-            $('.change-profile-photo').attr('src', '{{asset('dist/img/default-avatar.png')}}');
-        }
-    });
-    
+
+
+
 </script>
 @endsection

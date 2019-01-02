@@ -1,0 +1,398 @@
+<div class="row">
+   <div class="team-text-container advisor-margin ng-scope ng-binding" translate="">advisors</div>
+</div>
+<div>
+   <!-- ngRepeat: advisor in advisors -->
+   <div class="portrait-container-advisor animated ng-scope" data-animate="fadeInUp" data-delay="0.3" ng-repeat="team in advisors">
+      <advisor data="graham_friedman" class="ng-isolate-scope">
+         <div class="portrait-advisor advisor-port" ng-click="portraitClick()">
+            <div class="mug">
+               <div class="mug-inner-advisor" ng-style="{'background-image':'url(' + img + ')'}" style="background-image: url('landingpage/bio/data/graham_friedman.jpg');">
+               </div>
+               <div class="mug-logo-container ng-hide" ng-show="isTeam">
+                  <div class="mug-logo">
+                     <img src="landingpage/img/profile_temco_logo.png" alt="temco-logo">
+                  </div>
+               </div>
+               <!-- ngIf: linkedInUrl -->
+               <div class="linkedin ng-scope" ng-if="linkedInUrl" style="">
+                  <a ng-href="https://www.linkedin.com/in/graham-friedman-92581314" target="_blank" href="https://www.linkedin.com/in/graham-friedman-92581314">
+                  <img src="landingpage/img/linkedin.png" alt="linkedin-icon">
+                  </a>
+               </div>
+               <!-- end ngIf: linkedInUrl -->
+            </div>
+            <div style="position: relative">
+               <div class="team-info-wrapper-advisor">
+                  <div class="team-name text-sub-category ng-binding">
+                     GRAHAM FRIEDMAN
+                  </div>
+                  <div class="team-title text-desc ng-binding">
+                  </div>
+                  <div class="team-line">
+                  </div>
+                  <div style="margin: 23px auto 0px 0px;">
+                     <div style="display: flex; margin-bottom: 10px;">
+                        <div class="bio-image-div">
+                           <img class="bio-image" ng-src="landingpage/img/company/tldr.png" src="landingpage/img/company/tldr.png">
+                        </div>
+                        <div class="bio-image-div">
+                           <img class="bio-image" ng-src="landingpage/img/company/nyc.png" src="landingpage/img/company/nyc.png">
+                        </div>
+                     </div>
+                     <div style="display: flex; margin-bottom: 10px;">
+                        <div class="bio-image-div">
+                           <img class="bio-image">
+                        </div>
+                        <div class="bio-image-div">
+                           <img class="bio-image">
+                        </div>
+                     </div>
+                     <div style="display: flex; margin-bottom: 10px;">
+                        <div class="bio-image-div">
+                           <img class="bio-image">
+                        </div>
+                        <div class="bio-image-div">
+                           <img class="bio-image">
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="team-info-detail-wrapper" style="margin-left: 20px;">
+                  <div class="bio">
+                     <!-- ngRepeat: bio in bios -->
+                     <div ng-repeat="bio in bios" class="bio-detail ng-binding ng-scope" style="">
+                        <img src="landingpage/img/bullet-list.png"> Co-founder and Partner, TLDR
+                     </div>
+                     <!-- end ngRepeat: bio in bios -->
+                     <div ng-repeat="bio in bios" class="bio-detail ng-binding ng-scope">
+                        <img src="landingpage/img/bullet-list.png"> BFA in Film and Television Production, New York University
+                     </div>
+                     <!-- end ngRepeat: bio in bios -->
+                  </div>
+               </div>
+            </div>
+         </div>
+      </advisor>
+   </div>
+   <!-- end ngRepeat: advisor in advisors -->
+   <div class="portrait-container-advisor animated ng-scope" data-animate="fadeInUp" data-delay="0.3" ng-repeat="advisor in advisors">
+      <advisor data="alex_yamashita" class="ng-isolate-scope">
+         <div class="portrait-advisor advisor-port" ng-click="portraitClick()">
+            <div class="mug">
+               <div class="mug-inner-advisor" ng-style="{'background-image':'url(' + img + ')'}" style="background-image: url('landingpage/bio/data/alex_yamashita.jpg');">
+               </div>
+               <div class="mug-logo-container ng-hide" ng-show="isTeam">
+                  <div class="mug-logo">
+                     <img src="landingpage/img/profile_temco_logo.png" alt="temco-logo">
+                  </div>
+               </div>
+               <!-- ngIf: linkedInUrl -->
+               <div class="linkedin ng-scope" ng-if="linkedInUrl" style="">
+                  <a ng-href="https://www.linkedin.com/in/alex-yamashita-a933487" target="_blank" href="https://www.linkedin.com/in/alex-yamashita-a933487">
+                  <img src="landingpage/img/linkedin.png" alt="linkedin-icon">
+                  </a>
+               </div>
+               <!-- end ngIf: linkedInUrl -->
+            </div>
+            <div style="position: relative">
+               <div class="team-info-wrapper-advisor">
+                  <div class="team-name text-sub-category ng-binding">
+                     ALEX YAMASHITA
+                  </div>
+                  <div class="team-title text-desc ng-binding">
+                  </div>
+                  <div class="team-line">
+                  </div>
+                  <div style="margin: 23px auto 0px 0px;">
+                     <div style="display: flex; margin-bottom: 10px;">
+                        <div class="bio-image-div">
+                           <img class="bio-image" ng-src="landingpage/img/company/tldr.png" src="landingpage/img/company/tldr.png">
+                        </div>
+                        <div class="bio-image-div">
+                           <img class="bio-image" ng-src="landingpage/img/company/yale.png" src="landingpage/img/company/yale.png">
+                        </div>
+                     </div>
+                     <div style="display: flex; margin-bottom: 10px;">
+                        <div class="bio-image-div">
+                           <img class="bio-image">
+                        </div>
+                        <div class="bio-image-div">
+                           <img class="bio-image">
+                        </div>
+                     </div>
+                     <div style="display: flex; margin-bottom: 10px;">
+                        <div class="bio-image-div">
+                           <img class="bio-image">
+                        </div>
+                        <div class="bio-image-div">
+                           <img class="bio-image">
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="team-info-detail-wrapper" style="margin-left: 20px;">
+                  <div class="bio">
+                     <!-- ngRepeat: bio in bios -->
+                     <div ng-repeat="bio in bios" class="bio-detail ng-binding ng-scope" style="">
+                        <img src="landingpage/img/bullet-list.png"> Co-founder and Partner, TLDR
+                     </div>
+                     <!-- end ngRepeat: bio in bios -->
+                     <div ng-repeat="bio in bios" class="bio-detail ng-binding ng-scope">
+                        <img src="landingpage/img/bullet-list.png"> BA in Economics, Yale University
+                     </div>
+                     <!-- end ngRepeat: bio in bios -->
+                  </div>
+               </div>
+            </div>
+         </div>
+      </advisor>
+   </div>
+   <!-- end ngRepeat: advisor in advisors -->
+   <div class="portrait-container-advisor animated ng-scope" data-animate="fadeInUp" data-delay="0.3" ng-repeat="advisor in advisors">
+      <advisor data="adrian_lai" class="ng-isolate-scope">
+         <div class="portrait-advisor advisor-port" ng-click="portraitClick()">
+            <div class="mug">
+               <div class="mug-inner-advisor" ng-style="{'background-image':'url(' + img + ')'}" style="background-image: url("landingpage/bio/data/adrian_lai.png");">
+            </div>
+            <div class="mug-logo-container ng-hide" ng-show="isTeam">
+               <div class="mug-logo">
+                  <img src="landingpage/img/profile_temco_logo.png" alt="temco-logo">
+               </div>
+            </div>
+            <!-- ngIf: linkedInUrl -->
+            <div class="linkedin ng-scope" ng-if="linkedInUrl" style="">
+               <a ng-href="https://www.linkedin.com/in/adrian-lai" target="_blank" href="https://www.linkedin.com/in/adrian-lai">
+               <img src="landingpage/img/linkedin.png" alt="linkedin-icon">
+               </a>
+            </div>
+            <!-- end ngIf: linkedInUrl -->
+         </div>
+         <div style="position: relative">
+            <div class="team-info-wrapper-advisor">
+               <div class="team-name text-sub-category ng-binding">
+                  ADRIAN LAI
+               </div>
+               <div class="team-title text-desc ng-binding">
+               </div>
+               <div class="team-line">
+               </div>
+    <div style="margin: 23px auto 0px 0px;">
+                     <div style="display: flex; margin-bottom: 10px;">
+                        <div class="bio-image-div">
+                           <img class="bio-image" ng-src="landingpage/img/company/tldr.png" src="landingpage/img/company/tldr.png">
+                        </div>
+                        <div class="bio-image-div">
+                           <img class="bio-image" ng-src="landingpage/img/company/nyc.png" src="landingpage/img/company/nyc.png">
+                        </div>
+                     </div>
+                     <div style="display: flex; margin-bottom: 10px;">
+                        <div class="bio-image-div">
+                           <img class="bio-image">
+                        </div>
+                        <div class="bio-image-div">
+                           <img class="bio-image">
+                        </div>
+                     </div>
+                     <div style="display: flex; margin-bottom: 10px;">
+                        <div class="bio-image-div">
+                           <img class="bio-image">
+                        </div>
+                        <div class="bio-image-div">
+                           <img class="bio-image">
+                        </div>
+                     </div>
+                  </div>
+            </div>
+            <div class="team-info-detail-wrapper" style="margin-left: 20px;">
+               <div class="bio">
+                  <!-- ngRepeat: bio in bios -->
+                  <div ng-repeat="bio in bios" class="bio-detail ng-binding ng-scope" style="">
+                     <img src="landingpage/img/bullet-list.png"> Co-Founder, BlackHorse
+                  </div>
+                  <!-- end ngRepeat: bio in bios -->
+                  <div ng-repeat="bio in bios" class="bio-detail ng-binding ng-scope">
+                     <img src="landingpage/img/bullet-list.png"> Sales &amp; marketing, FinTech, corporate governance, BlackRock
+                  </div>
+                  <!-- end ngRepeat: bio in bios -->
+                  <div ng-repeat="bio in bios" class="bio-detail ng-binding ng-scope">
+                     <img src="landingpage/img/bullet-list.png"> Advisor, Plair Life - first ICO on Vechain
+                  </div>
+                  <!-- end ngRepeat: bio in bios -->
+                  <div ng-repeat="bio in bios" class="bio-detail ng-binding ng-scope">
+                     <img src="landingpage/img/bullet-list.png"> Blockchain Trainer, Hong Kong Securities and Investment Institute
+                  </div>
+                  <!-- end ngRepeat: bio in bios -->
+               </div>
+            </div>
+         </div>
+   </div>
+   </advisor>
+</div>
+<!-- end ngRepeat: advisor in advisors -->
+<div class="portrait-container-advisor animated ng-scope" data-animate="fadeInUp" data-delay="0.3" ng-repeat="advisor in advisors">
+   <advisor data="brian_tk_lee" class="ng-isolate-scope">
+      <div class="portrait-advisor advisor-port" ng-click="portraitClick()">
+         <div class="mug">
+            <div class="mug-inner-advisor" ng-style="{'background-image':'url(' + img + ')'}" style="background-image: url("landingpage/bio/data/brian_tk_Lee.png");">
+         </div>
+         <div class="mug-logo-container ng-hide" ng-show="isTeam">
+            <div class="mug-logo">
+               <img src="landingpage/img/profile_temco_logo.png" alt="temco-logo">
+            </div>
+         </div>
+         <!-- ngIf: linkedInUrl -->
+         <div class="linkedin ng-scope" ng-if="linkedInUrl" style="">
+            <a ng-href="https://www.linkedin.com/in/leetinka" target="_blank" href="https://www.linkedin.com/in/leetinka">
+            <img src="landingpage/img/linkedin.png" alt="linkedin-icon">
+            </a>
+         </div>
+         <!-- end ngIf: linkedInUrl -->
+      </div>
+      <div style="position: relative">
+         <div class="team-info-wrapper-advisor">
+            <div class="team-name text-sub-category ng-binding">
+               BRIAN LEE
+            </div>
+            <div class="team-title text-desc ng-binding">
+            </div>
+            <div class="team-line">
+            </div>
+                    <div style="margin: 23px auto 0px 0px;">
+                     <div style="display: flex; margin-bottom: 10px;">
+                        <div class="bio-image-div">
+                           <img class="bio-image" ng-src="landingpage/img/company/tldr.png" src="landingpage/img/company/tldr.png">
+                        </div>
+                        <div class="bio-image-div">
+                           <img class="bio-image" ng-src="landingpage/img/company/yale.png" src="landingpage/img/company/yale.png">
+                        </div>
+                     </div>
+                     <div style="display: flex; margin-bottom: 10px;">
+                        <div class="bio-image-div">
+                           <img class="bio-image">
+                        </div>
+                        <div class="bio-image-div">
+                           <img class="bio-image">
+                        </div>
+                     </div>
+                     <div style="display: flex; margin-bottom: 10px;">
+                        <div class="bio-image-div">
+                           <img class="bio-image">
+                        </div>
+                        <div class="bio-image-div">
+                           <img class="bio-image">
+                        </div>
+                     </div>
+                  </div>
+         </div>
+         <div class="team-info-detail-wrapper" style="margin-left: 20px;">
+            <div class="bio">
+               <!-- ngRepeat: bio in bios -->
+               <div ng-repeat="bio in bios" class="bio-detail ng-binding ng-scope" style="">
+                  <img src="landingpage/img/bullet-list.png"> Managing Director, BlackHorse
+               </div>
+               <!-- end ngRepeat: bio in bios -->
+               <div ng-repeat="bio in bios" class="bio-detail ng-binding ng-scope">
+                  <img src="landingpage/img/bullet-list.png"> President, Digital Asset Investment Association
+               </div>
+               <!-- end ngRepeat: bio in bios -->
+               <div ng-repeat="bio in bios" class="bio-detail ng-binding ng-scope">
+                  <img src="landingpage/img/bullet-list.png"> Investor, Quarkchain, Fantom, Open Platform, etc.
+               </div>
+               <!-- end ngRepeat: bio in bios -->
+               <div ng-repeat="bio in bios" class="bio-detail ng-binding ng-scope">
+                  <img src="landingpage/img/bullet-list.png"> BA in Financial Risk Management, Cass Business School
+               </div>
+               <!-- end ngRepeat: bio in bios -->
+            </div>
+         </div>
+      </div>
+</div>
+</advisor>
+</div><!-- end ngRepeat: advisor in advisors -->
+<div class="portrait-container-advisor animated ng-scope" data-animate="fadeInUp" data-delay="0.3" ng-repeat="advisor in advisors">
+   <advisor data="yongsik" class="ng-isolate-scope">
+      <div class="portrait-advisor advisor-port" ng-click="portraitClick()">
+         <div class="mug">
+            <div class="mug-inner-advisor" ng-style="{'background-image':'url(' + img + ')'}" style="background-image: url('landingpage/bio/data/yongsik_kim.png');">
+         </div>
+         <div class="mug-logo-container ng-hide" ng-show="isTeam">
+            <div class="mug-logo">
+               <img src="landingpage/img/profile_temco_logo.png" alt="temco-logo">
+            </div>
+         </div>
+         <!-- ngIf: linkedInUrl -->
+      </div>
+      <div style="position: relative">
+         <div class="team-info-wrapper-advisor">
+            <div class="team-name text-sub-category ng-binding">
+               YONGSIK KIM
+            </div>
+            <div class="team-title text-desc ng-binding">
+            </div>
+            <div class="team-line">
+            </div>
+                <div style="margin: 23px auto 0px 0px;">
+                     <div style="display: flex; margin-bottom: 10px;">
+                        <div class="bio-image-div">
+                           <img class="bio-image" ng-src="landingpage/img/company/tldr.png" src="landingpage/img/company/tldr.png">
+                        </div>
+                        <div class="bio-image-div">
+                           <img class="bio-image" ng-src="landingpage/img/company/nyc.png" src="landingpage/img/company/nyc.png">
+                        </div>
+                     </div>
+                     <div style="display: flex; margin-bottom: 10px;">
+                        <div class="bio-image-div">
+                           <img class="bio-image">
+                        </div>
+                        <div class="bio-image-div">
+                           <img class="bio-image">
+                        </div>
+                     </div>
+                     <div style="display: flex; margin-bottom: 10px;">
+                        <div class="bio-image-div">
+                           <img class="bio-image">
+                        </div>
+                        <div class="bio-image-div">
+                           <img class="bio-image">
+                        </div>
+                     </div>
+                  </div>
+         </div>
+         <div class="team-info-detail-wrapper" style="margin-left: 20px;">
+            <div class="bio">
+               <!-- ngRepeat: bio in bios -->
+               <div ng-repeat="bio in bios" class="bio-detail ng-binding ng-scope" style="">
+                  <img src="landingpage/img/bullet-list.png"> CEO, INNO Healthcare
+               </div>
+               <!-- end ngRepeat: bio in bios -->
+               <div ng-repeat="bio in bios" class="bio-detail ng-binding ng-scope">
+                  <img src="landingpage/img/bullet-list.png"> Evaluation Commissioner, Institute for ICT Promotion
+               </div>
+               <!-- end ngRepeat: bio in bios -->
+               <div ng-repeat="bio in bios" class="bio-detail ng-binding ng-scope">
+                  <img src="landingpage/img/bullet-list.png"> Managing Director, Ernst &amp; Young Advisory
+               </div>
+               <!-- end ngRepeat: bio in bios -->
+               <div ng-repeat="bio in bios" class="bio-detail ng-binding ng-scope">
+                  <img src="landingpage/img/bullet-list.png"> Strategic Marketing Principal, Samsung SDS
+               </div>
+               <!-- end ngRepeat: bio in bios -->
+               <div ng-repeat="bio in bios" class="bio-detail ng-binding ng-scope">
+                  <img src="landingpage/img/bullet-list.png"> M.E in Electrical and Computer Engineering, University of Missouri at Columbia
+               </div>
+               <!-- end ngRepeat: bio in bios -->
+               <div ng-repeat="bio in bios" class="bio-detail ng-binding ng-scope">
+                  <img src="landingpage/img/bullet-list.png"> B.S in Computer Science, University of Missouri at Columbia
+               </div>
+               <!-- end ngRepeat: bio in bios -->
+            </div>
+         </div>
+      </div>
+</div>
+</advisor>
+</div><!-- end ngRepeat: advisor in advisors -->
+
+
+
+</div>

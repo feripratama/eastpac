@@ -2,7 +2,6 @@
 
 @section('content')
 <!-- Content Wrapper. Contains page content -->
-<div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>
@@ -19,7 +18,7 @@
     <section class="content">
         <div class="row">
             <div class="col-md-12">
-                <div class="box">
+                <div class="box box-warning">
                     <div class="box-header with-border">
                     <h3 class="box-title">Users</h3>
                     </div>
@@ -77,7 +76,6 @@
 
     </section>
     <!-- /.content -->
-</div>
     <!-- /.content-wrapper -->
 @endsection
 
