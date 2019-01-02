@@ -22,6 +22,7 @@ class KycController extends Controller
 
     public function index()
     {
+        // dd(Auth::user()->hasVerifiedEmail());
         $title = 'Verify your identity to participate in tokensale.';
         return view($this->view_dir. 'index', compact('title'));
     }
@@ -29,29 +30,32 @@ class KycController extends Controller
     public function store(Request $request)
     {
         $file = $request->file('document_file');
-        dd($file);
+
         $validator = Validator::make($request->all(), [
-            'first_name'    => 'required',
-            'last_name'     => 'required',
-            'email'         => 'required',
-            'mobilenumber'  => 'required',
-            'date_of_birth' => 'required|date',
-            'address_1'     => 'required',
-            'address_2'     => 'required',
-            'nationality'   => 'required',
-            'city'          => 'required',
-            'state'         => 'required',
-            'document_type' => 'required',
-            'document_file' => 'required',
-            'zip_code'      => 'required',
-            'wallet_type'   => 'required',
-            'wallet_address' => 'required',
+            // 'first_name'    => 'required',
+            // 'last_name'     => 'required',
+            // 'email'         => 'required',
+            // 'mobilenumber'  => 'required',
+            // 'date_of_birth' => 'required|date',
+            // 'address_1'     => 'required',
+            // 'address_2'     => 'required',
+            // 'nationality'   => 'required',
+            // 'city'          => 'required',
+            // 'state'         => 'required',
+            // 'document_type' => 'required',
+            'document_file' => 'required|image',
+            // 'zip_code'      => 'required',
+            // 'wallet_type'   => 'required',
+            // 'wallet_address' => 'required',
         ]);
 
         if($validator->fails()) {
-            return redirect()->back()->withErrors();
+            dd(redirect()->back()->withErrors($validator));
+            // return redirect()->back()->withErrors();
         } else {
+            dd($file->extension());
             Kyc::create([
+                'user_id'       => Auth::user()->id,
                 'first_name'    => $request->first_name,
                 'last_name'     => $request->last_name,
                 'email'         => $request->email,

@@ -51,7 +51,7 @@
                                     <img class="imgicon" src="{{asset('dist/img/document.png')}}">
                                 </div>
                                 <h4 class="status-text" >You have not submitted your KYC Application</h4>
-                                <a href="#" class="btn btn-primary">CLick to proceed</a>
+                                <a href="{{ route('home.kycapp.form') }}" class="btn btn-primary">CLick to proceed</a>
                             </div>
 
                     </div>

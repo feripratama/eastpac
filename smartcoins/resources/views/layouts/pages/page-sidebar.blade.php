@@ -6,7 +6,11 @@
                 <img src="{{asset('dist/img/user.png')}}" width="40%" class="img-circle" alt="User Image">
                 <p>{{ Auth::user()->name }}</p>
                 <p style="margin-top: -5%"><b>Unique ID : IXIA1A105</b></p><br>
-                <button class="btn btn-warning btn-sm" style="margin-top: -20%">Confirm Email</button>
+                @if(Auth::user()->hasVerifiedEmail())
+                    <p style="margin-top: -13%;color:green"><b>Verified <i class="fa fa-check"></i></b></p><br>
+                @else
+                    <p style="margin-top: -13%;color:red"><b>Verified <i class="fa fa-times"></i></b></p><br>
+                @endif
                 <button class="btn btn-warning btn-sm" style="margin-top: -20%">KYC Pending</button>
             </div>
         </div>

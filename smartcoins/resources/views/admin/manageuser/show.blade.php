@@ -217,7 +217,9 @@
                         <tr>
                             <td> <i class="fa fa-circle-o" style="color:green;"></i> </td>
                             <td>${$('#permission-select').val().split('|')[1]}</td>
-                            <td><button class="btn btn-xs btn-danger" title="remove permission"> <i class="fa fa-times"></i> </button></td>
+                            <td>
+                                <a href="http://${window.location.host}/administrator/manage-user/remove-permission-from/{{$user->id}}/${$('#permission-select').val().split('|')[1]}" class="btn btn-xs btn-danger" title="remove role"> <i class="fa fa-times"></i> </a>
+                            </td>
                         </tr>
                     `)
 
