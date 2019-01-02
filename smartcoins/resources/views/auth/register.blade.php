@@ -66,7 +66,7 @@ License: You must have a valid license purchased only from themeforest(the above
 							<div class="m-login__wrapper">
 								<div class="m-login__logo">
 									<a href="#">
-										<img src="{{asset('main/assets/app/media/img/logos/logo-4.png')}}" width="20%">
+										<img src="{{asset('main/assets/app/media/img/logos/logo-5.png')}}" width="20%">
 									</a>
 								</div>
 
@@ -159,7 +159,7 @@ License: You must have a valid license purchased only from themeforest(the above
 						</div>
 					</div>
 				</div>
-				<div class="m-grid__item m-grid__item--fluid m-grid m-grid--center m-grid--hor m-grid__item--order-tablet-and-mobile-1	m-login__content" style="background-image: url({{asset('main/assets/app/media/img/bg/bg-8.jpg')}})">
+				<div class="m-grid__item m-grid__item--fluid m-grid m-grid--center m-grid--hor m-grid__item--order-tablet-and-mobile-1	m-login__content" style="background-image: url({{asset('landingpage/assets/images/architecture-buildings-business-442579.jpg')}})">
 
 					<div class="m-grid__item m-grid__item--middle">
 						<h3 class="m-login__welcome">
