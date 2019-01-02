@@ -188,8 +188,8 @@ License: You must have a valid license purchased only from themeforest(the above
                 var pages = function(){
 
                     return {
-                       Init : function() {
-                           $('#btnsubmit').click(function() {
+                        Init : function() {
+                            $('#btnsubmit').click(function() {
                                 $(this).text('Please wait . .');
                                 $.ajax({
                                     url : $('#frm-login').attr('action'),
@@ -226,7 +226,8 @@ License: You must have a valid license purchased only from themeforest(the above
 
                 $(function(){
                     $('#msg').hide();
-                    pages.Init();
+                    // pages.Init();
+                    $('#btnsubmit').text();
                 })
 
 

@@ -2,7 +2,6 @@
 
 @section('content')
 <!-- Content Wrapper. Contains page content -->
-<div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <a href="{{ route('admin.usermanage') }}" class="btn btn-sm btn-default" style="font-weight:bold"><i class="fa fa-angle-left"></i> Back</a>
@@ -26,7 +25,7 @@
                 <div id="msg" class="alert text-center" style="display:none">
                     <strong></strong>
                 </div>
-                <div class="box">
+                <div class="box box-warning">
                     <div class="box-header with-border">
                     <h3 class="box-title">{{ $title }}</h3>
                     </div>
@@ -51,7 +50,7 @@
                 </div>
             </div>
             <div class="col-md-6">
-                <div class="box">
+                <div class="box box-warning">
                     <div class="box-header with-border">
                     <h3 class="box-title">User Roles / Permissions</h3>
                     </div>
@@ -157,8 +156,6 @@
 
     </section>
     <!-- /.content -->
-</div>
-    <!-- /.content-wrapper -->
 @endsection
 
 @section('script')

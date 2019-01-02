@@ -1,5 +1,5 @@
 /*!
- *   AdminLTE v2.4.2
+ *   AdminLTE v2.4.4
  *   Author: Almsaeed Studio
  *	 Website: Almsaeed Studio <https://adminlte.io>
  *   License: Open source - MIT
@@ -91,10 +91,10 @@ body {
   z-index: 800;
 }
 .main-footer {
-  background: #fff;
-  padding: 15px;
-  color: #444;
-  border-top: 1px solid #d2d6de;
+    background: #ffffff;
+    padding: 15px;
+    color: #ff6c3f;
+    border-top: 0px solid #d2d6de;
 }
 /* Fixed layout */
 .fixed .main-header,
