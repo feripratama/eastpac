@@ -24,7 +24,7 @@
             <li class="{{ (Route::currentRouteName() == "home.transaction") ? 'active' : '' }}"><a href="{{ route('home.transaction') }}"><i class="fa fa-random"></i> <span>Transaction</span></a></li>
             <li class="{{ (Route::currentRouteName() == "home.referral") ? 'active' : '' }}"><a href="{{route('home.referral')}}"><i class="fa fa-refresh"></i> <span>Referral</span></a></li>
             <li class="{{ (Route::currentRouteName() == "profileIndex") ? 'active' : '' }}"><a href="{{ route('profileIndex') }}"><i class="fa fa-user"></i> <span>Account</span></a></li>
-            <li><a href="{{route('home.security')}}"><i class="fa fa-lock"></i> <span>Security</span></a></li>
+            <li class="{{ (Route::currentRouteName() == "home.security") ? 'active' : '' }}"><a href="{{route('home.security')}}"><i class="fa fa-lock"></i> <span>Security</span></a></li>
             @role('administrator')
             <li class="treeview
                 {{ (Route::currentRouteName() == "admin.usermanage") ? 'active' : '' }}">
