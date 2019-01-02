@@ -13,7 +13,7 @@
 
 /* Landing Page */
 Route::get('/', function () {
-    return view('welcome');
+    return view('landingpage.index');
 })->name('welcome');
 
 Route::get('/faq', function () {
@@ -42,6 +42,7 @@ Route::middleware(['auth', 'verified'])->prefix('home')->group(function() {
     Route::get('transaction','HomeController@transaction')->name('home.transaction');
     Route::get('referral','HomeController@referral')->name('home.referral');
     Route::get('kycapp','HomeController@kycapp')->name('home.kycapp');
+    Route::get('security','SecurityController@index')->name('home.security');
     Route::get('kycapp-form','KycController@index')->name('home.kycapp.form');
     Route::post('kycapp-form','KycController@store')->name('home.kycapp.store');
 });
