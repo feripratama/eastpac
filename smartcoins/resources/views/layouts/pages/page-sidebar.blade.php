@@ -11,6 +11,7 @@
                 @else
                     <p style="margin-top: -13%;color:red"><b>Verified <i class="fa fa-times"></i></b></p><br>
                 @endif
+
                 <button class="btn btn-warning btn-sm" style="margin-top: -20%">KYC Pending</button>
             </div>
         </div>

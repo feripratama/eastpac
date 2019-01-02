@@ -32,30 +32,32 @@ class KycController extends Controller
         $file = $request->file('document_file');
 
         $validator = Validator::make($request->all(), [
-            // 'first_name'    => 'required',
-            // 'last_name'     => 'required',
-            // 'email'         => 'required',
-            // 'mobilenumber'  => 'required',
-            // 'date_of_birth' => 'required|date',
-            // 'address_1'     => 'required',
-            // 'address_2'     => 'required',
-            // 'nationality'   => 'required',
-            // 'city'          => 'required',
-            // 'state'         => 'required',
-            // 'document_type' => 'required',
+            'first_name'    => 'required',
+            'last_name'     => 'required',
+            'email'         => 'required',
+            'mobilenumber'  => 'required',
+            'date_of_birth' => 'required|date',
+            'address_1'     => 'required',
+            'address_2'     => 'required',
+            'nationality'   => 'required',
+            'city'          => 'required',
+            'state'         => 'required',
+            'document_type' => 'required',
             'document_file' => 'required|image',
-            // 'zip_code'      => 'required',
-            // 'wallet_type'   => 'required',
-            // 'wallet_address' => 'required',
+            'zip_code'      => 'required',
+            'wallet_type'   => 'required',
+            'wallet_address' => 'required',
         ]);
 
         if($validator->fails()) {
-            dd(redirect()->back()->withErrors($validator));
-            // return redirect()->back()->withErrors();
+            return redirect()->back()->withErrors($validator);
         } else {
             dd($file->extension());
-            Kyc::create([
+            Kyc::updateOrcreate([
                 'user_id'       => Auth::user()->id,
+            ],
+            [
+                'status'        => 1,
                 'first_name'    => $request->first_name,
                 'last_name'     => $request->last_name,
                 'email'         => $request->email,

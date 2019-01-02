@@ -23,5 +23,6 @@ class Kyc extends Model
         'zip_code',
         'wallet_type',
         'wallet_address',
+        'status', // 1 = pending, 2 = progress, 3 = approve, 4 = reject
      ];
 }
