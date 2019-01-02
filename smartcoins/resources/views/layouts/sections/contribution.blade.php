@@ -194,9 +194,9 @@
                     </ul><!-- .tranx-info-list -->
                     <div class="row">
                         <div class="col-sm-5">
-                            <div class="tranx-info-qr">
+                            <div class="tranx-info-qr text-center">
                                 <span>OR Scan bellow QR Code to pay</span>
-                                <img class="tranx-info-qrimg" src="{{asset('dist/img/eth-qr.png')}}" alt="qr">
+                                <img class="tranx-info-qrimg img-responsive" style="margin: auto;" src="{{asset('dist/img/eth-qr.png')}}" alt="qr">
                                 <div class="gaps-4x"></div><br>
 <!--                                    <ul class="btn-grp guttar-20px">-->
                                     <button href="#" class="btn btn-primary" onclick="getPayments()">Yes, I want</button>
@@ -235,14 +235,15 @@
     function getPayments(){
 
         swal({ title: "We're reviewing your payment",
-                text: "We’ll review your transaction and get back to your within 6 hours. You’ll receive an email with the details of your contribution.",
-                icon: "success",
-                button: "Purchase",
-                type: "success"}).then(okay => {
-                if (okay) {
+            text: "We’ll review your transaction and get back to your within 6 hours. You’ll receive an email with the details of your contribution.",
+            icon: "success",
+            button: "Purchase",
+            type: "success"
+        }).then(okay => {
+            if (okay) {
                 window.location.href = "{{ route('home.transaction') }}";
-                }
-            });
+            }
+        });
     }
 </script>
 @endsection

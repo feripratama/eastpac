@@ -1,444 +1,1671 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en" class="js">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<title>{{ App\SiteConfig::where('key', 'SITE_TITLE')->first()->value }}</title>
-<link href="{{asset('landingpage/css/bootstrap.css')}}" rel="stylesheet" type="text/css"/>
-<link href="{{asset('landingpage/css/font-awesome')}}.min.css" rel="stylesheet" type="text/css"/>
-<link href="{{asset('landingpage/css/slick.css')}}" rel="stylesheet" type="text/css"/>
-<link href="{{asset('landingpage/css/styles.css')}}" rel="stylesheet" type="text/css"/>
-<link href="{{asset('landingpage/css/responsive.css')}}" rel="stylesheet" type="text/css"/>
-<style>
+	<meta charset="utf-8">
+	<meta name="author" content="Softnio">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="ICO Crypto is a modern and elegant landing page, created for ICO Agencies and digital crypto currency investment website.">
+	<!-- Fav Icon  -->
+	<link rel="shortcut icon" href="{{asset('landingpage/images/favicon.png')}}">
+	<!-- Site Title  -->
+	<title>{{App\SiteConfig::config('SITE_TITLE')}}</title>
+	<!-- Vendor Bundle CSS -->
+	<link rel="stylesheet" href="{{asset('landingpage/assets/css/vendor.bundle.css')}}">
+	<!-- Custom styles for this template -->
+	<link rel="stylesheet" href="{{asset('landingpage/assets/css/style.css')}}">
+	<link rel="stylesheet" href="{{asset('landingpage/assets/css/theme-orange.css')}}">
 
-
-</style>
 </head>
-<body>
-<div class="mainpage clearfix">
 
-<!-- Header Start -->
-@include('landingpage.nav')
+<body class="theme-dark io-zinnia" data-spy="scroll" data-target="#mainnav" data-offset="80">
 
-<!-- Banner Start -->
-<section class="banner clearfix"  id="particles-js">
-<div class="container">
-<div class="row">
-<div class="col-sm-7">
-  <h1>EASTERNSTAR ISO ENDING SOON</h1>
-  <h2>900,000 TAKENS ALREADY  SOLDOUT !</h2>
-  <h3>The next offer will start again at 21 : 30</h3>
-  <div class="timerwrap clearfix">
+	<!-- Header -->
+	<header class="site-header is-sticky">
 
+	    <!-- Place Particle Js -->
+		<div id="particles-js" class="particles-container particles-js"></div>
 
-  </div>
-  </div>
-</div>
-</section>
+		<!-- Navbar -->
+		<div class="navbar navbar-full navbar-expand-lg is-transparent" id="mainnav">
+            <a class="navbar-brand animated" data-animate="fadeInDown" data-delay=".65" href="./">
+                <img class="logo logo-dark" alt="logo" src="{{asset('landingpage/images/logo.png')}}" >
+                <img class="logo logo-light" alt="logo" src="{{asset('landingpage/images/logo-full-white.png')}}">
+            </a>
 
-<!-- Buy & Sell -->
-<section class="buysellwrap clearfix">
-<div class="container">
-  <div class="row">
-    <div class="col-md-6 col-sm-6">
-      <h2>Total Coin Sold 622,000 VOC</h2>
-
-       <div class="progress">
-          <div class="progress-bar" role="progressbar" aria-valuenow="70"
-          aria-valuemin="0" aria-valuemax="100" style="width:70%">
-            70%
-          </div>
-        </div>
-      </div>
- </div>
-      <div class="von-form clearfix">
-        <div class="von-left">
-          <h4>You get in Bitcoins </h4>
-          <input class="form-control" placeholder="0.00004023">
-        </div>
-        <div class="von-right">
-          <select class="custom-select">
-            <option>BTC</option>
-          </select>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-</section>
-
-<!-- Initial coin offering Start  -->
-<section class="offercoinwrap clearfix">
-<div class="container">
-  <h2>Von ICO</h2>
-  <h3>Initial coin offering</h3>
-  <div class="row">
-    <div class="col-md-4 col-sm-4 text-center">
-      <div class="sale-heading">Pre Sale I</div>
-      <div class="sale-price">600.000 VOC Price $0.65</div>
-      <div class="sale-date">20 March 2018</div>
-    </div>
-    <div class="col-md-4 col-sm-4 text-center">
-      <div class="sale-heading">Pre Sale 2</div>
-      <div class="sale-price">600.000 VOC Price $0.65</div>
-      <div class="sale-date">21 March 2018</div>
-    </div>
-    <div class="col-md-4 col-sm-4 text-center">
-      <div class="sale-heading">Pre Sale 3</div>
-      <div class="sale-price">600.000 VOC Price $0.65</div>
-      <div class="sale-date">22 March 2018</div>
-    </div>
-  </div>
-  <div class="coinoffer text-center">
-    <center>
-      <img src="{{asset('landingpage/images/coin-offering.png')}}" class="img-responsive" alt="Initial coin offering">
-    </center>
-  </div>
-  <h4>Hurry up to get the best price!</h4>
-  <div class="text-center">
-    <button type="button" class="btn btn-primary">Create Account &amp; Buy Exacoins</button>
-    <button type="button" class="white-btn">Whitepaper</button>
-  </div>
-</div>
-</section>
-
-<!-- Platform  -->
-<section class="platformwrap clearfix">
-<div class="container">
-  <div class="row">
-    <div class="col-md-4 col-sm-4">
-      <div class="plat-indent clearfix">
-        <p>
-          <center>
-            <img src="{{asset('landingpage/images/coin.png')}}" width="42" height="38" alt="Coin">
-          </center>
-        </p>
-        <h3>20,000,000 </h3>
-        <p>Total Coin Supply</p>
-      </div>
-    </div>
-    <div class="col-md-4 col-sm-4">
-      <div class="plat-indent clearfix">
-        <p>
-          <center>
-            <img src="{{asset('landingpage/images/smile-icon')}}.png" width="42" height="38" alt="Smile">
-          </center>
-        </p>
-        <h3>55,125</h3>
-        <p> Happy customers</p>
-      </div>
-    </div>
-    <div class="col-md-4 col-sm-4">
-      <div class="plat-indent clearfix">
-        <p>
-          <center>
-            <img src="{{asset('landingpage/images/offer-icon')}}.png" width="42" height="38" alt="offer">
-          </center>
-        </p>
-        <h3>1,289</h3>
-        <p>Trusted offers</p>
-      </div>
-    </div>
-    <div class="col-md-12 col-sm-12 text-center">
-      <div class="lendingwrap clearfix">
-        <h2>EASTERNSTAR Lending Platform</h2>
-        <p>EASTERNSTAR uses a binary concept based on the performance downline of the total lending value program </p>
-        <p>
-          <button type="button" class="btn btn-warning">REFFERAL</button>
-        </p>
-      </div>
-    </div>
-  </div>
-</div>
-</section>
-
-<!-- Roadmap Start -->
-
-<!-- Why Choose VANCOIN  -->
-<section class="choosevancoinwrap clearfix">
-<div class="container">
-  <h2>Why Choose EASTERNSTAR </h2>
-  <h3>Buy EASTERNSTAR instantly with over different ways to pay</h3>
-  <div class="row">
-    <div class="col-md-4 col-sm-6">
-      <div class="box clearfix">
-        <div class="why-icon"><img src="{{asset('landingpage/images/chat-icon.png')}}" alt="chat"></div>
-        <h4>Experts Support</h4>
-        <p>Support will answer your questions regarding bitcoins.</p>
-      </div>
-    </div>
-    <div class="col-md-4 col-sm-6">
-      <div class="box clearfix">
-        <div class="why-icon"><img src="{{asset('landingpage/images/lock-icon.png')}}" alt="chat"></div>
-        <h4>Safe & Secure</h4>
-        <p>Be sure in your account security and
-          your funds safe.</p>
-      </div>
-    </div>
-    <div class="col-md-4 col-sm-6">
-      <div class="box clearfix">
-        <div class="why-icon"><img src="{{asset('landingpage/images/instant-icon.png')}}" alt="chat"></div>
-        <h4>Instant Exchange</h4>
-        <p>Instant Exchange allows you to send
-          bitcoin and pay for it</p>
-      </div>
-    </div>
-    <div class="col-md-4 col-sm-6">
-      <div class="box clearfix">
-        <div class="why-icon"><img src="{{asset('landingpage/images/wallet-icon.png')}}" alt="chat"></div>
-        <h4>Balance Wallet</h4>
-        <p>Easy-to-use personal wallet will
-          keep your bitcoins in safe.</p>
-      </div>
-    </div>
-    <div class="col-md-4 col-sm-6">
-      <div class="box clearfix">
-        <div class="why-icon"><img src="{{asset('landingpage/images/buy-icon.png')}}" alt="chat"></div>
-        <h4>Recuring Buys</h4>
-        <p>Recurring transaction feature allows
-          you to schedule future</p>
-      </div>
-    </div>
-    <div class="col-md-4 col-sm-6">
-      <div class="box clearfix">
-        <div class="why-icon"><img src="{{asset('landingpage/images/market-icon.png')}}" alt="chat"></div>
-        <h4>Margin Trading</h4>
-        <p>Perfectly developed mobile apps
-          will open new opportunities.</p>
-      </div>
-    </div>
-  </div>
-</div>
-</section>
-
-<!-- WALLET Start -->
-<section class="freewalletwrap clearfix">
-<div class="container text-center">
-  <h2>GET FREE EASTERNSTAR BIT COIN WALLET</h2>
-  <p>Buy Easternstar instantly with over different ways to pay</p>
-  <p>
-    <button type="button" class="btn btn-warning">Buy Von coins now</button>
-  </p>
-</div>
-</section>
-
-<!-- Technologies EasternStar Start -->
-<section class="technologieswrap clearfix">
-<div class="container">
-<h2>Only the finest technologies are used in EasternStar</h2>
-
-<ul>
- <li>
- <center><img src="{{asset('landingpage/images/coin-logo-1.jpg')}}" alt="Coin"></center>
- </li>
- <li>
- <center><img src="{{asset('landingpage/images/coin-logo-2.jpg')}}" alt="Coin"></center>
- </li>
- <li>
- <center><img src="{{asset('landingpage/images/coin-logo-3.jpg')}}" alt="Coin"></center>
- </li>
- <li>
- <center><img src="{{asset('landingpage/images/coin-logo-4.jpg')}}" alt="Coin"></center>
- </li>
- <li>
- <center><img src="{{asset('landingpage/images/coin-logo-5.jpg')}}" alt="Coin"></center>
- </li>
- <li>
- <center><img src="{{asset('landingpage/images/coin-logo-6.jpg')}}" alt="Coin"></center>
- </li>
- <li>
- <center><img src="{{asset('landingpage/images/coin-logo-7.jpg')}}" alt="Coin"></center>
- </li>
-
-
-</ul>
-</div>
-</section>
-
-<!-- Technologies Easternstar Start -->
-<section class="ICOPricing clearfix">
-<div class="container">
-<h2>ICO Pricing and Conditions</h2>
-<p>During our Initial Coin Offering, everyone is able to purchase the Lancer Token (LNC). Funds raised will be  used to build and execute the Easternstar-platform vision. </p>
-
-<div class="row">
-
-    <div class="col-md-6 col-sm-12 padded">
-        <div class="panel panel-default wow zoomIn  animated" style="visibility: visible; animation-name: zoomIn;">
-            <div class="panel-heading">
-
-                <h3>Summary</h3>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle">
+                <span class="navbar-toggler-icon">
+                    <span class="ti ti-align-justify"></span>
+                </span>
+            </button>
+<!--Navbar section-->
+            <div class="collapse navbar-collapse justify-content-between" id="navbarToggle">
+                <ul class="navbar-nav animated remove-animation" data-animate="fadeInDown" data-delay=".75">
+                    <li class="nav-item"><a class="nav-link menu-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link menu-link" href="#benifits">Benifits</a></li>
+                    <li class="nav-item"><a class="nav-link menu-link" href="#tokenSale">Token Sale</a></li>
+                    <li class="nav-item"><a class="nav-link menu-link" href="#roadmap">Roadmap</a></li>
+                    <li class="nav-item"><a class="nav-link menu-link" href="#team">Team</a></li>
+                    <li class="nav-item"><a class="nav-link menu-link" href="#faq">Faqs</a></li>
+                    <li class="nav-item"><a class="nav-link menu-link" href="#contact">Contact</a></li>
+                </ul>
+                <ul class="navbar-btns animated remove-animation" data-animate="fadeInDown" data-delay=".85">
+                    <li class="nav-item lang-switch">
+                        <a class="" href="#" data-toggle="dropdown">English <em class="ti ti-angle-down"></em></a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">French</a>
+                            <a class="dropdown-item" href="#">Chinese</a>
+                            <a class="dropdown-item" href="#">Hindi</a>
+                        </div>
+                    </li>
+                    @if(Auth::guest())
+                    <li class="nav-item"><a class="nav-link btn btn-sm btn-outline menu-link" href="{{ route('register') }}">Register</a></li>
+                    <li class="nav-item"><a class="nav-link btn btn-sm btn-outline menu-link" href="{{ route('login') }}">Log In</a></li>
+                    @else
+                    <li class="nav-item"><a class="nav-link btn btn-sm btn-outline menu-link" href="{{ route('home') }}">Dashboard</a></li>
+                    @endif
+                </ul>
             </div>
-            <div class="panel-body">
-                <table class="table icotxt text-left">
-                    <tbody><tr>
-                        <td class="text-left" style="border-top:none;"><strong>Token</strong></td>
-                        <td style="border-top:none;">Lancer</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Symbol</strong></td>
-                        <td>LNC</td>
-                    </tr>
+		</div>
+		<!-- End Navbar -->
 
-                    <tr>
-                        <td><strong>Technology</strong></td>
-                        <td>Ethereum</td>
-                    </tr>
-                        <tr>
-                        <td style="padding-bottom: 50px;"><strong>Maximum Cap</strong></td>
-                        <td>$10M</td>
-                    </tr>
-                    <tr style="margin-top:30px;">
-                        <td style="border-top:none;"><strong><i class="fa fa-calendar-check-o margin-right"></i> Date</strong></td>
-                        <td style="border-top:none;">January 16th - February 28th</td>
-                    </tr>
-                    <tr>
-                        <td><strong><i class="fa fa-flag margin-right"></i> Goal</strong>
-                        </td>
-                        <td>$1M</td>
-                    </tr>
+		<!-- Banner/Slider -->
+		<div id="header" class="banner banner-zinnia">
+            <div class="ui-shape ui-shape-light ui-shape-header"></div>
+			<div class="container">
+				<div class="banner-content">
+					<div class="row align-items-center text-center justify-content-center">
+						<div class="col-sm-10 col-md-12 col-lg-10">
+							<div class="header-txt tab-center mobile-center">
+								<h1 class="animated" data-animate="fadeInUp" data-delay="1.25">EASTPAC ICO ENDING SOON<br class="d-none d-xl-block"></h1><h3>900,000 TAKENS ALREADY SOLD OUT</h3>
+								<div class="gaps size-1x d-none d-md-block"></div>
+								<p class="lead animated" data-animate="fadeInUp" data-delay="1.35">The next offer will start again at 21:30</p>
+								<div class="gaps size-1x d-none d-md-block"></div>
+								<ul class="btns animated" data-animate="fadeInUp" data-delay="1.45">
+									<li><a href="#" class="btn btn-icon-s3">JOIN PRE-SALE <i class="fas fa-angle-double-right"></i></a></li>
+									<li><a href="#" class="btn btn-icon-s3">WHITE PAPER <i class="fas fa-angle-double-right"></i></a></li>
+								</ul>
+							</div>
+						</div><!-- .col  -->
+					</div><!-- .row  -->
+				</div><!-- .banner-content  -->
+			</div><!-- .container  -->
+			<ul class="hr-social hr-social-mid animated" data-animate="fadeIn" data-delay="1.55">
+			    <li><a href="#"><em class="fab fa-facebook-f"></em></a></li>
+			    <li><a href="#"><em class="fab fa-twitter"></em></a></li>
+			    <li><a href="#"><em class="fab fa-youtube"></em></a></li>
+			    <li><a href="#"><em class="fab fa-github"></em></a></li>
+			    <li><a href="#"><em class="fab fa-bitcoin"></em></a></li>
+			    <li><a href="#"><em class="fab fa-medium-m"></em></a></li>
+			</ul>
+		</div>
+		<!-- End Banner/Slider -->
+		<div class="presale-box animated" data-animate="fadeIn" data-delay="1.65">
+            <div class="container">
+                <div class="row no-gutters justify-content-center">
+                    <div class="col-xl-4 col-md-5">
+                        <div class="presale-countdown">
+                            <h5>Pre-sale is Live Now</h5>
+                            <h6>Pre-Sale ends in</h6>
+                            <div class="token-countdown" data-date="2018/12/05"></div>
+                        </div>
+                    </div><!-- .col  -->
+                    <div class="col-xl-6 col-md-7">
+                        <div class="presale-status">
+                            <h5>Pre Sale</h5>
+                            <div class="presale-bar">
+                                <div class="presale-bar-percent" style="width:35%"></div>
+                            </div>
+                            <div class="presale-points d-flex justify-content-between">
+                                <span>15k Sold</span>
+                                <span>75k Sold</span>
+                            </div>
+                        </div>
+                    </div><!-- .col  -->
+                </div><!-- .row  -->
+            </div><!-- .container  -->
+		</div><!-- .presale-box  -->
+	</header>
+	<div class="gaps size-6x d-md-none"></div>
+    <div class="gaps size-3x"></div>
+	<!-- End Header -->
 
-                    <tr>
-                        <td><strong><i class="fa fa-plus margin-right"></i> Benefits</strong></td>
-                        <td>
-                            <ul style="padding-left: 12px;">
-                                <li> <p>Blocklancer’s fees are distributed among Tokenholders</p></li>
-                                <li><p>LNC is a tradeable token</p></li>
+
+    <!-- About EASTPAC -->
+    <div class="section section-pad about-section no-pb section-bg" id="about">
+        <div class="container">
+            <div class="row justify-content-center text-center">
+				<div class="col-md-10">
+					<div class="section-head-s7">
+						<h2 class="section-title-s7 animated" data-animate="fadeInUp" data-delay=".1">About Eastpac</h2>
+						<p class="lead animated" data-animate="fadeInUp" data-delay=".2">Small and medium-sized enterprises (SMEs) do not have sufficient infrastructure or financial flexibility to offer supply chain management data to their customers. On the other hand, customers want more information about their orders more than ever. In the existing system, they only have access to basic shipping logs and estimations.Using blockchain and smart contracts, Eastpac Project will revolutionize supply chain management through innovative technology. Our project will provide greater transparency and reliability across the entire supply chain process to deliver trustworthy information that empowers businesses and consumers.</p>
+					</div>
+				</div>
+			</div>
+        </div>
+    </div>
+    <!-- End Section -->
+
+
+    <!-- Start Section -->
+    <div class="section section-pad section-bg" id="why">
+        <div class="ui-shape ui-shape-s1"></div>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7 order-last">
+                    <div class="animated" data-animate="fadeInUp" data-delay=".5">
+						<img src="{{asset('landingpage/images/zinnia/graph-zinnia-a.png')}}" alt="graph">
+					</div>
+                </div>
+                <div class="col-lg-5 text-center text-lg-left res-m-bttm">
+                    <div class="text-block">
+                        <h2 class="animated" data-animate="fadeInUp" data-delay=".1">Direct-To-Consumer Decentralize Platform</h2>
+                        <p class="lead animated" data-animate="fadeInUp" data-delay=".2"><strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</strong></p>
+                        <p class="animated" data-animate="fadeInUp" data-delay=".3">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia </p>
+                        <p class="animated" data-animate="fadeInUp" data-delay=".4">Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Section -->
+
+
+    <!-- Problem & solution Section -->
+    <div class="section section-pad prblmsltn-section section-bg-alt" id="benifits">
+        <div class="ui-shape ui-shape-s2"></div>
+        <div class="container">
+            <div class="row justify-content-center text-center">
+				<div class="col-md-6 col-sm-8">
+					<div class="section-head-s7">
+						<h2 class="section-title-s7 animated" data-animate="fadeInUp" data-delay=".1">EASTCOIN Problem &amp; Solution</h2>
+						<p class="animated" data-animate="fadeInUp" data-delay=".2">At vero eos et accusamus et iusto odio dignissimos ducimus qui blan ditiis praes entium volup tatum deleniti.</p>
+					</div>
+				</div>
+			</div>
+            <div class="prblmsltn-list">
+                <div class="prblmsltn-item">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-12 animate-left delay-5ms">
+                            <div class="prblm-item">
+                                <h2 class="prblm-title">Problem</h2>
+                                <h5 class="prblm-subtitle">Centralize Network</h5>
+                                <ul class="prblm-points">
+                                    <li>What is the crypto tech? Lorem ipsum dolor sit amet, consectetur.</li>
+                                    <li>Natural Language Understanding</li>
+                                    <li>How to network with other investors / like-minded people?</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12 animate-right delay-7ms">
+                            <div class="sltn-item">
+                                <h2 class="sltn-title">Solution</h2>
+                                <h5 class="sltn-subtitle">Decentralize Network</h5>
+                                <ul class="sltn-points">
+                                    <li>What is the crypto tech? Lorem ipsum dolor sit amet, consectetur.</li>
+                                    <li>Natural Language Understanding</li>
+                                    <li>How to network with other investors / like-minded people?</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="prblmsltn-item">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-12 animate-left delay-5ms">
+                            <div class="prblm-item">
+                                <h2 class="prblm-title">Problem</h2>
+                                <h5 class="prblm-subtitle">Centralize Network</h5>
+                                <ul class="prblm-points">
+                                    <li>What is the crypto tech? Lorem ipsum dolor sit amet, consectetur.</li>
+                                    <li>Natural Language Understanding</li>
+                                    <li>How to network with other investors / like-minded people?</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12 animate-right delay-7ms">
+                            <div class="sltn-item">
+                                <h2 class="sltn-title">Solution</h2>
+                                <h5 class="sltn-subtitle">Decentralize Network</h5>
+                                <ul class="sltn-points">
+                                    <li>What is the crypto tech? Lorem ipsum dolor sit amet, consectetur.</li>
+                                    <li>Natural Language Understanding</li>
+                                    <li>How to network with other investors / like-minded people?</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Section -->
+
+
+    <!-- Start Section -->
+	<div class="section section-pad token-sale-section section-bg-zinnia" id="tokenSale">
+	    <div class="container">
+            <div class="row justify-content-center text-center">
+				<div class="col-md-6">
+					<div class="section-head-s7">
+						<h2 class="section-title-s7 animated" data-animate="fadeInUp" data-delay=".1">EAST Tokens Details</h2>
+					</div>
+				</div>
+			</div>
+        </div>
+
+        <div class="container">
+            <div class="tokdis-list">
+                <div class="row text-center text-lg-left">
+                    <div class="col-md">
+                        <div class="tokdis-item animated" data-animate="fadeInUp" data-delay=".2">
+                            <span>Tokens Offered</span>
+                            <h5>20M</h5>
+                        </div>
+                    </div><!-- .col -->
+                    <div class="col-md">
+                        <div class="tokdis-item animated" data-animate="fadeInUp" data-delay=".3">
+                            <span>Soft Cap (Public ICO)</span>
+                            <h5>$4M</h5>
+                        </div>
+                    </div><!-- .col -->
+                    <div class="col-md">
+                        <div class="tokdis-item animated" data-animate="fadeInUp" data-delay=".4">
+                            <span>Hard Cap</span>
+                            <h5>20 million</h5>
+                        </div>
+                    </div><!-- .col -->
+                    <div class="col-lg-4">
+                        <div class="tokdis-item animated" data-animate="fadeInUp" data-delay=".5">
+                            <span>Tokens Distributed</span>
+                            <h5>30 days after token sale ends</h5>
+                        </div>
+                    </div><!-- .col -->
+                </div><!-- .row -->
+            </div><!-- .tokdis-list -->
+        </div><!-- .container -->
+        <div class="gaps size-2x d-none d-md-block"></div>
+        <div class="gaps size-2x"></div>
+        <div class="toktmln-list">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg">
+                        <div class="toktmln-item animated" data-animate="fadeInUp" data-delay=".6">
+                            <div>
+                                <span>Token Sale I</span>
+                                <span>January 15- February 15</span>
+                            </div>
+                            <div>
+                                <span>67% Bonus</span>
+                                <span>$0.354344/token</span>
+                            </div>
+                        </div>
+                    </div><!-- .col -->
+                    <div class="col-lg">
+                        <div class="toktmln-item animated" data-animate="fadeInUp" data-delay=".7">
+                            <div>
+                                <span>Token Sale II</span>
+                                <span>March 01 - March 15</span>
+                            </div>
+                            <div>
+                                <span>40% Bonus</span>
+                                <span>$0.354344/token</span>
+                            </div>
+                        </div>
+                    </div><!-- .col -->
+                    <div class="col-lg">
+                        <div class="toktmln-item animated" data-animate="fadeInUp" data-delay=".8">
+                            <div>
+                                <span>Token Sale III</span>
+                                <span>March 25- April 15</span>
+                            </div>
+                            <div>
+                                <span>20% Bonus</span>
+                                <span>$0.354344/token</span>
+                            </div>
+                        </div>
+                    </div><!-- .col -->
+                    <div class="col-lg">
+                        <div class="toktmln-item animated" data-animate="fadeInUp" data-delay=".9">
+                            <div>
+                                <span>Token Sale VI</span>
+                                <span>April 20- May 20</span>
+                            </div>
+                            <div>
+                                <span>50% Bonus</span>
+                                <span>$0.304344/token</span>
+                            </div>
+                        </div>
+                    </div><!-- .col -->
+                    <div class="col-lg">
+                        <div class="toktmln-item animated" data-animate="fadeInUp" data-delay="1">
+                            <div>
+                                <span>Token Sale V</span>
+                                <span>June 01 - July 30</span>
+                            </div>
+                            <div>
+                                <span>30% Bonus</span>
+                                <span>$0.354344/token</span>
+                            </div>
+                            </div>
+                            <div>
+                        </div>
+                    </div><!-- .col -->
+                </div><!-- .row -->
+            </div><!-- .container -->
+        </div><!-- .toktmln -->
+
+    </div>
+	<!-- End Section -->
+
+
+    <!-- Start Section -->
+	<div class="section section-pad token-alocate-section section-bg" id="tokenAlocate">
+        <div class="ui-shape ui-shape-s3"></div>
+	    <div class="container">
+            <div class="row justify-content-center text-center">
+				<div class="col-md-6">
+					<div class="section-head-s7">
+						<h2 class="section-title-s7 animated" data-animate="fadeInUp" data-delay=".1">Token Allocation Forecast</h2>
+					</div>
+				</div>
+			</div>
+            <div class="tab-s4">
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs text-center animated" data-animate="fadeInUp" data-delay=".2">
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#tab-dist">Distribution </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" data-toggle="tab" href="#tab-fund">Funding Allocation</a>
+                    </li>
+                </ul>
+                <div class="gaps size-2x"></div>
+                <div class="gaps size-3x d-none d-xl-block"></div>
+                <!-- Tab panes -->
+                <div class="tab-content animated" data-animate="fadeInUp" data-delay=".3">
+                    <div class="tab-pane animate" id="tab-dist">
+                        <div class="tkn-crt">
+                            <div class="tkn-crt-img">
+                                <img src="{{asset('landingpage/images/zinnia/chart-zinnia-a.png')}}" alt="chart">
+                            </div>
+                            <ul class="tkn-crt-lst">
+                                <li class="tkn-crt-itm">
+                                    <span class="tkn-crt-prcnt one"><span>60%</span></span><span class="tkn-crt-ttl">Token Sale Program</span>
+                                </li>
+                                <li class="tkn-crt-itm">
+                                    <span class="tkn-crt-prcnt two"><span>8%</span></span><span class="tkn-crt-ttl">Reserve Fund</span>
+                                </li>
+                                <li class="tkn-crt-itm">
+                                    <span class="tkn-crt-prcnt three"><span>15%</span></span><span class="tkn-crt-ttl">Team and Founders</span>
+                                </li>
+                                <li class="tkn-crt-itm">
+                                    <span class="tkn-crt-prcnt four"><span>4%</span></span><span class="tkn-crt-ttl">Board Advisors</span>
+                                </li>
+                                <li class="tkn-crt-itm">
+                                    <span class="tkn-crt-prcnt five"><span>7%</span></span><span class="tkn-crt-ttl">Ecosystem Development</span>
+                                </li>
+                                <li class="tkn-crt-itm">
+                                    <span class="tkn-crt-prcnt five"><span>6%</span></span><span class="tkn-crt-ttl">Marketing and Bounty</span>
+                                </li>
                             </ul>
+                        </div>
+                    </div><!-- End tab-pane -->
+                    <div class="tab-pane animate active show" id="tab-fund">
+                        <div class="tkn-crt">
+                            <div class="tkn-crt-img">
+                                <img src="{{asset('landingpage/images/zinnia/chart-zinnia-b.png')}}" alt="chart">
+                            </div>
+                            <ul class="tkn-crt-lst">
+                                <li class="tkn-crt-itm">
+                                    <span class="tkn-crt-prcnt one"><span>40%</span></span><span class="tkn-crt-ttl">Product Develoment</span>
+                                </li>
+                                <li class="tkn-crt-itm">
+                                    <span class="tkn-crt-prcnt two"><span>12%</span></span><span class="tkn-crt-ttl">Business Development</span>
+                                </li>
+                                <li class="tkn-crt-itm">
+                                    <span class="tkn-crt-prcnt three"><span>20%</span></span><span class="tkn-crt-ttl">Marketing</span>
+                                </li>
+                                <li class="tkn-crt-itm">
+                                    <span class="tkn-crt-prcnt four"><span>10%</span></span><span class="tkn-crt-ttl">Legal &amp; Regulation</span>
+                                </li>
+                                <li class="tkn-crt-itm">
+                                    <span class="tkn-crt-prcnt five"><span>6%</span></span><span class="tkn-crt-ttl">Partner/Investor</span>
+                                </li>
+                                <li class="tkn-crt-itm">
+                                    <span class="tkn-crt-prcnt six"><span>8%</span></span><span class="tkn-crt-ttl">Operational</span>
+                                </li>
+                                <li class="tkn-crt-itm">
+                                    <span class="tkn-crt-prcnt seven"><span>4%</span></span><span class="tkn-crt-ttl">Contingency</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div><!-- End tab-pane -->
+                </div><!-- .tab-content -->
+            </div><!-- .tab-custom-s4 -->
+        </div><!-- .container -->
+    </div>
+	<!-- End Section -->
 
-                            </td>
-                    </tr>
-                </tbody></table>
-            </div>
+
+	<!-- WhitePaper Section -->
+	<div class="section section-pad document-section section-bg-zinnia" id="documents">
+	    <div class="container">
+	        <div class="row justify-content-between align-items-center">
+	            <div class="col-lg-5 res-m-bttm">
+	                <div class="document-img-s3 animated" data-animate="fadeInUp" data-delay=".1">
+	                    <img src="{{asset('landingpage/images/zinnia/documents-cover.png')}}" alt="documents">
+	                </div>
+	            </div><!-- .col -->
+	            <div class="col-lg-7 text-center text-lg-left">
+	                <div class="section-head-s7">
+						<h2 class="section-title-s7 animated" data-animate="fadeInUp" data-delay=".2">Read Our Documents</h2>
+						<p class="animated" data-animate="fadeInUp" data-delay=".3">Here is our full documents that help you to understand about us.</p>
+					</div>
+                    <ul class="document-list">
+                        <li class="animated" data-animate="fadeInUp" data-delay=".4">
+                            <a href="#" class="btn btn-outline btn-dropdown" data-toggle="dropdown">White Paper <i class="fas fa-caret-down"></i></a>
+                            <ul class="dropdown-menu dropdown-menu-right">
+                                <li><a href="#">English</a></li>
+                                <li><a href="#">Dutch</a></li>
+                                <li><a href="#">France</a></li>
+                            </ul>
+                        </li>
+                        <li class="animated" data-animate="fadeInUp" data-delay=".5">
+                            <a href="#" class="btn btn-outline btn-dropdown" data-toggle="dropdown">One Pager <i class="fas fa-caret-down"></i></a>
+                            <ul class="dropdown-menu dropdown-menu-right">
+                                <li><a href="#">English</a></li>
+                                <li><a href="#">Dutch</a></li>
+                                <li><a href="#">France</a></li>
+                            </ul>
+                        </li>
+                        <li class="animated" data-animate="fadeInUp" data-delay=".6"><a href="#" class="btn btn-outline">Privacy &amp; Policy</a></li>
+                        <li class="animated" data-animate="fadeInUp" data-delay=".7"><a href="#" class="btn btn-outline">Terms of Coin Sale</a></li>
+                    </ul>
+	            </div><!-- .col -->
+	        </div><!-- .row -->
+	    </div><!-- .container -->
+	</div>
+	<!-- End Section -->
+
+
+	<!-- Technology Service Section -->
+	<div class="section section-pad services-section section-bg" id="services">
+        <div class="ui-shape ui-shape-s4"></div>
+	    <div class="container">
+            <div class="row justify-content-center text-center">
+				<div class="col-lg-6 col-sm-8">
+					<div class="section-head-s7">
+						<h2 class="section-title-s7 animated" data-animate="fadeInUp" data-delay=".1">Our Technology Services</h2>
+						<p class="animated" data-animate="fadeInUp" data-delay=".2">EASTPAC combines innovative technologies - smart contracts, blockchain, and big data. Data is uploaded to blockchain using smart contracts and then migrated to big data. This design enables businesses to maximize the use of valuable information.</p>
+					</div>
+				</div>
+			</div>
+	        <div class="row align-items-center">
+	            <div class="col-lg-7 res-m-bttm">
+	                <div class="row justify-content-between text-center text-lg-left">
+	                    <div class="col-xl-5 col-md-6">
+	                        <div class="service-item animated" data-animate="fadeInUp" data-delay=".4">
+	                            <div class="service-icon mx-auto mx-lg-0">
+	                                <img src="{{asset('landingpage/images/zinnia/service-icon-a.png')}}" alt="icon">
+	                            </div>
+	                            <h5 class="service-title">Easy to Buy &amp; Sale Token</h5>
+	                            <p>Lorem ipsum dolor sit amet, cons ectetur adipiscing elit, sed do eiusm od tempor incididunt.</p>
+	                        </div>
+	                    </div><!-- .col -->
+	                    <div class="col-xl-5 col-md-6">
+	                        <div class="service-item animated" data-animate="fadeInUp" data-delay=".5">
+	                            <div class="service-icon mx-auto mx-lg-0">
+	                                <img src="{{asset('landingpage/images/zinnia/service-icon-b.png')}}" alt="icon">
+	                            </div>
+	                            <h5 class="service-title">Responsive Design</h5>
+	                            <p>Lorem ipsum dolor sit amet, cons ectetur adipiscing elit, sed do eiusm od tempor incididunt.</p>
+	                        </div>
+	                    </div><!-- .col -->
+	                    <div class="col-xl-5 col-md-6">
+	                        <div class="service-item animated" data-animate="fadeInUp" data-delay=".6">
+	                            <div class="service-icon mx-auto mx-lg-0">
+	                                <img src="{{asset('landingpage/images/zinnia/service-icon-c.png')}}" alt="icon">
+	                            </div>
+	                            <h5 class="service-title">Easy to Communicate</h5>
+	                            <p>Lorem ipsum dolor sit amet, cons ectetur adipiscing elit, sed do eiusm od tempor incididunt.</p>
+	                        </div>
+	                    </div><!-- .col -->
+	                    <div class="col-xl-5 col-md-6">
+	                        <div class="service-item animated" data-animate="fadeInUp" data-delay=".7">
+	                            <div class="service-icon mx-auto mx-lg-0">
+	                                <img src="{{asset('landingpage/images/zinnia/service-icon-d.png')}}" alt="icon">
+	                            </div>
+	                            <h5 class="service-title">Safe &amp; Secure</h5>
+	                            <p>Lorem ipsum dolor sit amet, cons ectetur adipiscing elit, sed do eiusm od tempor incididunt.</p>
+	                        </div>
+	                    </div><!-- .col -->
+	                </div><!-- .row -->
+	                <ul class="btns text-center text-lg-left animated" data-animate="fadeInUp" data-delay=".8">
+                        <li><a href="#" class="btn btn-sm">Download Now</a></li>
+                        <li>
+                            <a href="#"><em class="fab fa-apple"></em></a>
+                            <a href="#"><em class="fab fa-android"></em></a>
+                            <a href="#"><em class="fab fa-windows"></em></a>
+                        </li>
+                    </ul>
+	            </div><!-- .col -->
+	            <div class="col-lg-5 order-first order-lg-last res-m-bttm">
+	                <div class="service-img animated" data-animate="fadeInUp" data-delay=".3">
+	                    <img src="{{asset('landingpage/images/zinnia/app-screen.png')}}" alt="app-screen">
+	                </div>
+	            </div><!-- .col -->
+	        </div><!-- .row -->
+	    </div><!-- .container -->
+	</div>
+	<!-- End Section -->
+
+
+	<!-- Roadmap Section -->
+	<div class="section section-pad roadmap-section section-bg-zinnia" id="roadmap">
+		<div class="container">
+          <div class="row justify-content-center text-center">
+				<div class="col-md-6">
+					<div class="section-head-s7">
+						<h2 class="section-title-s7 animated" data-animate="fadeInUp" data-delay=".1">Roadmap</h2>
+						<p class="animated" data-animate="fadeInUp" data-delay=".2">Our team working hardly to make archive lorem ipsum dolor sit amet, consectetur amet, consectetur adipiscing elit.</p>
+					</div>
+				</div>
+			</div>
+           <div class="timeline-row timeline-row-odd timeline-row-done animated" data-animate="fadeInUp" data-delay=".3">
+               <div class="row no-gutters text-left text-lg-center justify-content-center">
+                   <div class="col-lg">
+                       <div class="timeline-item timeline-done">
+                           <span class="timeline-date">2017 Q1</span>
+                           <h6 class="timeline-title">Concept</h6>
+                           <ul class="timeline-info">
+                               <li>Concept Generation</li>
+                               <li>Team Assemble</li>
+                           </ul>
+                       </div>
+                   </div><!-- .col -->
+                   <div class="col-lg">
+                       <div class="timeline-item timeline-done">
+                           <span class="timeline-date">2017 Q2</span>
+                           <h6 class="timeline-title">Research</h6>
+                           <ul class="timeline-info">
+                               <li>Proving the concept can work</li>
+                               <li>Strategic Plan</li>
+                               <li>White paper conpletion</li>
+                           </ul>
+                       </div>
+                   </div><!-- .col -->
+                   <div class="col-lg">
+                       <div class="timeline-item timeline-done">
+                           <span class="timeline-date">2018 Q1</span>
+                           <h6 class="timeline-title">Design</h6>
+                           <ul class="timeline-info">
+                               <li>Platform design and technical demonstration</li>
+                               <li>Building the MVP</li>
+                           </ul>
+                       </div>
+                   </div><!-- .col -->
+                   <div class="col-lg">
+                       <div class="timeline-item timeline-done">
+                           <span class="timeline-date">2018 Q2</span>
+                           <h6 class="timeline-title">Pre-Sale</h6>
+                           <ul class="timeline-info">
+                               <li>Public financing &amp; Seed funding raised</li>
+                           </ul>
+                       </div>
+                   </div><!-- .col -->
+               </div><!-- .row -->
+           </div><!-- .timeline-row -->
+           <div class="timeline-row timeline-row-even animated" data-animate="fadeInUp" data-delay=".4">
+               <div class="row no-gutters text-left text-lg-center justify-content-center flex-row-reverse">
+                   <div class="col-lg">
+                       <div class="timeline-item timeline-current">
+                           <span class="timeline-date">2018 Q3</span>
+                           <h6 class="timeline-title">Alpha Test</h6>
+                           <ul class="timeline-info">
+                               <li>In-house testing of functional</li>
+                               <li>Prototype published and linked to Ethereum blockchain with real-time scanning</li>
+                           </ul>
+                       </div>
+                   </div><!-- .col -->
+                   <div class="col-lg">
+                       <div class="timeline-item">
+                           <span class="timeline-date">2018 Q4</span>
+                           <h6 class="timeline-title">Token Sale</h6>
+                           <ul class="timeline-info">
+                               <li>ICO Press Tour</li>
+                               <li>Open global sales of ICOblock token</li>
+                           </ul>
+                       </div>
+                   </div><!-- .col -->
+                   <div class="col-lg">
+                       <div class="timeline-item">
+                           <span class="timeline-date">2019 Q1</span>
+                           <h6 class="timeline-title">App Beta Test</h6>
+                           <ul class="timeline-info">
+                               <li>Private closed beta</li>
+                               <li>Open beta launched to public and improvement the app</li>
+                           </ul>
+                       </div>
+                   </div><!-- .col -->
+               </div><!-- .row -->
+           </div><!-- .timeline-row -->
+           <div class="timeline-row timeline-row-odd timeline-row-last mb--x5 animated" data-animate="fadeInUp" data-delay=".5">
+               <div class="row no-gutters text-left text-lg-center justify-content-center">
+                   <div class="col-lg">
+                       <div class="timeline-item">
+                           <span class="timeline-date">2019 Q2</span>
+                           <h6 class="timeline-title">Crowdfunding Integration</h6>
+                           <ul class="timeline-info">
+                               <li>Smart contracts support creators</li>
+                               <li>Ethereum tokens support</li>
+                           </ul>
+                       </div>
+                   </div><!-- .col -->
+                   <div class="col-lg">
+                       <div class="timeline-item">
+                           <span class="timeline-date">2019 Q3</span>
+                           <h6 class="timeline-title">Community Benefits</h6>
+                           <ul class="timeline-info">
+                               <li>Establishing global user base</li>
+                               <li>US start retailer selection</li>
+                           </ul>
+                       </div>
+                   </div><!-- .col -->
+                   <div class="col-lg">
+                       <div class="timeline-item">
+                           <span class="timeline-date">2019 Q4</span>
+                           <h6 class="timeline-title">Hardware things</h6>
+                           <ul class="timeline-info">
+                               <li>Integration of third party controllers</li>
+                               <li>Marketplace cooperative module</li>
+                           </ul>
+                       </div>
+                   </div><!-- .col -->
+                   <div class="col-lg">
+                       <div class="timeline-item">
+                           <span class="timeline-date">2020 Q1</span>
+                           <h6 class="timeline-title">More Operational</h6>
+                           <ul class="timeline-info">
+                               <li>Integration with Private Chains, More Coin in Wallet</li>
+                               <li>New services offered by members or business</li>
+                           </ul>
+                       </div>
+                   </div><!-- .col -->
+               </div><!-- .row -->
+           </div><!-- .timeline-row -->
+           <div class="gaps size-2x d-lg-none"></div>
+        </div><!-- .container -->
+    </div>
+    <!-- End Section -->
+
+    <!-- Team Section -->
+	<div class="section section-pad section-bg" id="team">
+	    <div class="ui-shape ui-shape-s5"></div>
+		<div class="container">
+			<div class="row justify-content-center text-center">
+				<div class="col-xl-6 col-lg-8">
+					<div class="section-head-s7">
+						<h2 class="section-title-s7 animated" data-animate="fadeInUp" data-delay=".1">Executive team</h2>
+						<p class="animated" data-animate="fadeInUp" data-delay=".2">The EASTPAC Team combines a passion for esports, industry experise &amp; proven record in finance, development, marketing & licensing.</p>
+					</div>
+				</div>
+			</div>
+			<div class="row justify-content-center text-center">
+				<div class="col-sm-6 col-lg-3">
+					<div class="team-circle animated" data-animate="fadeInUp" data-delay=".3">
+						<div class="team-photo">
+							<img src="{{asset('landingpage/images/team-a-sq.jpg')}}" alt="" />
+							<a href="#team-profile-1" class="expand-trigger content-popup"></a>
+						</div>
+						<div class="team-info">
+							<h5 class="team-name">Waylon Dalton</h5>
+							<span class="team-title">CEO &amp; Lead Blockchain </span>
+							<ul class="team-social">
+								<li><a href=""><em class="fab fa-facebook-f"></em></a></li>
+								<li><a href=""><em class="fab fa-linkedin-in"></em></a></li>
+								<li><a href=""><em class="fab fa-twitter"></em></a></li>
+							</ul>
+						</div>
+
+						<!-- Start .team-profile  -->
+						<div id="team-profile-1" class="team-profile mfp-hide">
+							<button title="Close" type="button" class="mfp-close">×</button>
+							<div class="container-fluid">
+								<div class="row no-mg">
+									<div class="col-md-6">
+										<div class="team-profile-photo">
+											<img src="{{asset('landingpage/images/team-a-lg.jpg')}}" alt="" />
+										</div>
+									</div><!-- .col  -->
+
+									<div class="col-md-6">
+										<div class="team-profile-info">
+											<h3 class="name">Waylon Dalton</h3>
+											<p class="sub-title">CEO &amp; Lead Blockchain </p>
+											<ul class="tpi-social">
+												<li><a href=""><em class="fab fa-facebook-f"></em></a></li>
+												<li><a href=""><em class="fab fa-linkedin-in"></em></a></li>
+												<li><a href=""><em class="fab fa-twitter"></em></a></li>
+											</ul>
+											<p>He is a great man to work Lorem ipsum dolor sit amet, consec tetur adipis icing elit. Simi lique, autem. </p>
+											<p>Tenetur quos facere magnam volupt ates quas esse Sedrep ell endus mole stiae tates quas esse Sed repell endus molesti aela uda ntium quis quam iusto minima thanks.</p>
+											<div class="skill-bars">
+												<div class="single-skill-bar">
+													<div class="row no-mg">
+														<div class="col-8 no-pd"><span class="skill-title">HTML5</span></div>
+														<div class="col-4 text-right no-pd"><span class="skill-percent">85%</span></div>
+													</div>
+													<div class="skill-bar">
+														<div class="skill-bar-percent gradiant-background" style="width:85%"></div>
+													</div>
+												</div>
+												<div class="single-skill-bar">
+													<div class="row no-mg">
+														<div class="col-8 no-pd"><span class="skill-title">CSS3</span></div>
+														<div class="col-4 text-right no-pd"><span class="skill-percent">90%</span></div>
+													</div>
+													<div class="skill-bar">
+														<div class="skill-bar-percent gradiant-background" style="width:90%"></div>
+													</div>
+												</div>
+												<div class="single-skill-bar">
+													<div class="row no-mg">
+														<div class="col-8 no-pd"><span class="skill-title">Java</span></div>
+														<div class="col-4 text-right no-pd"><span class="skill-percent">75%</span></div>
+													</div>
+													<div class="skill-bar">
+														<div class="skill-bar-percent gradiant-background" style="width:75%"></div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div><!-- .col  -->
+
+								</div><!-- .row  -->
+							</div><!-- .container  -->
+						</div><!-- .team-profile  -->
+
+					</div>
+				</div><!-- .col  -->
+
+				<div class="col-sm-6 col-lg-3">
+					<div class="team-circle animated" data-animate="fadeInUp" data-delay=".4">
+						<div class="team-photo">
+							<img src="{{asset('landingpage/images/team-b-sq.jpg')}}" alt="team">
+							<a href="#team-profile-2" class="expand-trigger content-popup"></a>
+						</div>
+						<div class="team-info">
+							<h5 class="team-name">Stefan Harary</h5>
+							<span class="team-title">CTO &amp; Senior Developer</span>
+							<ul class="team-social">
+								<li><a href=""><em class="fab fa-facebook-f"></em></a></li>
+								<li><a href=""><em class="fab fa-linkedin-in"></em></a></li>
+								<li><a href=""><em class="fab fa-twitter"></em></a></li>
+							</ul>
+						</div>
+
+						<!-- Start .team-profile  -->
+						<div id="team-profile-2" class="team-profile mfp-hide">
+							<button title="Close" type="button" class="mfp-close">×</button>
+							<div class="container-fluid">
+								<div class="row no-mg">
+									<div class="col-md-6">
+										<div class="team-profile-photo">
+											<img src="{{asset('landingpage/images/team-b-lg.jpg')}}" alt="team" />
+										</div>
+									</div><!-- .col  -->
+
+									<div class="col-md-6">
+										<div class="team-profile-info">
+											<h3 class="name">Stefan Harary</h3>
+											<p class="sub-title">CTO &amp; Senior Developer</p>
+											<ul class="tpi-social">
+												<li><a href=""><em class="fab fa-facebook-f"></em></a></li>
+												<li><a href=""><em class="fab fa-linkedin-in"></em></a></li>
+												<li><a href=""><em class="fab fa-twitter"></em></a></li>
+											</ul>
+											<p>He is a great man to work Lorem ipsum dolor sit amet, consec tetur adipis icing elit. Simi lique, autem. </p>
+											<p>Tenetur quos facere magnam volupt ates quas esse Sedrep ell endus mole stiae tates quas esse Sed repell endus molesti aela uda ntium quis quam iusto minima thanks.</p>
+											<div class="skill-bars">
+												<div class="single-skill-bar">
+													<div class="row no-mg">
+														<div class="col-8 no-pd"><span class="skill-title">HTML5</span></div>
+														<div class="col-4 text-right no-pd"><span class="skill-percent">85%</span></div>
+													</div>
+													<div class="skill-bar">
+														<div class="skill-bar-percent gradiant-background" style="width:85%"></div>
+													</div>
+												</div>
+												<div class="single-skill-bar">
+													<div class="row no-mg">
+														<div class="col-8 no-pd"><span class="skill-title">CSS3</span></div>
+														<div class="col-4 text-right no-pd"><span class="skill-percent">90%</span></div>
+													</div>
+													<div class="skill-bar">
+														<div class="skill-bar-percent gradiant-background" style="width:90%"></div>
+													</div>
+												</div>
+												<div class="single-skill-bar">
+													<div class="row no-mg">
+														<div class="col-8 no-pd"><span class="skill-title">Java</span></div>
+														<div class="col-4 text-right no-pd"><span class="skill-percent">75%</span></div>
+													</div>
+													<div class="skill-bar">
+														<div class="skill-bar-percent gradiant-background" style="width:75%"></div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div><!-- .col  -->
+
+								</div><!-- .row  -->
+							</div><!-- .container  -->
+						</div><!-- .team-profile  -->
+
+					</div>
+				</div><!-- .col  -->
+
+				<div class="col-sm-6 col-lg-3">
+					<div class="team-circle animated" data-animate="fadeInUp" data-delay=".5">
+						<div class="team-photo">
+							<img src="{{asset('landingpage/images/team-c-sq.jpg')}}" alt="team">
+							<a href="#team-profile-3" class="expand-trigger content-popup"></a>
+						</div>
+						<div class="team-info">
+							<h5 class="team-name">Moises Teare</h5>
+							<span class="team-title">Blochain App Developer</span>
+							<ul class="team-social">
+								<li><a href=""><em class="fab fa-facebook-f"></em></a></li>
+								<li><a href=""><em class="fab fa-linkedin-in"></em></a></li>
+								<li><a href=""><em class="fab fa-twitter"></em></a></li>
+							</ul>
+						</div>
+
+						<!-- Start .team-profile  -->
+						<div id="team-profile-3" class="team-profile mfp-hide">
+							<button title="Close" type="button" class="mfp-close">×</button>
+							<div class="container-fluid">
+								<div class="row no-mg">
+									<div class="col-md-6">
+										<div class="team-profile-photo">
+											<img src="{{asset('landingpage/images/team-c-lg.jpg')}}" alt="team" />
+										</div>
+									</div><!-- .col  -->
+
+									<div class="col-md-6">
+										<div class="team-profile-info">
+											<h3 class="name">Moises Teare</h3>
+											<p class="sub-title">Blockhain App Developer</p>
+											<ul class="tpi-social">
+												<li><a href=""><em class="fab fa-facebook-f"></em></a></li>
+												<li><a href=""><em class="fab fa-linkedin-in"></em></a></li>
+												<li><a href=""><em class="fab fa-twitter"></em></a></li>
+											</ul>
+											<p>He is a great man to work Lorem ipsum dolor sit amet, consec tetur adipis icing elit. Simi lique, autem. </p>
+											<p>Tenetur quos facere magnam volupt ates quas esse Sedrep ell endus mole stiae tates quas esse Sed repell endus molesti aela uda ntium quis quam iusto minima thanks.</p>
+											<div class="skill-bars">
+												<div class="single-skill-bar">
+													<div class="row no-mg">
+														<div class="col-8 no-pd"><span class="skill-title">HTML5</span></div>
+														<div class="col-4 text-right no-pd"><span class="skill-percent">85%</span></div>
+													</div>
+													<div class="skill-bar">
+														<div class="skill-bar-percent gradiant-background" style="width:85%"></div>
+													</div>
+												</div>
+												<div class="single-skill-bar">
+													<div class="row no-mg">
+														<div class="col-8 no-pd"><span class="skill-title">CSS3</span></div>
+														<div class="col-4 text-right no-pd"><span class="skill-percent">90%</span></div>
+													</div>
+													<div class="skill-bar">
+														<div class="skill-bar-percent gradiant-background" style="width:90%"></div>
+													</div>
+												</div>
+												<div class="single-skill-bar">
+													<div class="row no-mg">
+														<div class="col-8 no-pd"><span class="skill-title">Java</span></div>
+														<div class="col-4 text-right no-pd"><span class="skill-percent">75%</span></div>
+													</div>
+													<div class="skill-bar">
+														<div class="skill-bar-percent gradiant-background" style="width:75%"></div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div><!-- .col  -->
+
+								</div><!-- .row  -->
+							</div><!-- .container  -->
+						</div><!-- .team-profile  -->
+
+					</div>
+				</div><!-- .col  -->
+
+				<div class="col-sm-6 col-lg-3">
+					<div class="team-circle animated" data-animate="fadeInUp" data-delay=".6">
+						<div class="team-photo">
+							<img src="{{asset('landingpage/images/team-d-sq.jpg')}}" alt="team">
+							<a href="#team-profile-4" class="expand-trigger content-popup"></a>
+						</div>
+						<div class="team-info">
+							<h5 class="team-name">Gabriel Bernal</h5>
+							<span class="team-title">Community Management</span>
+							<ul class="team-social">
+								<li><a href=""><em class="fab fa-facebook-f"></em></a></li>
+								<li><a href=""><em class="fab fa-linkedin-in"></em></a></li>
+								<li><a href=""><em class="fab fa-twitter"></em></a></li>
+							</ul>
+						</div>
+
+						<!-- Start .team-profile  -->
+						<div id="team-profile-4" class="team-profile mfp-hide">
+							<button title="Close" type="button" class="mfp-close">×</button>
+							<div class="container-fluid">
+								<div class="row no-mg">
+									<div class="col-md-6">
+										<div class="team-profile-photo">
+											<img src="{{asset('landingpage/images/team-d-lg.jpg')}}" alt="team" />
+										</div>
+									</div><!-- .col  -->
+
+									<div class="col-md-6">
+										<div class="team-profile-info">
+											<h3 class="name">Gabriel Bernal</h3>
+											<p class="sub-title">Community Management</p>
+											<ul class="tpi-social">
+												<li><a href=""><em class="fab fa-facebook-f"></em></a></li>
+												<li><a href=""><em class="fab fa-linkedin-in"></em></a></li>
+												<li><a href=""><em class="fab fa-twitter"></em></a></li>
+											</ul>
+											<p>He is a great man to work Lorem ipsum dolor sit amet, consec tetur adipis icing elit. Simi lique, autem. </p>
+											<p>Tenetur quos facere magnam volupt ates quas esse Sedrep ell endus mole stiae tates quas esse Sed repell endus molesti aela uda ntium quis quam iusto minima thanks.</p>
+											<div class="skill-bars">
+												<div class="single-skill-bar">
+													<div class="row no-mg">
+														<div class="col-8 no-pd"><span class="skill-title">HTML5</span></div>
+														<div class="col-4 text-right no-pd"><span class="skill-percent">85%</span></div>
+													</div>
+													<div class="skill-bar">
+														<div class="skill-bar-percent gradiant-background" style="width:85%"></div>
+													</div>
+												</div>
+												<div class="single-skill-bar">
+													<div class="row no-mg">
+														<div class="col-8 no-pd"><span class="skill-title">CSS3</span></div>
+														<div class="col-4 text-right no-pd"><span class="skill-percent">90%</span></div>
+													</div>
+													<div class="skill-bar">
+														<div class="skill-bar-percent gradiant-background" style="width:90%"></div>
+													</div>
+												</div>
+												<div class="single-skill-bar">
+													<div class="row no-mg">
+														<div class="col-8 no-pd"><span class="skill-title">Java</span></div>
+														<div class="col-4 text-right no-pd"><span class="skill-percent">75%</span></div>
+													</div>
+													<div class="skill-bar">
+														<div class="skill-bar-percent gradiant-background" style="width:75%"></div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div><!-- .col  -->
+
+								</div><!-- .row  -->
+							</div><!-- .container  -->
+						</div><!-- .team-profile  -->
+
+					</div>
+				</div><!-- .col  -->
+			</div><!-- .row  -->
+			<div class="row">
+				<div class="col-md-12">
+					<div class="gaps size-2x"></div>
+					<h3 class="sub-heading ucap animated" data-animate="fadeInUp" data-delay=".7">Advisors</h3>
+					<div class="gaps size-2x"></div>
+				</div>
+			</div>
+			<div class="row justify-content-center text-center">
+                <div class="col-lg-3 col-sm-6">
+                    <div class="team-circle animated" data-animate="fadeInUp" data-delay=".8">
+                        <div class="team-photo">
+                            <img src="{{asset('landingpage/images/team-e-sq.jpg')}}" alt="team">
+                            <a href="#team-profile-5" class="expand-trigger content-popup"></a>
+                        </div>
+                        <div class="team-info">
+                            <h5 class="team-name">Dylan Finch</h5>
+                            <span class="team-title">Board Advisor</span>
+                            <ul class="team-social">
+                                <li><a href=""><em class="fab fa-facebook-f"></em></a></li>
+                                <li><a href=""><em class="fab fa-linkedin-in"></em></a></li>
+                                <li><a href=""><em class="fab fa-twitter"></em></a></li>
+                            </ul>
+                        </div>
+
+                        <!-- Start .team-profile  -->
+                        <div id="team-profile-5" class="team-profile mfp-hide">
+                            <button title="Close" type="button" class="mfp-close">×</button>
+                            <div class="container-fluid">
+                                <div class="row no-mg">
+                                    <div class="col-md-6">
+                                        <div class="team-profile-photo">
+                                            <img src="{{asset('landingpage/images/team-e-lg.jpg')}}" alt="team" />
+                                        </div>
+                                    </div><!-- .col  -->
+
+                                    <div class="col-md-6">
+                                        <div class="team-profile-info">
+                                            <h3 class="name">Dylan Finch</h3>
+                                            <p class="sub-title">Board Advisor</p>
+                                            <ul class="tpi-social">
+                                                <li><a href=""><em class="fab fa-facebook-f"></em></a></li>
+                                                <li><a href=""><em class="fab fa-linkedin-in"></em></a></li>
+                                                <li><a href=""><em class="fab fa-twitter"></em></a></li>
+                                            </ul>
+                                            <p>He is a great man to work Lorem ipsum dolor sit amet, consec tetur adipis icing elit. Simi lique, autem. </p>
+                                            <p>Tenetur quos facere magnam volupt ates quas esse Sedrep ell endus mole stiae tates quas esse Sed repell endus molesti aela uda ntium quis quam iusto minima thanks.</p>
+                                            <div class="skill-bars">
+                                                <div class="single-skill-bar">
+                                                    <div class="row no-mg">
+                                                        <div class="col-8 no-pd"><span class="skill-title">HTML5</span></div>
+                                                        <div class="col-4 text-right no-pd"><span class="skill-percent">85%</span></div>
+                                                    </div>
+                                                    <div class="skill-bar">
+                                                        <div class="skill-bar-percent gradiant-background" style="width:85%"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="single-skill-bar">
+                                                    <div class="row no-mg">
+                                                        <div class="col-8 no-pd"><span class="skill-title">CSS3</span></div>
+                                                        <div class="col-4 text-right no-pd"><span class="skill-percent">90%</span></div>
+                                                    </div>
+                                                    <div class="skill-bar">
+                                                        <div class="skill-bar-percent gradiant-background" style="width:90%"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="single-skill-bar">
+                                                    <div class="row no-mg">
+                                                        <div class="col-8 no-pd"><span class="skill-title">Java</span></div>
+                                                        <div class="col-4 text-right no-pd"><span class="skill-percent">75%</span></div>
+                                                    </div>
+                                                    <div class="skill-bar">
+                                                        <div class="skill-bar-percent gradiant-background" style="width:75%"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div><!-- .col  -->
+
+                                </div><!-- .row  -->
+                            </div><!-- .container  -->
+                        </div><!-- .team-profile  -->
+
+                    </div>
+                </div><!-- .col  -->
+
+                <div class="col-lg-3 col-sm-6">
+                    <div class="team-circle animated" data-animate="fadeInUp" data-delay=".9">
+                        <div class="team-photo">
+                            <img src="{{asset('landingpage/images/team-f-sq.jpg')}}" alt="team">
+                            <a href="#team-profile-6" class="expand-trigger content-popup"></a>
+                        </div>
+                        <div class="team-info">
+                            <h5 class="team-name">Julian Paten</h5>
+                            <span class="team-title">Board Advisor</span>
+                            <ul class="team-social">
+								<li><a href=""><em class="fab fa-facebook-f"></em></a></li>
+								<li><a href=""><em class="fab fa-linkedin-in"></em></a></li>
+								<li><a href=""><em class="fab fa-twitter"></em></a></li>
+							</ul>
+                        </div>
+
+                        <!-- Start .team-profile  -->
+                        <div id="team-profile-6" class="team-profile mfp-hide">
+                            <button title="Close" type="button" class="mfp-close">×</button>
+                            <div class="container-fluid">
+                                <div class="row no-mg">
+
+                                    <div class="col-md-6">
+                                        <div class="team-profile-photo">
+                                            <img src="{{asset('landingpage/images/team-f-lg.jpg')}}" alt="team" />
+                                        </div>
+                                    </div><!-- .col  -->
+
+                                    <div class="col-md-6">
+                                        <div class="team-profile-info">
+                                            <h3 class="name">Julian Paten</h3>
+                                            <p class="sub-title">Board Advisor</p>
+                                            <ul class="tpi-social">
+                                                <li><a href=""><em class="fab fa-facebook-f"></em></a></li>
+                                                <li><a href=""><em class="fab fa-linkedin-in"></em></a></li>
+                                                <li><a href=""><em class="fab fa-twitter"></em></a></li>
+                                            </ul>
+                                            <p>He is a great man to work Lorem ipsum dolor sit amet, consec tetur adipis icing elit. Simi lique, autem. </p>
+                                            <p>Tenetur quos facere magnam volupt ates quas esse Sedrep ell endus mole stiae tates quas esse Sed repell endus molesti aela uda ntium quis quam iusto minima thanks.</p>
+                                            <div class="skill-bars">
+                                                <div class="single-skill-bar">
+                                                    <div class="row no-mg">
+                                                        <div class="col-8 no-pd"><span class="skill-title">HTML5</span></div>
+                                                        <div class="col-4 text-right no-pd"><span class="skill-percent">85%</span></div>
+                                                    </div>
+                                                    <div class="skill-bar">
+                                                        <div class="skill-bar-percent gradiant-background" style="width:85%"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="single-skill-bar">
+                                                    <div class="row no-mg">
+                                                        <div class="col-8 no-pd"><span class="skill-title">CSS3</span></div>
+                                                        <div class="col-4 text-right no-pd"><span class="skill-percent">90%</span></div>
+                                                    </div>
+                                                    <div class="skill-bar">
+                                                        <div class="skill-bar-percent gradiant-background" style="width:90%"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="single-skill-bar">
+                                                    <div class="row no-mg">
+                                                        <div class="col-8 no-pd"><span class="skill-title">Java</span></div>
+                                                        <div class="col-4 text-right no-pd"><span class="skill-percent">75%</span></div>
+                                                    </div>
+                                                    <div class="skill-bar">
+                                                        <div class="skill-bar-percent gradiant-background" style="width:75%"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div><!-- .col  -->
+
+                                </div><!-- .row  -->
+                            </div><!-- .container  -->
+                        </div><!-- .team-profile  -->
+                    </div>
+                </div><!-- .col  -->
+
+                <div class="col-lg-3 col-sm-6">
+                    <div class="team-circle animated" data-animate="fadeInUp" data-delay="1">
+                        <div class="team-photo">
+                            <img src="{{asset('landingpage/images/team-g-sq.jpg')}}" alt="team">
+                            <a href="#team-profile-7" class="expand-trigger content-popup"></a>
+                        </div>
+                        <div class="team-info">
+                            <h5 class="team-name">Jaxon Kilburn</h5>
+                            <span class="team-title">Board Advisor</span>
+                            <ul class="team-social">
+								<li><a href=""><em class="fab fa-facebook-f"></em></a></li>
+								<li><a href=""><em class="fab fa-linkedin-in"></em></a></li>
+								<li><a href=""><em class="fab fa-twitter"></em></a></li>
+							</ul>
+                        </div>
+
+                        <!-- Start .team-profile  -->
+                        <div id="team-profile-7" class="team-profile mfp-hide">
+                            <button title="Close" type="button" class="mfp-close">×</button>
+                            <div class="container-fluid">
+                                <div class="row no-mg">
+
+                                    <div class="col-md-6">
+                                        <div class="team-profile-photo">
+                                            <img src="{{asset('landingpage/images/team-g-lg.jpg')}}" alt="team" />
+                                        </div>
+                                    </div><!-- .col  -->
+
+                                    <div class="col-md-6">
+                                        <div class="team-profile-info">
+                                            <h3 class="name">Jaxon Kilburn</h3>
+                                            <p class="sub-title">Board Advisor</p>
+                                            <ul class="tpi-social">
+                                                <li><a href=""><em class="fab fa-facebook-f"></em></a></li>
+                                                <li><a href=""><em class="fab fa-linkedin-in"></em></a></li>
+                                                <li><a href=""><em class="fab fa-twitter"></em></a></li>
+                                            </ul>
+                                            <p>He is a great man to work Lorem ipsum dolor sit amet, consec tetur adipis icing elit. Simi lique, autem. </p>
+                                            <p>Tenetur quos facere magnam volupt ates quas esse Sedrep ell endus mole stiae tates quas esse Sed repell endus molesti aela uda ntium quis quam iusto minima thanks.</p>
+                                            <div class="skill-bars">
+                                                <div class="single-skill-bar">
+                                                    <div class="row no-mg">
+                                                        <div class="col-8 no-pd"><span class="skill-title">HTML5</span></div>
+                                                        <div class="col-4 text-right no-pd"><span class="skill-percent">85%</span></div>
+                                                    </div>
+                                                    <div class="skill-bar">
+                                                        <div class="skill-bar-percent gradiant-background" style="width:85%"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="single-skill-bar">
+                                                    <div class="row no-mg">
+                                                        <div class="col-8 no-pd"><span class="skill-title">CSS3</span></div>
+                                                        <div class="col-4 text-right no-pd"><span class="skill-percent">90%</span></div>
+                                                    </div>
+                                                    <div class="skill-bar">
+                                                        <div class="skill-bar-percent gradiant-background" style="width:90%"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="single-skill-bar">
+                                                    <div class="row no-mg">
+                                                        <div class="col-8 no-pd"><span class="skill-title">Java</span></div>
+                                                        <div class="col-4 text-right no-pd"><span class="skill-percent">75%</span></div>
+                                                    </div>
+                                                    <div class="skill-bar">
+                                                        <div class="skill-bar-percent gradiant-background" style="width:75%"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div><!-- .col  -->
+
+                                </div><!-- .row  -->
+                            </div><!-- .container  -->
+                        </div><!-- .team-profile  -->
+
+                    </div>
+                </div><!-- .col  -->
+			</div><!-- .row  -->
         </div>
     </div>
+	<!-- Section Products -->
+	<div class="section section-pad section-bg-zinnia" id="partners">
+		<div class="container">
+			<div class="row text-center">
+				<div class="col-md-6 offset-md-3">
+					<div class="section-head">
+						<h3 class="section-title-md animated" data-animate="fadeInUp" data-delay=".1">Our Products</h3>
+					</div>
+				</div>
+			</div>
+			<div class="partner-list">
+				<div class="row text-center">
+						<div class="col-sm col-6"></div>
+					<div class="col-sm col-6">
+						<div class="single-partner animated" data-animate="fadeInUp" data-delay=".2">
+							<img src="{{asset('landingpage/images/east_book.png')}}" alt="partner">
+						</div>
+					</div>
+					<div class="col-sm col-6">
+						<div class="single-partner animated" data-animate="fadeInUp" data-delay=".3">
+							<img src="{{asset('landingpage/images/east_dax.png')}}" alt="partner">
+						</div>
+					</div>
+					<div class="col-sm col-6">
+						<div class="single-partner animated" data-animate="fadeInUp" data-delay=".4">
+							<img src="{{asset('landingpage/images/east_pedia.png')}}" alt="partner">
+						</div>
+					</div>
+					<div class="col-sm col-6">
+						<div class="single-partner animated" data-animate="fadeInUp" data-delay=".5">
+							<img src="{{asset('landingpage/images/east_teleco.png')}}" alt="partner">
+						</div>
+					</div>
+					<div class="col-sm col-6"></div>
+					<div class="row text-center">
+							<div class="col-sm col-6"></div>
+					<div class="col-sm col-6">
+						<div class="single-partner animated" data-animate="fadeInUp" data-delay=".6">
+							<img src="{{asset('landingpage/images/east_pasific.png')}}" alt="partner">
+						</div>
+					</div>
+					<div class="col-sm col-6">
+						<div class="single-partner animated" data-animate="fadeInUp" data-delay=".7">
+							<img src="{{asset('landingpage/images/EASTMERCHANT.png')}}" alt="partner">
+						</div>
+					</div>
+					<div class="col-sm col-6">
+							<div class="single-partner animated" data-animate="fadeInUp" data-delay=".8">
+								<img src="{{asset('landingpage/images/east_pay.png')}}" alt="partner">
+							</div>
+					</div>
+					<div class="col-sm col-6">
+							<div class="single-partner animated" data-animate="fadeInUp" data-delay=".9">
+								<img src="{{asset('landingpage/images/eastern_atm.png')}}" alt="partner">
+							</div>
+						</div>
+						<div class="col-sm col-6"></div>
+				</div>
 
-<div class="col-md-6 col-sm-12 padded">
-<div class="panel panel-default wow zoomIn  animated" style="visibility: visible; animation-name: zoomIn;">
-<div class="panel-heading">
-    <h3>Spendings &amp; Distribution</h3>
-</div>
-<div class="panel-body">
-    <div id="ico-spendings"></div>
-    <hr style="margin: 0px;">
-<div id="tokendistri"></div>
-</div>
-
-</div>
-
-</div>
+			</div>
+		</div>
+	</div>
+	<!-- End Section -->
 
 
-</div>
-</div>
+	<!-- Start Section -->
+	<div class="section section-pad-md section-bg" id="faq">
+	    <div class="ui-shape ui-shape-s6"></div>
+		<div class="container">
+			<div class="row justify-content-center text-center">
+				<div class="col-md-7">
+					<div class="section-head-s7">
+						<h2 class="section-title-s7 animated" data-animate="fadeInUp" data-delay=".1">Frequently asked questions</h2>
+						<p class="animated" data-animate="fadeInUp" data-delay=".2">Below we’ve provided a bit of EASTCOIN, EAST Token, cryptocurrencies, and few others. If you have any other questions, please get in touch using the contact form below.</p>
+					</div>
+				</div>
+			</div>
+			<div class="row align-items-center justify-content-center">
+				<div class="col-md-10">
+					<div class="tab-custom-s3">
+						<!-- Nav tabs -->
+						<ul class="nav nav-tabs text-center justify-content-center animated" data-animate="fadeInUp" data-delay=".1">
+							<li class="nav-item">
+								<a class="nav-link active" data-toggle="tab" href="#tab-1">General</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" data-toggle="tab" href="#tab-2">Pre-ICO &amp; ICO</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" data-toggle="tab" href="#tab-3">Tokens</a>
+							</li>
+						</ul>
+						<div class="gaps size-1x"></div>
+						<!-- Tab panes -->
+						<div class="tab-content animated" data-animate="fadeInUp" data-delay=".2">
+							<div class="tab-pane fade show active" id="tab-1">
+								<div class="accordion-s2" id="accordion-1">
+									<div class="card active">
+										<div class="card-header">
+											<h5>
+												<a data-toggle="collapse" data-target="#collapse-1-1">
+													What is EAST COIN?<span class="plus-minus"><span class="ti ti-angle-up"></span></span>
+												</a>
+											</h5>
+										</div>
+										<div id="collapse-1-1" class="collapse show" data-parent="#accordion-1">
+											<div class="card-body">
+												<p>ICO Crypto - is unique blockchain platform; that is secure, smart and easy-to-use platform, and completely disrupting the way businesses raise capital,  and the way investors buy and sell. </p>
+											</div>
+										</div>
+									</div>
+									<div class="card">
+										<div class="card-header">
+											<h5>
+												<a class="collapsed" data-toggle="collapse" data-target="#collapse-1-2">
+												  What cryptocurrencies can I use to purchase?<span class="plus-minus"><span class="ti ti-angle-up"></span></span>
+												</a>
+											</h5>
+										</div>
+										<div id="collapse-1-2" class="collapse" data-parent="#accordion-1">
+											<div class="card-body">
+												<p>ICO Crypto - is unique platform; that is secure, smart and easy-to-use platform, and completely disrupting the way businesses raise capital.</p>
+											</div>
+										</div>
+									</div>
+									<div class="card">
+										<div class="card-header">
+											<h5>
+												<a class="collapsed" data-toggle="collapse" data-target="#collapse-1-3">
+												  How can I participate in the EAST Token sale?<span class="plus-minus"><span class="ti ti-angle-up"></span></span>
+												</a>
+											</h5>
+										</div>
+										<div id="collapse-1-3" class="collapse" data-parent="#accordion-1">
+											<div class="card-body">
+												<p>ICO Crypto - is unique platform; that is secure, smart and easy-to-use platform, and completely disrupting the way businesses raise capital.</p>
+											</div>
+										</div>
+									</div>
+									<div class="card">
+										<div class="card-header">
+											<h5>
+												<a class="collapsed" data-toggle="collapse" data-target="#collapse-1-4">
+												  How do I benefit from the EAST Token?<span class="plus-minus"><span class="ti ti-angle-up"></span></span>
+												</a>
+											</h5>
+										</div>
+										<div id="collapse-1-4" class="collapse" data-parent="#accordion-1">
+											<div class="card-body">
+												<p>ICO Crypto - is unique platform; that is secure, smart and easy-to-use platform, and completely disrupting the way businesses raise capital.</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div><!-- End tab-pane -->
+							<div class="tab-pane fade" id="tab-2">
+								<div class="accordion-s2" id="accordion-2">
+									<div class="card active">
+										<div class="card-header">
+											<h5>
+												<a data-toggle="collapse" data-target="#collapse-2-1">
+												  Which of us ever undertakes laborious?<span class="plus-minus"><span class="ti ti-angle-up"></span></span>
+												</a>
+											</h5>
+										</div>
+										<div id="collapse-2-1" class="collapse show" data-parent="#accordion-2">
+											<div class="card-body">
+												<p>ICO Crypto - is unique platform; that is secure, smart and easy-to-use platform, and completely disrupting the way businesses raise capital.</p>
+											</div>
+										</div>
+									</div>
+									<div class="card">
+										<div class="card-header">
+											<h5>
+												<a class="collapsed" data-toggle="collapse" data-target="#collapse-2-2">
+													Who do not know how to pursue rationally?<span class="plus-minus"><span class="ti ti-angle-up"></span></span>
+												</a>
+											</h5>
+										</div>
+										<div id="collapse-2-2" class="collapse" data-parent="#accordion-2">
+											<div class="card-body">
+												<p>ICO Crypto - is unique platform; that is secure, smart and easy-to-use platform, and completely disrupting the way businesses raise capital.</p>
+											</div>
+										</div>
+									</div>
+									<div class="card">
+										<div class="card-header">
+											<h5>
+												<a class="collapsed" data-toggle="collapse" data-target="#collapse-2-4">
+												   Their separate existence is a myth?<span class="plus-minus"><span class="ti ti-angle-up"></span></span>
+												</a>
+											</h5>
+										</div>
+										<div id="collapse-2-4" class="collapse" data-parent="#accordion-2">
+											<div class="card-body">
+												<p>ICO Crypto - is unique platform; that is secure, smart and easy-to-use platform, and completely disrupting the way businesses raise capital.</p>
+											</div>
+										</div>
+									</div>
+									<div class="card">
+										<div class="card-header">
+											<h5>
+												<a class="collapsed" data-toggle="collapse" data-target="#collapse-2-3">
+												  Pityful a rethoric question ran over her cheek?<span class="plus-minus"><span class="ti ti-angle-up"></span></span>
+												</a>
+											</h5>
+										</div>
+										<div id="collapse-2-3" class="collapse" data-parent="#accordion-2">
+											<div class="card-body">
+												<p>ICO Crypto - is unique platform; that is secure, smart and easy-to-use platform, and completely disrupting the way businesses raise capital.</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div><!-- End tab-pane -->
+							<div class="tab-pane fade" id="tab-3">
+								<div class="accordion-s2" id="accordion-3">
+									<div class="card active">
+										<div class="card-header">
+											<h5>
+												<a data-toggle="collapse" data-target="#collapse-3-1">
+													When she reached the first hills?<span class="plus-minus"><span class="ti ti-angle-up"></span></span>
+												</a>
+											</h5>
+										</div>
+										<div id="collapse-3-1" class="collapse show" data-parent="#accordion-3">
+											<div class="card-body">
+												<p>ICO Crypto - is unique platform; that is secure, smart and easy-to-use platform, and completely disrupting the way businesses raise capital.</p>
+											</div>
+										</div>
+									</div>
+									<div class="card">
+										<div class="card-header">
+											<h5>
+												<a class="collapsed" data-toggle="collapse" data-target="#collapse-3-2">
+												  Big Oxmox advised her not to do?<span class="plus-minus"><span class="ti ti-angle-up"></span></span>
+												</a>
+											</h5>
+										</div>
+										<div id="collapse-3-2" class="collapse" data-parent="#accordion-3">
+											<div class="card-body">
+												<p>ICO Crypto - is unique platform; that is secure, smart and easy-to-use platform, and completely disrupting the way businesses raise capital.</p>
+											</div>
+										</div>
+									</div>
+									<div class="card">
+										<div class="card-header">
+											<h5>
+												<a class="collapsed" data-toggle="collapse" data-target="#collapse-3-3">
+												  Which roasted parts of sentences fly into your mouth?<span class="plus-minus"><span class="ti ti-angle-up"></span></span>
+												</a>
+											</h5>
+										</div>
+										<div id="collapse-3-3" class="collapse" data-parent="#accordion-3">
+											<div class="card-body">
+												<p>ICO Crypto - is unique platform; that is secure, smart and easy-to-use platform, and completely disrupting the way businesses raise capital.</p>
+											</div>
+										</div>
+									</div>
+									<div class="card">
+										<div class="card-header">
+											<h5>
+												<a class="collapsed" data-toggle="collapse" data-target="#collapse-3-4">
+												  Vokalia and Consonantia, there live?<span class="plus-minus"><span class="ti ti-angle-up"></span></span>
+												</a>
+											</h5>
+										</div>
+										<div id="collapse-3-4" class="collapse" data-parent="#accordion-3">
+											<div class="card-body">
+												<p>ICO Crypto - is unique platform; that is secure, smart and easy-to-use platform, and completely disrupting the way businesses raise capital.</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div><!-- .tab-pane -->
+						</div><!-- .tab-content -->
+					</div><!-- .tab-custom -->
+				</div><!-- .col -->
+			</div><!-- .row -->
+		</div><!-- .container -->
+	</div>
+	<!-- End Section -->
 
-</section>
 
-<!-- Media Partners -->
-<section class="MediaPartners clearfix">
-<div class="container">
-<h2>Media Partners</h2>
+	<!-- Start Section -->
+	<div class="section section-pad-md section-bg-alt" id="contact">
+	    <div class="ui-shape ui-shape-s7"></div>
+		<div class="container">
+			<div class="row text-center">
+				<div class="col">
+					<div class="section-head-s7">
+						<h2 class="section-title-s7 animated" data-animate="fadeInUp" data-delay=".1">Contact EASTERN PASIFIC</h2>
+						<p class="animated" data-animate="fadeInUp" data-delay=".2">Any question? Reach out to us and we’ll get back to you shortly.</p>
+					</div>
+				</div><!-- .col -->
+			</div><!-- .row -->
+			<div class="row justify-content-center">
+				<div class="col-lg-8">
+					<ul class="contact-info">
+						<li class="animated" data-animate="fadeInUp" data-delay=".3"><em class="fa fa-phone"></em><span>{{App\SiteConfig::config('CONTACT_PHONE_NUMBER')}}</span></li>
+						<li class="animated" data-animate="fadeInUp" data-delay=".4"><em class="fa fa-envelope"></em><span> {{App\SiteConfig::config('CONTACT_EMAIL')}}</span></li>
+						<li class="animated" data-animate="fadeInUp" data-delay=".5"><em class="fa fa-building"></em><span>{{App\SiteConfig::config('CONTACT_ADDRESS')}}</span></li>
+					</ul>
+				</div><!-- .col -->
+			</div><!-- .row -->
+			<div class="row justify-content-center">
+				<div class="col-lg-8">
+					<form id="contact-form" class="form-message text-center show-error-hint" action="#" method="post">
+						<div class="form-results"></div>
+						<div class="input-field animated" data-animate="fadeInUp" data-delay=".6">
+							<input name="contact-name" type="text" class="input-line required">
+							<label class="input-title">Your Name</label>
+						</div>
+						<div class="input-field animated" data-animate="fadeInUp" data-delay=".7">
+							<input name="contact-email" type="email" class="input-line required email">
+							<label class="input-title">Your Email</label>
+						</div>
+						<div class="input-field animated" data-animate="fadeInUp" data-delay=".8">
+							<textarea name="contact-message" class="txtarea input-line required"></textarea>
+							<label class="input-title">Your Message</label>
+						</div>
+						<input type="text" class="d-none" name="form-anti-honeypot" value="">
+						<div class="input-field animated" data-animate="fadeInUp" data-delay=".9">
+							<button type="submit" class="btn">Submit</button>
+						</div>
+					</form>
+				</div><!-- .col -->
+			</div><!-- .row -->
+		</div><!-- .container -->
+	</div>
+	<!-- End Section -->
 
-<div class="row">
-<div class="col-md-3 col-sm-6">
-<center>
-  <img src="{{asset('landingpage/images/media-logo-1.jpg')}}" class="img-responsive" alt="Media">
-</center>
-</div>
-<div class="col-md-3 col-sm-6">
-<center>
-  <img src="{{asset('landingpage/images/media-logo-2.jpg')}}" class="img-responsive" alt="Media">
-</center>
-</div>
-<div class="col-md-3 col-sm-6">
-<center>
-  <img src="{{asset('landingpage/images/media-logo-3.jpg')}}" class="img-responsive" alt="Media">
-</center>
-</div>
-<div class="col-md-3 col-sm-6">
-<center>
-  <img src="{{asset('landingpage/images/media-logo-4.jpg')}}" class="img-responsive" alt="Media">
-</center>
-</div>
+
+	<!-- Start Section -->
+	<div class="section footer-section section-pad-md no-pb">
+        <div class="ui-shape ui-shape-light ui-shape-footer"></div>
+	    <div class="container">
+	        <div class="row">
+	            <!-- .col -->
+	            <div class="col-lg-3 col-sm">
+	                <div class="widget-item">
+	                    <h5 class="widget-title">RESOURCES</h5>
+	                    <ul class="widget-links">
+	                        <li><a href="#">Watch Demo</a></li>
+	                        <li><a href="#">Whitepaper</a></li>
+	                        <li><a href="#">Intigration &amp; API</a></li>
+	                        <li><a href="#">Privacy &amp; policy</a></li>
+	                    </ul>
+	                </div>
+	            </div><!-- .col -->
+	            <div class="col-lg-3 col-sm">
+	                <div class="widget-item">
+	                    <h5 class="widget-title">Company</h5>
+	                    <ul class="widget-links">
+	                        <li><a href="#">Home</a></li>
+	                        <li><a href="#">About</a></li>
+	                        <li><a href="#">Blog</a></li>
+	                        <li><a href="#">FAQ</a></li>
+	                        <li><a href="#">Contact Us</a></li>
+	                    </ul>
+	                </div>
+	            </div><!-- .col -->
+	            <div class="col-lg-3">
+	                <div class="widget-item">
+	                    <h5 class="widget-title widget-title-ncap">NewsLetter</h5>
+	                    <div class="widget-subsctibe">
+	                        <p>Lorem ipsum dolor sit amet, cons ectetur adipiscing elit, sed</p>
+	                        <form id="subscribe-form" action="form/subscribe.php" method="post" class="subscription-form subscription-form-sm">
+                                <input type="text" name="youremail" class="input-round required email" placeholder="Enter mail" >
+                                <input type="text" class="d-none" name="form-anti-honeypot" value="">
+                                <button type="submit" class="btn btn-plane"><i class="fas fa-paper-plane"></i></button>
+                                <div class="subscribe-results"></div>
+                            </form>
+	                    </div>
+	                </div>
+	            </div><!-- .col -->
+	        </div><!-- .row -->
+	        <div class="footer-bottom">
+                <div class="row align-items-center">
+                    <div class="col-sm-6 res-m-bttm">
+                        <a class="footer-brand" href="./">
+                            <img class="logo logo-light" alt="logo" src="{{asset('landingpage/images/logo-full-white.png')}}" srcset="images/logo-full-white2x.png 2x" style="height: 50px; width:150px;">
+                        </a>
+                    </div>
+                    <div class="col-sm-6 text-sm-right">
+                        <span class="copyright-text"> &copy; EASTERN PASIFIC, 2019</span>
+                    </div>
+                </div>
+	        </div>
+	    </div><!-- .container -->
+	</div>
+	<!-- End Section -->
 
 
-</div>
+	<!-- Preloader !remove please if you do not want -->
+	<div id="preloader">
+		<div id="loader"></div>
+		<div class="loader-section loader-top"></div>
+   		<div class="loader-section loader-bottom"></div>
+	</div>
+	<!-- Preloader End -->
 
+	<!-- JavaScript (include all script here) -->
+	<script src="{{asset('landingpage/assets/js/jquery.bundle.js?ver=142')}}"></script>
+	<script src="{{asset('landingpage/assets/js/script.js?ver=142')}}"></script>
 
-</div>
-</section>
-
-<!-- Footer Start -->
-<footer>
-<div class="container">
-  <div class="row">
-    <div class="col-md-3 col-sm-6 hidden-xs hidden-sm"></div>
-    <div class="col-md-3 col-sm-4">
-      <h2>quick links <i></i></h2>
-      <ul>
-        <li><a href="#">buy EXOcoins</a></li>
-        <li><a href="#">sell EXOcoins</a></li>
-        <li><a href="#">Privacy policy</a></li>
-        <li><a href="#">Contact US</a></li>
-      </ul>
-    </div>
-    <div class="col-md-3 col-sm-4">
-      <h2>social media <i></i></h2>
-      <ul>
-        <li><a href="#"><span><i class="fa fa-facebook" aria-hidden="true"></i></span> Facebook</a></li>
-        <li><a href="#"><span><i class="fa fa-twitter" aria-hidden="true"></i></span> Twitter</a></li>
-        <li><a href="#"><span><i class="fa fa-linkedin" aria-hidden="true"></i></span> Youtube</a></li>
-        <li><a href="#"><span><i class="fa fa-google-plus" aria-hidden="true"></i></span> google </a></li>
-      </ul>
-    </div>
-    <div class="col-md-3 col-sm-4">
-      <h2>newsletter <i></i></h2>
-      <h3>SUBSCRIBE TO OUR NEWS</h3>
-      <p>Lorem Ipsum is simply dummy text of the printing ndustry.</p>
-    </div>
-  </div>
-</div>
-<div class="copyright text-center">
-  <div class="container">Copyright &copy; 2017 EasternStar.com. All rights reserved.</div>
-</div>
-</footer>
-
-</div>
-<script type="text/javascript" src="{{asset('landingpage/js/jquery.min.js')}}"></script>
-<script type="text/javascript" src="{{asset('landingpage/js/bootstrap.min.js')}}"></script>
-<script type="text/javascript" src="{{asset('landingpage/js/particles.js')}}"></script>
-<script type="text/javascript" src="{{asset('landingpage/js/app.js')}}"></script>
-<script type="text/javascript" src="{{asset('landingpage/js/slick.js')}}"></script>
-<script type="text/javascript" src="{{asset('landingpage/js/custom.js')}}"></script>
-<script>
-// Set the date we're counting down to
-var countDownDate = new Date("March 1, 2018 15:37:25").getTime();
-
-// Update the count down every 1 second
-var x = setInterval(function() {
-
-// Get todays date and time
-var now = new Date().getTime();
-
-// Find the distance between now an the count down date
-var distance = countDownDate - now;
-
-// Time calculations for days, hours, minutes and seconds
-var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-// Output the result in an element with id="timer"
-document.getElementById("timer").innerHTML = "<li>" + days + "</li><li>" + hours + "</li><li>"
-+ minutes + "</li><li>" + seconds + "</li>";
-
-// If the count down is over, write some text
-if (distance < 0) {
-    clearInterval(x);
-    document.getElementById("timer").innerHTML = "EXPIRED";
-}
-}, 1000);
-</script>
 </body>
 </html>
