@@ -13,7 +13,13 @@
 
 /* Landing Page */
 Route::get('/', function () {
-    return view('landingpage.index');
+    // money_format('%(#10n', $number)
+    $dshare_persentase_progress_bar = number_format((float)(App\SiteConfig::config('TOTAL_DSHARE_SOLD') / (int)App\SiteConfig::config('TOTAL_DSHARE_TARGET')) * 100, 2, '.', '');
+
+    $dshare_target = (int)App\SiteConfig::config('TOTAL_DSHARE_TARGET');
+    $dshare_sold = (int)App\SiteConfig::config('TOTAL_DSHARE_SOLD');
+
+    return view('landingpage.index', compact('dshare_persentase_progress_bar', 'dshare_target', 'dshare_sold'));
 })->name('welcome');
 
 Route::get('/faq', function () {
