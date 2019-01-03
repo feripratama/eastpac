@@ -14,10 +14,16 @@
 /* Landing Page */
 Route::get('/', function () {
     // money_format('%(#10n', $number)
-    $dshare_persentase_progress_bar = number_format((float)(App\SiteConfig::config('TOTAL_DSHARE_SOLD') / (int)App\SiteConfig::config('TOTAL_DSHARE_TARGET')) * 100, 2, '.', '');
 
     $dshare_target = (int)App\SiteConfig::config('TOTAL_DSHARE_TARGET');
     $dshare_sold = (int)App\SiteConfig::config('TOTAL_DSHARE_SOLD');
+
+    if($dshare_target < 0 || $dshare_sold < 0) {
+        $dshare_persentase_progress_bar = 0;
+    } else {
+        $dshare_persentase_progress_bar = number_format((float)(App\SiteConfig::config('TOTAL_DSHARE_SOLD') / (int)App\SiteConfig::config('TOTAL_DSHARE_TARGET')) * 100, 2, '.', '');
+    }
+
 
     return view('landingpage.index', compact('dshare_persentase_progress_bar', 'dshare_target', 'dshare_sold'));
 })->name('welcome');

@@ -74,7 +74,7 @@ class SiteConfigsTableSeeder extends Seeder
             6 =>
             array (
                 'id' => 7,
-                'key' => 'TOTAL_DSHARE_TARGET',
+                'key' => 'TOTAL_DSHARE_SOLD',
                 'value' => '0',
                 'type' => 'int',
                 'created_at' => '2018-12-27 00:00:00',
