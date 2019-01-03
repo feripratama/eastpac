@@ -13,19 +13,7 @@
 
 /* Landing Page */
 Route::get('/', function () {
-    // money_format('%(#10n', $number)
-
-    $dshare_target = (int)App\SiteConfig::config('TOTAL_DSHARE_TARGET');
-    $dshare_sold = (int)App\SiteConfig::config('TOTAL_DSHARE_SOLD');
-
-    if($dshare_target <= 0 || $dshare_sold <= 0) {
-        $dshare_persentase_progress_bar = 0;
-    } else {
-        $dshare_persentase_progress_bar = number_format((float)(App\SiteConfig::config('TOTAL_DSHARE_SOLD') / (int)App\SiteConfig::config('TOTAL_DSHARE_TARGET')) * 100, 2, '.', '');
-    }
-
-
-    return view('landingpage.index', compact('dshare_persentase_progress_bar', 'dshare_target', 'dshare_sold'));
+    return view('landingpage.index');
 })->name('welcome');
 
 Route::get('/faq', function () {
@@ -48,23 +36,13 @@ Auth::routes(['verify' => true]);
 
 Route::get('/home', 'HomeController@index')->name('home')->middleware('verified');
 
-Route::middleware(['auth', 'verified'])->prefix('home')->group(function() {
-    // home route
-    Route::get('contribution','HomeController@contribution')->name('home.contribution');
-    Route::get('transaction','HomeController@transaction')->name('home.transaction');
-    Route::get('referral','HomeController@referral')->name('home.referral');
-    Route::get('kycapp','HomeController@kycapp')->name('home.kycapp');
-    Route::get('security','SecurityController@index')->name('home.security');
-    Route::get('kycapp-form','KycController@index')->name('home.kycapp.form');
-    Route::post('kycapp-form','KycController@store')->name('home.kycapp.store');
-});
-
 // member
 Route::middleware(['auth', 'verified'])->prefix('setting')->group(function() {
-    // profiel
     Route::get('profile','ProfileController@index')->name('profileIndex');
     Route::post('profile/full-name-save-edit', 'ProfileController@update')->name('profileUpdate');
     Route::post('profile/change-password-save', 'ProfileController@updatePassword')->name('profileUpdatePassword');
+    Route::post('profile/upload', 'ProfileController@updateProfile')->name('profileUpload');
+
 });
 
 // administrator
@@ -72,14 +50,7 @@ Route::middleware(['auth','role:administrator'])->prefix('administrator')->group
     // manage user
     Route::get('/manage-user', 'AdministratorController@manageUser')->name('admin.usermanage');
     Route::get('/manage-user/show/{id}', 'AdministratorController@manageUserShow')->name('admin.usermanage.show');
-
-    // role
-    Route::post('manage-user/add-role-to/{id}', 'AdministratorController@addRoleTo')->name('admin.usermanage.addRoleTo');
-    Route::get('/manage-user/remove-role-from/{id}/{role_name}', 'AdministratorController@removeRole')->name('admin.usermanage.removeRole');
-
-    // permission
     Route::post('/manage-user/add-permission-to/{id}', 'AdministratorController@addPermissionTo')->name('admin.usermanage.addPermissionTo');
-    Route::get('/manage-user/remove-permission-from/{id}/{permission_name}', 'AdministratorController@removePermission')->name('admin.usermanage.removePermission');
 
     // site config
     Route::get('/site-config', 'AdministratorController@configIndex')->name('admin.config.index');
