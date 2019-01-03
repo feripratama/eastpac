@@ -1,0 +1,90 @@
+@media screen and (max-width:1023px) {
+.navbar-brand > img { width: 170px; }
+header .navbar-nav > li > a { font-size: 14px; margin: 0 10px; padding: 5px 0; }
+.banner { padding: 130px 0 40px; }
+.banner h1 { font-size: 40px; line-height: normal; margin-bottom: 8px; }
+.banner h2 { font-size: 30px; line-height: normal; margin: 0 0 5px; }
+.banner h3 { font-size: 32px; line-height: normal; }
+.buysellwrap h2 { margin-bottom: 15px; }
+.buysellwrap h3 { margin-bottom: 20px; }
+.buysellwrap .btn-green { margin-bottom: 35px; width: 100%; }
+.buysellwrap .btn-warning { width: 100%; margin-bottom: 35px; }
+.lendingwrap p { line-height: normal; }
+.choosevancoinwrap { padding: 50px 0 0; }
+.freewalletwrap h2 { font-size: 32px; }
+.freewalletwrap { padding: 20px 0; }
+footer { padding: 40px 0 25px; }
+/* Technologies Css  */
+.technologieswrap li { display: inline-block; margin: 0 0 40px; width: 32%; }
+/* Admin Theme Css */
+.header .right-top-header li { font-size: 14px; padding: 19px 15px; }
+.balance-box { margin-top: 15px; }
+.balance-box li { width: calc(50% - 16px); margin: 0 8px; }
+.balance-box .voc-transfer { display: none; }
+}
+ @media screen and (min-width:768px) {
+.sidebar .collapse { display: block !important; }
+.sidebar h3 i { display: none; }
+}
+ @media screen and (max-width:767px) {
+header { background: rgba(30, 59, 85, 0.63); padding: 0 0 10px; top: 0; }
+.navbar-brand > img { display: block; width: 180px; }
+.navbar-toggle { background: #fff none repeat scroll 0 0; margin-top: 20px; }
+.navbar-toggle .icon-bar { background: #333 none repeat scroll 0 0; }
+.navbar-collapse { background: #1e3b55; margin-top: 10px; padding: 15px 0; }
+header .navbar-right { margin: 0px; }
+.banner { padding: 110px 0 40px; }
+.banner h1 { font-size: 20px; line-height: 40px; margin-bottom: 10px; }
+.banner h2 { font-size: 24px; line-height: 36px; }
+.banner h3 { font-size: 30px; line-height: 40px; }
+.price-box p { font-size: 20px; }
+.timer-indent li { font-size: 25px; }
+.price-box h4 { font-size: 40px; line-height: 45px; }
+.buysellwrap h2, .buysellwrap h3 { text-align: center; margin-bottom: 20px; }
+.buysellwrap .btn-green { margin-bottom: 25px; padding: 15px 0; width: 100%; }
+.buysellwrap .btn-warning { width: 100%; }
+.buysellwrap center { margin: 25px 0; display: block; }
+.von-left { padding: 10px 15px 0; }
+.von-left .form-control { line-height: 45px; }
+.offercoinwrap { padding: 30px 0; }
+.offercoinwrap h2 { font-size: 20px; }
+.offercoinwrap h3 { font-size: 32px; margin-bottom: 25px; }
+.offercoinwrap h4 { font-size: 18px; margin-bottom: 20px; }
+.coinoffer { margin: 20px 0 40px; }
+.sale-heading { font-size: 28px; margin-bottom: 10px; }
+.sale-date { border-bottom: 1px solid #ccc; font-size: 20px; margin: 0 0 15px; padding-bottom: 20px; }
+.platformwrap { padding: 10px 0; }
+.platformwrap .plat-indent { padding: 10px 0; }
+.lendingwrap h2 { font-size: 22px; margin-bottom: 20px; }
+.lendingwrap p { font-size: 18px; line-height: 28px; padding-bottom: 30px; }
+.lendingwrap .btn-warning { padding: 15px 0; width: 100%; }
+.roadmapwrap { padding: 30px 0; }
+.road-logo { margin: 0 auto 35px; width: 100px; }
+.roadmapwrap h2 { font-size: 22px; }
+.choosevancoinwrap h2 { color: #282828; font-size: 22px; }
+.choosevancoinwrap h3 { font-size: 20px; line-height: normal; margin-bottom: 15px; }
+.choosevancoinwrap { padding: 30px 0 0; }
+.choosevancoinwrap .box { padding: 20px 0; }
+.freewalletwrap { padding: 30px 0; }
+.freewalletwrap h2 { font-size: 22px; line-height: 30px; margin-bottom: 15px; }
+.freewalletwrap p { font-size: 18px; line-height: normal; margin-bottom: 25px; }
+.freewalletwrap .btn-warning { width: 100%; }
+footer { padding: 0; }
+footer h2 { margin: 20px 0 15px; }
+footer .copyright { padding: 25px 0; }
+/* Technologies Css  */
+.technologieswrap { padding: 30px 0 0; }
+.technologieswrap h2 { font-size: 20px; line-height: 28px; }
+.technologieswrap li { display: inline-block; margin: 0 0 40px; width: 49%; }
+/* Admin Theme Css */
+.admin-banner { padding: 20px 0; }
+.exchange-btn { margin-top: 0; padding: 20px 15px; text-align: center; width: 100%; }
+.profile-wrap { padding: 25px 0; text-align: center; }
+.transfer-btn { margin-top: 0; padding: 20px 15px; text-align: center; width: 100%; }
+.coinwrap { margin: 20px 0 0; width: 100%; }
+.coinb { margin-bottom: 10px; }
+.coinb { width: 100%; }
+.ballvon { width: 100%; margin: 0 0 10px; }
+.balance-box li { width: 100%; margin: 0 0 10px; }
+.voc-transfer { display: none; }
+}

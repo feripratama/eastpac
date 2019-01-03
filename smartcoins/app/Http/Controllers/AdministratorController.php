@@ -9,7 +9,6 @@ use App\SiteConfig;
 use Validator;
 
 use Spatie\Permission\Models\Permission;
-use Spatie\Permission\Models\Role;
 
 class AdministratorController extends Controller
 {
@@ -29,139 +28,6 @@ class AdministratorController extends Controller
         return view('admin.manageuser.show', compact('title','user'));
     }
 
-    // user role
-
-    public function addRoleTo($id, Request $request)
-    {
-        //hasRole
-
-        $validate = Validator::make($request->all(), [
-            'role_id' => 'required'
-        ]);
-
-        if(is_null(Role::find($request->role_id))) {
-            $result = [
-                'msg' => 'Role not found !'
-            ];
-
-            $status = 500;
-
-            return response()->json($result, $status);
-        }
-
-        if($validate->fails()) {
-            $result = [
-                'msg' => 'Failed give Role'
-            ];
-
-            $status = 500;
-        } else {
-            if(User::find($id)->hasRole(Role::find($request->role_id)->id)) {
-                $result = [
-                    'msg' => 'Role allready use '.str_replace('-', ' ', Role::find($request->role_id)->name)
-                ];
-
-                $status = 500;
-            } else {
-                User::find($id)->assignRole(Role::find($request->role_id)->name);
-
-                $result = [
-                    'msg' => 'Success give role'
-                ];
-
-                $status = 200;
-            }
-        }
-
-        return response()->json($result, $status);
-    }
-
-    public function removeRole($id, $role_name)
-    {
-        $user = User::find($id);
-        if(is_null($user)) {
-            $result = 'Failed remove role';
-
-            $status = 500;
-        } else {
-            $user->removeRole($role_name);
-
-            $result = 'Success remove role';
-
-            $status = 200;
-        }
-
-        return redirect()->back()->with('msg', $result);
-    }
-
-    // user permission
-
-    public function addPermissionTo($id, Request $request)
-    {
-        $validator = Validator::make($request->all(), [
-            'permission_id' => 'required'
-        ]);
-
-        if(is_null(Permission::find($request->permission_id))) {
-            $result = [
-                'msg' => 'Permission not found !'
-            ];
-
-            $status = 500;
-
-            return response()->json($result, $status);
-        }
-
-        if($validator->fails()) {
-
-            $result = [
-                'msg' => 'Failed give permission'
-            ];
-
-            $status = 500;
-
-        } else {
-            if(User::find($id)->hasPermissionTo(Permission::find($request->permission_id)->id)) {
-                $result = [
-                    'msg' => 'Permission allready use '.str_replace('-', ' ', Permission::find($request->permission_id)->name)
-                ];
-
-                $status = 500;
-            } else {
-                User::find($id)->givePermissionTo(Permission::find($request->permission_id)->name);
-                $result = [
-                    'msg' => 'Success give permission'
-                ];
-
-                $status = 200;
-            }
-
-
-        }
-
-        return response()->json($result, $status);
-    }
-
-    public function removePermission($id, $permission_name)
-    {
-        $user = User::find($id);
-        if(is_null($user)) {
-            $result = 'Failed remove permission';
-
-            $status = 500;
-        } else {
-            $user->revokePermissionTo($permission_name);
-
-            $result = 'Success remove permission';
-
-            $status = 200;
-        }
-
-        return redirect()->back()->with('msg', $result);
-    }
-
-    // site config
-
     public function configIndex()
     {
         $title = "Site Config";
@@ -171,8 +37,6 @@ class AdministratorController extends Controller
         $contact_address = $this->getConfigValue('CONTACT_ADDRESS');
         $contact_phone_number = $this->getConfigValue('CONTACT_PHONE_NUMBER');
         $eth_address = $this->getConfigValue('ETHEREUM_ADDRESS');
-        $dshare_target = $this->getConfigValue('TOTAL_DSHARE_TARGET');
-        $dshare_sold = $this->getConfigValue('TOTAL_DSHARE_SOLD');
 
 
         return view('admin.config', compact(
@@ -181,9 +45,7 @@ class AdministratorController extends Controller
                                             'contact_email',
                                             'contact_address',
                                             'contact_phone_number',
-                                            'eth_address',
-                                            'dshare_target',
-                                            'dshare_sold'
+                                            'eth_address'
                                         ));
     }
 
@@ -218,6 +80,42 @@ class AdministratorController extends Controller
 
         return response()->json($result);
 
+    }
+
+    public function addPermissionTo($id, Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'permission_id' => 'required'
+        ]);
+
+        if($validator->fails()) {
+
+            $result = [
+                'msg' => 'Failed give permission'
+            ];
+
+            $status = 500;
+
+        } else {
+            if(User::find($id)->hasPermissionTo(Permission::find($request->permission_id)->id)) {
+                $result = [
+                    'msg' => 'Permission allready use '.str_replace('-', ' ', Permission::find($request->permission_id)->name)
+                ];
+
+                $status = 500;
+            } else {
+                User::find($id)->givePermissionTo(Permission::find($request->permission_id)->name);
+                $result = [
+                    'msg' => 'Success give permission'
+                ];
+
+                $status = 200;
+            }
+
+
+        }
+
+        return response()->json($result, $status);
     }
 
     protected function getConfigValue($key)

@@ -27,6 +27,8 @@ class CreateUsersTable extends Migration
 
             $table->boolean('enable_twoway')->default(false);
 
+            $table->string('images')->nullable();
+
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
