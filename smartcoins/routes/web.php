@@ -18,7 +18,7 @@ Route::get('/', function () {
     $dshare_target = (int)App\SiteConfig::config('TOTAL_DSHARE_TARGET');
     $dshare_sold = (int)App\SiteConfig::config('TOTAL_DSHARE_SOLD');
 
-    if($dshare_target < 0 || $dshare_sold < 0) {
+    if($dshare_target <= 0 || $dshare_sold <= 0) {
         $dshare_persentase_progress_bar = 0;
     } else {
         $dshare_persentase_progress_bar = number_format((float)(App\SiteConfig::config('TOTAL_DSHARE_SOLD') / (int)App\SiteConfig::config('TOTAL_DSHARE_TARGET')) * 100, 2, '.', '');
