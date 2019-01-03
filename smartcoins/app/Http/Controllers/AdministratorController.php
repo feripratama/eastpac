@@ -171,6 +171,8 @@ class AdministratorController extends Controller
         $contact_address = $this->getConfigValue('CONTACT_ADDRESS');
         $contact_phone_number = $this->getConfigValue('CONTACT_PHONE_NUMBER');
         $eth_address = $this->getConfigValue('ETHEREUM_ADDRESS');
+        $dshare_target = $this->getConfigValue('TOTAL_DSHARE_TARGET');
+        $dshare_sold = $this->getConfigValue('TOTAL_DSHARE_SOLD');
 
 
         return view('admin.config', compact(
@@ -179,7 +181,9 @@ class AdministratorController extends Controller
                                             'contact_email',
                                             'contact_address',
                                             'contact_phone_number',
-                                            'eth_address'
+                                            'eth_address',
+                                            'dshare_target',
+                                            'dshare_sold'
                                         ));
     }
 
