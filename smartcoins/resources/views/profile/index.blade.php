@@ -28,14 +28,25 @@
 
 <section class="content container-fluid" style="margin-top: 20px; margin-left:20px; margin-right:20px;">
 
-    <form class="form-horizontal" id="frm_transfer_eth" action="starter.html" method="post">
+    <div class="form-horizontal" id="frm_transfer_eth">
         <div class="row">
             <div class="col-sm-3">
                 <img src="{{asset('dist/img/bio-bg.png')}}" class="user-bg">
-                <img src="{{asset('dist/img/user-big.png')}}" class="user-icon">
+                
+                @if(Auth::user()->getMedia('avatars')->last() != false)
+                    <img src="{{ Auth::user()->getMedia('avatars')->last()->getFullUrl() }}" class="user-icon">
+                @else
+                    <img src="{{ asset('dist/img/user.png') }}" class="user-icon">
+                @endif
+                                
             </div>
             <div class="col-sm-2"></div>
             <div class="col-sm-6">
+                @if ($errors->has('avatar'))
+                    <span class="help-block">
+                        <strong>{{ $errors->first('avatar') }}</strong>
+                    </span>
+                @endif
                 <div id="msg" class="alert text-center" style="display:none">
                     <strong></strong>
                 </div>
@@ -103,11 +114,27 @@
                                 </span>
                             </div>
                         </div>
+                        <div class="form-group">
+                            <label for="password_confirmation" class="col-sm-3">Change avatar</label>
+                            <div class="col-sm-9">
+                                <a id="upload" onclick="showUpload()">Click Here !</a>
+                            </div>
+                            <div class="col-sm-8 input-group input-group-sm" id="upload-input" style="display:none">
+                                <form action="{{ route('profileUpload') }}" method="post" enctype="multipart/form-data">
+                                {{csrf_field()}}
+                                <input id="upload-file" type="file" class="form-control" name="avatar">
+                                <span class="input-group-btn">
+                                    <button type="submit" class="btn btn-success btn-flat" id="btnok-submit-upload"><i class="fa fa-check"></i></button>
+                                    <button type="button" class="btn btn-danger btn-flat" id="btncancel-submit-upload"><i class="fa fa-times"></i></button>
+                                </span>
+                                </form>
+                            </div>
+                        </div>  
                     </div>
                 </div>
             </div>
         </div>
-    </form>
+    </div>
 </section>
 
 @endsection
@@ -171,6 +198,32 @@
             })
         });
 
+        // $('#btnok-submit-upload').click(function() {
+        //     $.ajax({
+        //         url: '/setting/profile/upload',
+        //         contentType: "multipart/form-data",
+        //         type: 'post',
+        //         data: {
+        //             _token: '{{csrf_token()}}',
+        //             avatar: $('#upload-file').val()
+        //         },
+        //         error: function(datas, status, c) {
+        //             $('#msg').addClass('alert-'+datas.responseJSON.type);
+        //             $('#msg').removeClass('alert-success');
+        //             $('#msg strong').text(datas.responseJSON.msg);
+        //             $('#msg').show();
+        //         },
+        //         success: function(datas, status,c) {
+        //             $('#msg').removeClass('alert-danger');
+        //             $('#msg').addClass('alert-success');
+        //             $('#msg strong').text(datas.msg);
+        //             $('#msg').show();
+        //             $('#upload-input').hide();
+        //             $('#upload').show();
+        //         }
+        //     })
+        // });
+
         $('#btncancel-submit-fullname').click(function(){
             $('#full-name-input').hide();
             $('#full-name').show();
@@ -179,6 +232,11 @@
         $('#btncancel-submit-password').click(function(){
             $('.password-input').hide();
             $('#password').show();
+        });
+
+        $('#btncancel-submit-upload').click(function(){
+            $('#upload-input').hide();
+            $('#upload').show();
         });
     });
 
@@ -194,6 +252,10 @@
         $('#password-input input').focus();
     }
 
+    function showUpload() {
+        $('#upload').hide();
+        $('#upload-input').show();
+    }
 
 
 </script>
