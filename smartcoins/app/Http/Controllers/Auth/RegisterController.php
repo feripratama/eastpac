@@ -58,7 +58,7 @@ class RegisterController extends Controller
     }
 
     /**
-     * Create a new user instance after a avlid registration.
+     * Create a new user instance after a valid registration.
      *
      * @param  array  $data
      * @return \App\User
@@ -72,11 +72,6 @@ class RegisterController extends Controller
             'mobilenumber' => $data['mobilenumber'],
             'password' => Hash::make($data['password']),
         ]);
-
-        if (isset($data['avatar'])) {
-            //dd($newUser->addMediaFromUrl('avatar'));
-        $newUser->addMediaFromUrl('http://www.pro.co.id/wp-content/uploads/2018/07/Cara-Membaca-Pesan-WhatsApp-Tanpa-Diketahui-di-iPhone.jpg')->toMediaCollection('avatars');
-    }
 
         // assign member role to newly registered member
         $newUser->assignRole('member');

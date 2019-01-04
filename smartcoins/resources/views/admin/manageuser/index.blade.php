@@ -2,7 +2,6 @@
 
 @section('content')
 <!-- Content Wrapper. Contains page content -->
-<div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>
@@ -19,7 +18,7 @@
     <section class="content">
         <div class="row">
             <div class="col-md-12">
-                <div class="box">
+                <div class="box box-warning">
                     <div class="box-header with-border">
                     <h3 class="box-title">Users</h3>
                     </div>
@@ -31,6 +30,7 @@
                             <th>Name</th>
                             <th>Username</th>
                             <th>Email</th>
+                            <th>Verified</th>
                             <th style="width: 100px">Action</th>
                         </tr>
                         @php
@@ -42,6 +42,13 @@
                             <td>{{ $user->name }}</td>
                             <td>{{ $user->username }}</td>
                             <td>{{ $user->email }}</td>
+                            <th>
+                                @if(is_null($user->email_verified_at))
+                                    <i class="fa fa-ban" style="color:red"></i>
+                                @else
+                                    <i class="fa fa-check" style="color:green"></i>
+                                @endif
+                            </th>
                             <td>
                                 <a href="{{ route('admin.usermanage.show', $user->id) }}" class="btn btn-sm btn-primary" title="view detail"> <i class="fa fa-eye"></i> </a>
                                 <button class="btn btn-sm btn-danger" title="ban user"> <i class="fa fa-ban"></i> </button>
@@ -69,7 +76,6 @@
 
     </section>
     <!-- /.content -->
-</div>
     <!-- /.content-wrapper -->
 @endsection
 

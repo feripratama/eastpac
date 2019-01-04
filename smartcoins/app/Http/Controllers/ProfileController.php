@@ -7,13 +7,10 @@ use App\User;
 use Illuminate\Support\Facades\Hash;
 use Auth;
 use Validator;
-use Illuminate\Support\Facades\Input;
-
 
 
 class ProfileController extends Controller
 {
-
 
     public function __construct()
     {
@@ -24,32 +21,6 @@ class ProfileController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-     public function upload(Request $request)
-        { 
-            // dd($request->file('file')->getClientOriginalName());
-            $user = Auth::user()->id;
-            // dd($user);
-            
-            $validator = Validator::make($request->all(), [
-                'file' => 'required'
-            ]);
-
-            if($validator->fails()) {
-                $result = ['msg' => 'Update Images Failed', 'type' => 'danger'];
-                $status = 500;
-            } else {
-                $result = ['msg' => 'Udpate Images Success2', 'type' => 'success'];
-                $status = 200;
-
-                    // dd(User::find($user));
-                User::where('id', $user)->update(['images' => $request->file('file')->getClientOriginalName()]);
-            }
-
-                 return response()->json($result, $status);
-    
-
-    }
-
     public function index()
     {
         $title = "Profile";
@@ -61,7 +32,7 @@ class ProfileController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(array $data)
+    public function create()
     {
         //
     }

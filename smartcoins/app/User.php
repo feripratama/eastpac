@@ -6,14 +6,12 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Spatie\Permission\Traits\HasRoles;
-use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
 use Spatie\MediaLibrary\HasMedia\HasMedia;
-use Spatie\MediaLibrary\Models\Media;
+use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
 
 class User extends Authenticatable implements MustVerifyEmail, HasMedia
 {
-    use Notifiable;
-    use HasRoles;
+    use Notifiable, HasRoles;
     use HasMediaTrait;
 
     /**
@@ -28,13 +26,6 @@ class User extends Authenticatable implements MustVerifyEmail, HasMedia
         'enable_twoway'
     ];
 
-    public function registerMediaConversions(Media $media = null)
-    {
-         $this->addMediaConversion('thumb')
-             ->width(50)
-             ->height(50);
-    }
-
     /**
      * The attributes that should be hidden for arrays.
      *
@@ -43,5 +34,4 @@ class User extends Authenticatable implements MustVerifyEmail, HasMedia
     protected $hidden = [
         'password', 'remember_token',
     ];
-
 }
