@@ -65,6 +65,7 @@ Route::middleware(['auth', 'verified'])->prefix('setting')->group(function() {
     Route::get('profile','ProfileController@index')->name('profileIndex');
     Route::post('profile/full-name-save-edit', 'ProfileController@update')->name('profileUpdate');
     Route::post('profile/change-password-save', 'ProfileController@updatePassword')->name('profileUpdatePassword');
+    Route::post('profile/upload', 'ProfileController@updateProfile')->name('profileUpload');
 });
 
 // administrator

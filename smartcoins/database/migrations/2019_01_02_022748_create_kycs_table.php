@@ -30,7 +30,7 @@ class CreateKycsTable extends Migration
             $table->text('document_file');
             $table->string('zip_code');
             $table->string('wallet_type'); // id : [1,2,3]
-            $table->string('wallet_address', 255)->unique();
+            $table->string('wallet_address')->unique();
             $table->integer('status')->default(1)->nullable(); // 1 = pending, 2 = progress, 3 = approve, 4 = reject
             $table->timestamps();
 
