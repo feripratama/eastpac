@@ -95,13 +95,13 @@
                         <div class="form-group password-input"  style="display:none" >
                             <label for="password_old" class="col-sm-3">Old Password</label>
                             <div class="col-sm-8 input-group input-group-sm">
-                                <input type="text" class="form-control" id="password_old" placeholder="">
+                                <input type="password" class="form-control" id="password_old" placeholder="">
                             </div>
                         </div>
                         <div class="form-group password-input"  style="display:none">
                             <label for="password_now" class="col-sm-3">New Password</label>
                             <div class="col-sm-8 input-group input-group-sm">
-                                <input type="text" class="form-control" id="password_now" placeholder="">
+                                <input type="password" class="form-control" id="password_now" placeholder="">
                             </div>
                         </div>
                         <div class="form-group password-input"  style="display:none">
