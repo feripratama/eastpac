@@ -32,13 +32,13 @@
         <div class="row">
             <div class="col-sm-3">
                 <img src="{{asset('dist/img/bio-bg.png')}}" class="user-bg">
-                
+
                 @if(Auth::user()->getMedia('avatars')->last() != false)
                     <img src="{{ Auth::user()->getMedia('avatars')->last()->getFullUrl() }}" class="user-icon">
                 @else
                     <img src="{{ asset('dist/img/user.png') }}" class="user-icon">
                 @endif
-                                
+
             </div>
             <div class="col-sm-2"></div>
             <div class="col-sm-6">
@@ -129,7 +129,7 @@
                                 </span>
                                 </form>
                             </div>
-                        </div>  
+                        </div>
                     </div>
                 </div>
             </div>
