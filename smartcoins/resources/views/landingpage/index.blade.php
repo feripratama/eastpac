@@ -748,7 +748,7 @@
                     <div class="col-sm-6 col-lg-3">
                         <div class="team-circle animated" data-animate="fadeInUp" data-delay=".3">
                             <div class="team-photo">
-                                <img src="images/team-walter.jpg" alt="" />
+                                <img src="{{asset('landingpage/images/team-walter.jpg')}}" alt="" />
                                 <a href="#team-profile-1" class="expand-trigger content-popup"></a>
                             </div>
                             <div class="team-info">
@@ -768,7 +768,7 @@
                                     <div class="row no-mg">
                                         <div class="col-md-6">
                                             <div class="team-profile-photo">
-                                                <img src="images/team-walter.jpg" alt="" />
+                                                <img src="{{asset('landingpage/images/team-walter.jpg')}}" alt="" />
                                             </div>
                                         </div><!-- .col  -->
 
@@ -797,7 +797,7 @@
                     <div class="col-sm-6 col-lg-3">
                         <div class="team-circle animated" data-animate="fadeInUp" data-delay=".4">
                             <div class="team-photo">
-                                <img src="images/team-iliya.jpeg" alt="team">
+                                <img src="{{asset('landingpage/images/team-iliya.jpeg')}}" alt="team">
                                 <a href="#team-profile-2" class="expand-trigger content-popup"></a>
                             </div>
                             <div class="team-info">
@@ -817,7 +817,7 @@
                                     <div class="row no-mg">
                                         <div class="col-md-6">
                                             <div class="team-profile-photo">
-                                                <img src="images/team-iliya.jpg" alt="team" />
+                                                <img src="{{asset('landingpage/images/team-iliya.jpg')}}" alt="team" />
                                             </div>
                                         </div><!-- .col  -->
 
@@ -846,7 +846,7 @@
                     <div class="col-sm-6 col-lg-3">
                         <div class="team-circle animated" data-animate="fadeInUp" data-delay=".5">
                             <div class="team-photo">
-                                <img src="images/team-ruslana.jpeg" alt="team">
+                                <img src="{{asset('landingpage/images/team-ruslana.jpeg')}}" alt="team">
                                 <a href="#team-profile-3" class="expand-trigger content-popup"></a>
                             </div>
                             <div class="team-info">
@@ -866,7 +866,7 @@
                                     <div class="row no-mg">
                                         <div class="col-md-6">
                                             <div class="team-profile-photo">
-                                                <img src="images/team-ruslana.jpeg" alt="team" />
+                                                <img src="{{asset('landingpage/images/team-ruslana.jpeg')}}" alt="team" />
                                             </div>
                                         </div><!-- .col  -->
 
@@ -922,7 +922,7 @@
                                     <div class="row no-mg">
                                         <div class="col-md-6">
                                             <div class="team-profile-photo">
-                                                <img src="images/team-alex.jpeg" alt="team" />
+                                                <img src="{{asset('landingpage/images/team-alex.jpeg')}}" alt="team" />
                                             </div>
                                         </div><!-- .col  -->
 
@@ -973,7 +973,7 @@
                     <div class="col-lg-3 col-sm-6">
                         <div class="team-circle animated" data-animate="fadeInUp" data-delay=".9">
                             <div class="team-photo">
-                                <img src="images/team-yamaji.jpeg" alt="team">
+                                <img src="{{asset('landingpage/images/team-yamaji.jpeg')}}" alt="team">
                                 <a href="#team-profile-6" class="expand-trigger content-popup"></a>
                             </div>
                             <div class="team-info">
@@ -994,7 +994,7 @@
 
                                         <div class="col-md-6">
                                             <div class="team-profile-photo">
-                                                <img src="images/team-yamaji.jpeg" alt="team" />
+                                                <img src="{{asset('landingpage/images/team-yamaji.jpeg')}}" alt="team" />
                                             </div>
                                         </div><!-- .col  -->
 

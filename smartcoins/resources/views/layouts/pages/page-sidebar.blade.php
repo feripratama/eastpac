@@ -3,7 +3,13 @@
     <div class="user-panel">
         <div class="row" align="center">
             <div class="col-md-12">
-                <img src="{{asset('dist/img/user.png')}}" width="40%" class="img-circle" alt="User Image">
+
+                @if(Auth::user()->getMedia('avatars')->last() != false)
+                    <img src="{{ Auth::user()->getMedia('avatars')->last()->getFullUrl() }}" width="40%" class="img-circle" alt="User Image">
+                @else
+                    <img src="{{asset('dist/img/user.png')}}" width="40%" class="img-circle" alt="User Image">
+                @endif
+
                 <p>{{ Auth::user()->name }}</p>
                 <p style="margin-top: -5%"><b>Unique ID : IXIA1A105</b></p><br>
                 @if(Auth::user()->hasVerifiedEmail())

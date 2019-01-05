@@ -100,6 +100,33 @@ class ProfileController extends Controller
         return response()->json($result, $status);
     }
 
+    public function updateProfile(Request $request)
+    {        
+        // dd($request->file('avatar'));
+        $validator = Validator::make($request->all(), [
+            'avatar' => 'required|image'
+        ]);
+
+        if($validator->fails()) {
+            
+            return redirect()->back()->withErrors($validator);
+        } else {
+            
+           /* User::where('username', $username)->update([
+                'name' => $request->fullname
+            ]);*/
+            if (isset($request->avatar)) {
+                // dd('kakaikuda');
+                Auth::user()->addMediaFromRequest("avatar")->toMediaCollection('avatars');
+            }
+            return redirect()->back();
+        }
+
+        
+
+        return response()->json($result, $status);
+    }
+
     public function updatePassword(Request $request)
     {
         $username = Auth::user()->username;
