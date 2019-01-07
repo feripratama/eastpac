@@ -57,6 +57,9 @@ Route::middleware(['auth', 'verified'])->prefix('home')->group(function() {
     Route::get('security','SecurityController@index')->name('home.security');
     Route::get('kycapp-form','KycController@index')->name('home.kycapp.form');
     Route::post('kycapp-form','KycController@store')->name('home.kycapp.store');
+
+    // referral
+    Route::post('/referral/store', 'ReferralController@store')->name('home.referral.store');
 });
 
 // member
