@@ -1,6 +1,3 @@
-@php
-    use App\LandingPageContent;
-@endphp
 <!DOCTYPE html>
 <html lang="en" class="js">
 <head>
@@ -88,23 +85,7 @@
 					<div class="row align-items-center text-center justify-content-center">
 						<div class="col-sm-10 col-md-12 col-lg-10">
 							<div class="header-txt tab-center mobile-center">
-                                @role('administrator')
-                                <h1 class="animated" data-animate="fadeInUp" data-delay="1.25" id="txt-banner-1">{!!LandingPageContent::getJsonData('banner_1', 'banner_1', 'txt')!!}<br class="d-none d-xl-block"></h1>
-                                <div class="row" id="txt-banner-1-ctrl" style="display:none">
-                                    <div class="col-md-12">
-                                        <a href="#" id="txt-banner-1-cancel" class="pull-right" style="color:white;"> <i class="fas fa-times"> </i> cancel </a>&nbsp;
-                                        <a href="#" id="txt-banner-1-save" class="pull-right" style="color:white;"> <i class="fas fa-save"> </i> save </a>
-                                    </div>
-                                </div>
-                                @else
-                                <h1 class="animated" data-animate="fadeInUp" data-delay="1.25">
-                                    {!!
-                                        LandingPageContent::getJsonData('banner_1', 'banner_1', 'txt')
-                                    !!}
-                                    <br class="d-none d-xl-block">
-                                </h1>
-                                @endrole
-                                <h3>900,000 TAKENS ALREADY SOLD OUT</h3>
+								<h1 class="animated" data-animate="fadeInUp" data-delay="1.25">EASTPAC ICO STARTING SOON<br class="d-none d-xl-block"></h1><h3>900,000 TAKENS ALREADY SOLD OUT</h3>
 								<div class="gaps size-1x d-none d-md-block"></div>
 								<p class="lead animated" data-animate="fadeInUp" data-delay="1.35">The next offer will start again at 21:30</p>
 								<div class="gaps size-1x d-none d-md-block"></div>
@@ -186,11 +167,9 @@
             <div class="row justify-content-center text-center">
 				<div class="col-md-10">
 					<div class="section-head-s7" id="txt-about-1">
-                        <h2 class="section-title-s7 animated" data-animate="fadeInUp" data-delay=".1">          {!!LandingPageContent::getJsonData('about_1', 'about_1', 'title')!!}
-                        </h2>
-                        <p class="lead animated" data-animate="fadeInUp" data-delay=".2">
-                            {!!LandingPageContent::getJsonData('about_1', 'about_1', 'content')!!}
-                        </p>
+						<h2 class="section-title-s7 animated" data-animate="fadeInUp" data-delay=".1">About Eastpac</h2>
+                        <p class="lead animated" data-animate="fadeInUp" data-delay=".2">Small and medium-sized enterprises (SMEs) do not have sufficient infrastructure or financial flexibility to offer supply chain management data to their customers. On the other hand, customers want more information about their orders more than ever. In the existing system, they only have access to basic shipping logs and estimations.Using blockchain and smart contracts, Eastpac Project will revolutionize supply chain management through innovative technology. Our project will provide greater transparency and reliability across the entire supply chain process to deliver trustworthy information that empowers businesses and consumers.</p>
+                        <p>
                     </div>
                     @role('administrator')
                     <div class="row">
@@ -219,41 +198,12 @@
 					</div>
                 </div>
                 <div class="col-lg-5 text-center text-lg-left res-m-bttm">
-                    <div class="text-block" id="txt-about-2">
-                        <h2 class="animated" data-animate="fadeInUp" data-delay=".1">
-                            {!!
-                                LandingPageContent::getJsonData('about_2', 'about_2', 'title')
-                            !!}
-                        </h2>
-
-                        <p class="lead animated" data-animate="fadeInUp" data-delay=".2">
-                            <strong>
-                                {!!
-                                    LandingPageContent::getJsonData('about_2', 'about_2', 'content_0')
-                                !!}
-                            </strong>
-                        </p>
-
-                        <p class="animated" data-animate="fadeInUp" data-delay=".3">
-                            {!!
-                                LandingPageContent::getJsonData('about_2', 'about_2', 'content_1')
-                            !!}
-                        </p>
-                        <p class="animated" data-animate="fadeInUp" data-delay=".4">
-                            {!!
-                                LandingPageContent::getJsonData('about_2', 'about_2', 'content_2')
-                            !!}
-                        </p>
+                    <div class="text-block">
+                        <h2 class="animated" data-animate="fadeInUp" data-delay=".1">Direct-To-Consumer Decentralize Platform</h2>
+                        <p class="lead animated" data-animate="fadeInUp" data-delay=".2"><strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</strong></p>
+                        <p class="animated" data-animate="fadeInUp" data-delay=".3">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia </p>
+                        <p class="animated" data-animate="fadeInUp" data-delay=".4">Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore</p>
                     </div>
-                    @role('administrator')
-                    <div class="row">
-                        <div class="col-md-12">
-                            <a href="#" style="color:blue;" id="edit-about-2" onclick="return false;"><i class="fa fa-pencil"> Edit</i></a>
-                            <a href="#" style="display:none;color:blue;" id="save-about-2" onclick="return false;"><i class="fa fa-save"> Save </i> </a>
-                            <a href="#" style="display:none;color:red;" id="cancel-about-2" onclick="return false;"><i class="fa fa-times" style=""> Cancel</i> </a>
-                        </div>
-                    </div>
-                    @endrole
                 </div>
             </div>
         </div>
@@ -879,7 +829,7 @@
                                     <div class="row no-mg">
                                         <div class="col-md-6">
                                             <div class="team-profile-photo">
-                                                <img src="{{asset('landingpage/images/team-iliya.jpeg')}}" alt="team" />
+                                                <img src="{{asset('landingpage/images/team-iliya.jpg')}}" alt="team" />
                                             </div>
                                         </div><!-- .col  -->
 
@@ -1531,180 +1481,43 @@
     <script src="{{asset('landingpage/assets/js/script.js?ver=142')}}"></script>
 
     @role('administrator')
-    <script src="{{asset('dist/js/sweetalert/sweetalert.min.js')}}"></script>
     <script>
-        // Edit About
         var about_1_temp = "";
         $('#edit-about-1').click(function(){
-            $('#txt-about-1 h2').attr('contenteditable', 'true');
-            $('#txt-about-1 p').attr('contenteditable', 'true');
+            $('#txt-about-1').attr('contenteditable', 'true');
             $('#txt-about-1').css('border','1px solid blue');
             $('#txt-about-1').focus();
             $(this).hide();
             $('#save-about-1').show();
             $('#cancel-about-1').show();
             about_1_temp = $('#txt-about-1').html();
+            // console.log(about_1_temp);
+            //contenteditable="true"
         });
 
         $('#save-about-1').click(function(){
-            $.ajax({
-                method: "put",
-                url: '{{route('editcontent.update')}}',
-                data: {
-                    _token: '{{csrf_token()}}',
-                    key: 'about_1',
-                    jdata: { "about_1": { "title": $('#txt-about-1 h2').text(), "content" : $('#txt-about-1 p').text() } }
-                },
-            }).done(function(res) {
-                swal({
-                    title: res.title,
-                    text: res.msg,
-                    icon: res.icon,
-                    type: res.type
-                }).then(function(){
-                    $('#txt-about-1').show();
-                    $('#txt-about-1').html($('#txt-about-1').html());
-                    $('#txt-about-1 h2').attr('contenteditable', 'false');
-                    $('#txt-about-1 p').attr('contenteditable', 'false');
-                    $('#edit-about-1').show();
-                    $('#save-about-1').hide();
-                    $('#cancel-about-1').hide();
-                    $('#txt-about-1').css('border','none');
-                })
-
-            });
-
-        });
-
-        $('#cancel-about-1').click(function(){
             $('#txt-about-1').show();
-            $('#txt-about-1').html(about_1_temp);
-            $('#txt-about-1 h2').attr('contenteditable', 'false');
-            $('#txt-about-1 p').attr('contenteditable', 'false');
+            $('#txt-about-1').html($('#txt-about-1').html());
+            console.log(about_1_temp);
+            $('#txt-about-1').attr('contenteditable', 'false');
+            // $('#txt-about-1').focus();
             $('#edit-about-1').show();
             $('#save-about-1').hide();
             $('#cancel-about-1').hide();
             $('#txt-about-1').css('border','none');
         });
 
-        // End Edit About
-
-
-        // Edit About 2
-        var about_2_temp = "";
-        $('#edit-about-2').click(function(){
-            $('#txt-about-2 h2').attr('contenteditable', 'true');
-            $('#txt-about-2 p').attr('contenteditable', 'true');
-            $('#txt-about-2').css('border','1px solid blue');
-            $('#txt-about-2').focus();
-            $(this).hide();
-            $('#save-about-2').show();
-            $('#cancel-about-2').show();
-            about_2_temp = $('#txt-about-2').html();
+        $('#cancel-about-1').click(function(){
+            $('#txt-about-1').show();
+            $('#txt-about-1').html(about_1_temp);
+            console.log(about_1_temp);
+            $('#txt-about-1').attr('contenteditable', 'false');
+            // $('#txt-about-1').focus();
+            $('#edit-about-1').show();
+            $('#save-about-1').hide();
+            $('#cancel-about-1').hide();
+            $('#txt-about-1').css('border','none');
         });
-
-        $('#save-about-2').click(function(){
-            $.ajax({
-                method: "put",
-                url: '{{route('editcontent.update')}}',
-                data: {
-                    _token: '{{csrf_token()}}',
-                    key: 'about_2',
-                    jdata: {
-                        "about_2": {
-                                "title": $('#txt-about-2 h2').text(),
-                                "content_0" : $('#txt-about-2').children().eq(1).text(),
-                                "content_1" : $('#txt-about-2').children().eq(2).text(),
-                                "content_2" : $('#txt-about-2').children().eq(3).text()
-                            }
-                    }
-                },
-            }).done(function(res) {
-                swal({
-                    title: res.title,
-                    text: res.msg,
-                    icon: res.icon,
-                    type: res.type
-                }).then(function(){
-                    $('#txt-about-2').show();
-                    $('#txt-about-2').html($('#txt-about-2').html());
-                    $('#txt-about-2 h2').attr('contenteditable', 'false');
-                    $('#txt-about-2 p').attr('contenteditable', 'false');
-                    $('#edit-about-2').show();
-                    $('#save-about-2').hide();
-                    $('#cancel-about-2').hide();
-                    $('#txt-about-2').css('border','none');
-                })
-
-            });
-
-        });
-
-        $('#cancel-about-2').click(function(){
-            $('#txt-about-2').show();
-            $('#txt-about-2').html(about_2_temp);
-            $('#txt-about-2 h2').attr('contenteditable', 'false');
-            $('#txt-about-2 p').attr('contenteditable', 'false');
-            $('#edit-about-2').show();
-            $('#save-about-2').hide();
-            $('#cancel-about-2').hide();
-            $('#txt-about-2').css('border','none');
-        });
-
-        // End Edit About 2
-
-        var txt_banner_1_temp = "";
-        $('#txt-banner-1').click(function() {
-            txt_banner_1_temp = $('#txt-banner-1').html();
-            $(this).css('border', '1px solid yellow');
-            $(this).attr('contenteditable', 'true');
-            $(this).focus();
-            $('#txt-banner-1-ctrl').show();
-        });
-
-        $('#txt-banner-1-cancel').click(function() {
-            $('#txt-banner-1').css('border', 'none');
-            $('#txt-banner-1').attr('contenteditable', 'false');
-            $('#txt-banner-1-ctrl').hide();
-            $('#txt-banner-1').html(txt_banner_1_temp);
-        });
-
-        $('#txt-banner-1-save').click(function() {
-            $.ajax({
-                method: "put",
-                url: '{{route('editcontent.update')}}',
-                data: {
-                    _token: '{{csrf_token()}}',
-                    key: 'banner_1',
-                    jdata: {
-                        "banner_1": {
-                                "txt" : $('#txt-banner-1').text()
-                            }
-                    }
-                }
-            }).done(function(res) {
-                swal({
-                    title: res.title,
-                    text: res.msg,
-                    icon: res.icon,
-                    type: res.type
-                }).then(function(){
-                    $('#txt-banner-1').css('border', 'none');
-                    $('#txt-banner-1').attr('contenteditable', 'false');
-                    $('#txt-banner-1-ctrl').hide();
-                    if(res.type == 'error') {
-                        $('#txt-banner-1').html(txt_banner_1_temp);
-                    } else {
-                        $('#txt-banner-1').html($('#txt-banner-1').html());
-                    }
-
-                })
-
-            });
-        });
-        // End Text Banner 1
-
-
     </script>
     @endrole
 
