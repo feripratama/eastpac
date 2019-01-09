@@ -109,7 +109,7 @@
 								<p class="lead animated" data-animate="fadeInUp" data-delay="1.35">The next offer will start again at 21:30</p>
 								<div class="gaps size-1x d-none d-md-block"></div>
 								<ul class="btns animated" data-animate="fadeInUp" data-delay="1.45">
-									<li><a href="#" class="btn btn-icon-s3">JOIN PRE-SALE <i class="fas fa-angle-double-right"></i></a></li>
+                                    <li><a href="{{route('register')}}" class="btn btn-icon-s3">JOIN PRE-SALE <i class="fas fa-angle-double-right"></i></a></li>
 									<li><a href="#" class="btn btn-icon-s3">WHITE PAPER <i class="fas fa-angle-double-right"></i></a></li>
 								</ul>
 							</div>
@@ -267,10 +267,27 @@
         <div class="container">
             <div class="row justify-content-center text-center">
 				<div class="col-md-6 col-sm-8">
-					<div class="section-head-s7">
-						<h2 class="section-title-s7 animated" data-animate="fadeInUp" data-delay=".1">EASTCOIN Problem &amp; Solution</h2>
-						<p class="animated" data-animate="fadeInUp" data-delay=".2">At vero eos et accusamus et iusto odio dignissimos ducimus qui blan ditiis praes entium volup tatum deleniti.</p>
-					</div>
+					<div class="section-head-s7" id="txt-beneffit">
+						<h2 class="section-title-s7 animated" data-animate="fadeInUp" data-delay=".1">
+                            {!!
+                                LandingPageContent::getJsonData('beneffit', 'beneffit', 'title')
+                            !!}
+                        </h2>
+						<p class="animated" data-animate="fadeInUp" data-delay=".2">
+                            {!!
+                                LandingPageContent::getJsonData('beneffit', 'beneffit', 'content')
+                            !!}
+                        </p>
+                    </div>
+                    @role('administrator')
+                    <div class="row">
+                        <div class="col-md-12">
+                            <a href="#" style="color:blue;" id="edit-beneffit" onclick="return false;"><i class="fa fa-pencil"> Edit</i></a>
+                            <a href="#" style="display:none;color:blue;" id="save-beneffit" onclick="return false;"><i class="fa fa-save"> Save </i> </a>
+                            <a href="#" style="display:none;color:red;" id="cancel-beneffit" onclick="return false;"><i class="fa fa-times" style=""> Cancel</i> </a>
+                        </div>
+                    </div>
+                    @endrole
 				</div>
 			</div>
             <div class="prblmsltn-list">
@@ -348,28 +365,88 @@
             <div class="tokdis-list">
                 <div class="row text-center text-lg-left">
                     <div class="col-md">
-                        <div class="tokdis-item animated" data-animate="fadeInUp" data-delay=".2">
-                            <span>Tokens Offered</span>
-                            <h5>20M</h5>
+                        <div class="tokdis-item animated" id="txt-token-1" data-animate="fadeInUp" data-delay=".2">
+                            <span>
+                                {!!
+                                    LandingPageContent::getJsonData('token_1', 'token_1', 'txt_2')
+                                !!}
+                            </span>
+                            <h5>{!!
+                                LandingPageContent::getJsonData('token_1', 'token_1', 'txt_1')
+                            !!}</h5>
                         </div>
+                        @role('administrator')
+                        <div class="row">
+                            <div class="col-md-12">
+                                <a href="#" style="color:yellow;" id="edit-token-1" onclick="return false;"><i class="fa fa-pencil"> Edit</i></a>
+                                <a href="#" style="display:none;color:yellow;" id="save-token-1" onclick="return false;"><i class="fa fa-save"> Save </i> </a>
+                                <a href="#" style="display:none;color:yellow;" id="cancel-token-1" onclick="return false;"><i class="fa fa-times" style=""> Cancel</i> </a>
+                            </div>
+                        </div>
+                        @endrole
                     </div><!-- .col -->
                     <div class="col-md">
-                        <div class="tokdis-item animated" data-animate="fadeInUp" data-delay=".3">
-                            <span>Soft Cap (Public ICO)</span>
-                            <h5>$4M</h5>
+                        <div class="tokdis-item animated" id="txt-token-2" data-animate="fadeInUp" data-delay=".3">
+                            <span>
+                                {!!
+                                    LandingPageContent::getJsonData('token_2', 'token_2', 'txt_2')
+                                !!}
+                            </span>
+                            <h5>{!!
+                                LandingPageContent::getJsonData('token_2', 'token_2', 'txt_1')
+                            !!}</h5>
                         </div>
+                        @role('administrator')
+                        <div class="row">
+                            <div class="col-md-12">
+                                <a href="#" style="color:yellow;" id="edit-token-2" onclick="return false;"><i class="fa fa-pencil"> Edit</i></a>
+                                <a href="#" style="display:none;color:yellow;" id="save-token-2" onclick="return false;"><i class="fa fa-save"> Save </i> </a>
+                                <a href="#" style="display:none;color:yellow;" id="cancel-token-2" onclick="return false;"><i class="fa fa-times" style=""> Cancel</i> </a>
+                            </div>
+                        </div>
+                        @endrole
                     </div><!-- .col -->
                     <div class="col-md">
-                        <div class="tokdis-item animated" data-animate="fadeInUp" data-delay=".4">
-                            <span>Hard Cap</span>
-                            <h5>20 million</h5>
+                        <div class="tokdis-item animated" id="txt-token-3" data-animate="fadeInUp" data-delay=".4">
+                            <span>
+                                {!!
+                                    LandingPageContent::getJsonData('token_3', 'token_3', 'txt_2')
+                                !!}
+                            </span>
+                            <h5>{!!
+                                LandingPageContent::getJsonData('token_3', 'token_3', 'txt_1')
+                            !!}</h5>
                         </div>
+                        @role('administrator')
+                        <div class="row">
+                            <div class="col-md-12">
+                                <a href="#" style="color:yellow;" id="edit-token-3" onclick="return false;"><i class="fa fa-pencil"> Edit</i></a>
+                                <a href="#" style="display:none;color:yellow;" id="save-token-3" onclick="return false;"><i class="fa fa-save"> Save </i> </a>
+                                <a href="#" style="display:none;color:yellow;" id="cancel-token-3" onclick="return false;"><i class="fa fa-times" style=""> Cancel</i> </a>
+                            </div>
+                        </div>
+                        @endrole
                     </div><!-- .col -->
                     <div class="col-lg-4">
-                        <div class="tokdis-item animated" data-animate="fadeInUp" data-delay=".5">
-                            <span>Tokens Distributed</span>
-                            <h5>30 days after token sale ends</h5>
+                        <div class="tokdis-item animated" id="txt-token-4" data-animate="fadeInUp" data-delay=".5">
+                            <span>
+                                {!!
+                                    LandingPageContent::getJsonData('token_4', 'token_4', 'txt_2')
+                                !!}
+                            </span>
+                            <h5>{!!
+                                LandingPageContent::getJsonData('token_4', 'token_4', 'txt_1')
+                            !!}</h5>
                         </div>
+                        @role('administrator')
+                        <div class="row">
+                            <div class="col-md-12">
+                                <a href="#" style="color:yellow;" id="edit-token-4" onclick="return false;"><i class="fa fa-pencil"> Edit</i></a>
+                                <a href="#" style="display:none;color:yellow;" id="save-token-4" onclick="return false;"><i class="fa fa-save"> Save </i> </a>
+                                <a href="#" style="display:none;color:yellow;" id="cancel-token-4" onclick="return false;"><i class="fa fa-times" style=""> Cancel</i> </a>
+                            </div>
+                        </div>
+                        @endrole
                     </div><!-- .col -->
                 </div><!-- .row -->
             </div><!-- .tokdis-list -->
@@ -589,50 +666,115 @@
 	    <div class="container">
             <div class="row justify-content-center text-center">
 				<div class="col-lg-6 col-sm-8">
-					<div class="section-head-s7">
-						<h2 class="section-title-s7 animated" data-animate="fadeInUp" data-delay=".1">Our Technology Services</h2>
-						<p class="animated" data-animate="fadeInUp" data-delay=".2">EASTPAC combines innovative technologies - smart contracts, blockchain, and big data. Data is uploaded to blockchain using smart contracts and then migrated to big data. This design enables businesses to maximize the use of valuable information.</p>
-					</div>
-				</div>
+					<div class="section-head-s7" id="txt-token-11">
+						<h2 class="section-title-s7 animated" data-animate="fadeInUp" data-delay=".1">{!!
+                            LandingPageContent::getJsonData('token_11', 'token_11', 'title')
+                        !!}</h2>
+						<p class="animated" data-animate="fadeInUp" data-delay=".2">{!!
+                            LandingPageContent::getJsonData('token_11', 'token_11', 'content')
+                        !!}</p>
+                    </div>
+                    @role('administrator')
+                    <div class="row">
+                        <div class="col-md-12">
+                            <a href="#" style="color:blue;" id="edit-token-11" onclick="return false;"><i class="fa fa-pencil"> Edit</i></a>
+                            <a href="#" style="display:none;color:blue;" id="save-token-11" onclick="return false;"><i class="fa fa-save"> Save </i> </a>
+                            <a href="#" style="display:none;color:blue;" id="cancel-token-11" onclick="return false;"><i class="fa fa-times" style=""> Cancel</i> </a>
+                        </div>
+                    </div>
+                    @endrole
+                </div>
 			</div>
 	        <div class="row align-items-center">
 	            <div class="col-lg-7 res-m-bttm">
 	                <div class="row justify-content-between text-center text-lg-left">
 	                    <div class="col-xl-5 col-md-6">
-	                        <div class="service-item animated" data-animate="fadeInUp" data-delay=".4">
+	                        <div class="service-item animated" data-animate="fadeInUp" data-delay=".4" id="txt-token-21">
 	                            <div class="service-icon mx-auto mx-lg-0">
 	                                <img src="{{asset('landingpage/images/zinnia/service-icon-a.png')}}" alt="icon">
 	                            </div>
-	                            <h5 class="service-title">Easy to Buy &amp; Sale Token</h5>
-	                            <p>Lorem ipsum dolor sit amet, cons ectetur adipiscing elit, sed do eiusm od tempor incididunt.</p>
-	                        </div>
+	                            <h5 class="service-title">{!!
+                                    LandingPageContent::getJsonData('token_21', 'token_21', 'title')
+                                !!}</h5>
+	                            <p>{!!
+                                    LandingPageContent::getJsonData('token_21', 'token_21', 'content')
+                                !!}</p>
+                            </div>
+                            @role('administrator')
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <a href="#" style="color:blue;" id="edit-token-21" onclick="return false;"><i class="fa fa-pencil"> Edit</i></a>
+                                    <a href="#" style="display:none;color:blue;" id="save-token-21" onclick="return false;"><i class="fa fa-save"> Save </i> </a>
+                                    <a href="#" style="display:none;color:blue;" id="cancel-token-21" onclick="return false;"><i class="fa fa-times" style=""> Cancel</i> </a>
+                                </div>
+                            </div>
+                            @endrole
 	                    </div><!-- .col -->
 	                    <div class="col-xl-5 col-md-6">
-	                        <div class="service-item animated" data-animate="fadeInUp" data-delay=".5">
+	                        <div class="service-item animated" data-animate="fadeInUp" data-delay=".5" id="txt-token-22">
 	                            <div class="service-icon mx-auto mx-lg-0">
 	                                <img src="{{asset('landingpage/images/zinnia/service-icon-b.png')}}" alt="icon">
 	                            </div>
-	                            <h5 class="service-title">Responsive Design</h5>
-	                            <p>Lorem ipsum dolor sit amet, cons ectetur adipiscing elit, sed do eiusm od tempor incididunt.</p>
-	                        </div>
+	                            <h5 class="service-title">{!!
+                                    LandingPageContent::getJsonData('token_22', 'token_22', 'title')
+                                !!}</h5>
+	                            <p>{!!
+                                    LandingPageContent::getJsonData('token_22', 'token_22', 'content')
+                                !!}</p>
+                            </div>
+                            @role('administrator')
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <a href="#" style="color:blue;" id="edit-token-22" onclick="return false;"><i class="fa fa-pencil"> Edit</i></a>
+                                    <a href="#" style="display:none;color:blue;" id="save-token-22" onclick="return false;"><i class="fa fa-save"> Save </i> </a>
+                                    <a href="#" style="display:none;color:blue;" id="cancel-token-22" onclick="return false;"><i class="fa fa-times" style=""> Cancel</i> </a>
+                                </div>
+                            </div>
+                            @endrole
 	                    </div><!-- .col -->
 	                    <div class="col-xl-5 col-md-6">
-	                        <div class="service-item animated" data-animate="fadeInUp" data-delay=".6">
+	                        <div class="service-item animated" data-animate="fadeInUp" data-delay=".6" id="txt-token-23">
 	                            <div class="service-icon mx-auto mx-lg-0">
 	                                <img src="{{asset('landingpage/images/zinnia/service-icon-c.png')}}" alt="icon">
 	                            </div>
-	                            <h5 class="service-title">Easy to Communicate</h5>
-	                            <p>Lorem ipsum dolor sit amet, cons ectetur adipiscing elit, sed do eiusm od tempor incididunt.</p>
-	                        </div>
+	                            <h5 class="service-title">{!!
+                                    LandingPageContent::getJsonData('token_23', 'token_23', 'title')
+                                !!}</h5>
+	                            <p>{!!
+                                    LandingPageContent::getJsonData('token_23', 'token_23', 'content')
+                                !!}</p>
+                            </div>
+                            @role('administrator')
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <a href="#" style="color:blue;" id="edit-token-23" onclick="return false;"><i class="fa fa-pencil"> Edit</i></a>
+                                    <a href="#" style="display:none;color:blue;" id="save-token-23" onclick="return false;"><i class="fa fa-save"> Save </i> </a>
+                                    <a href="#" style="display:none;color:blue;" id="cancel-token-23" onclick="return false;"><i class="fa fa-times" style=""> Cancel</i> </a>
+                                </div>
+                            </div>
+                            @endrole
 	                    </div><!-- .col -->
 	                    <div class="col-xl-5 col-md-6">
-	                        <div class="service-item animated" data-animate="fadeInUp" data-delay=".7">
+	                        <div class="service-item animated" data-animate="fadeInUp" data-delay=".7" id="txt-token-24">
 	                            <div class="service-icon mx-auto mx-lg-0">
 	                                <img src="{{asset('landingpage/images/zinnia/service-icon-d.png')}}" alt="icon">
 	                            </div>
-	                            <h5 class="service-title">Safe &amp; Secure</h5>
-	                            <p>Lorem ipsum dolor sit amet, cons ectetur adipiscing elit, sed do eiusm od tempor incididunt.</p>
-	                        </div>
+	                            <h5 class="service-title">{!!
+                                    LandingPageContent::getJsonData('token_24', 'token_24', 'title')
+                                !!}</h5>
+	                            <p>{!!
+                                    LandingPageContent::getJsonData('token_24', 'token_24', 'content')
+                                !!}</p>
+                            </div>
+                            @role('administrator')
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <a href="#" style="color:blue;" id="edit-token-24" onclick="return false;"><i class="fa fa-pencil"> Edit</i></a>
+                                    <a href="#" style="display:none;color:blue;" id="save-token-24" onclick="return false;"><i class="fa fa-save"> Save </i> </a>
+                                    <a href="#" style="display:none;color:blue;" id="cancel-token-24" onclick="return false;"><i class="fa fa-times" style=""> Cancel</i> </a>
+                                </div>
+                            </div>
+                            @endrole
 	                    </div><!-- .col -->
 	                </div><!-- .row -->
 	                <ul class="btns text-center text-lg-left animated" data-animate="fadeInUp" data-delay=".8">
@@ -800,10 +942,23 @@
             <div class="container">
                 <div class="row justify-content-center text-center">
                     <div class="col-xl-6 col-lg-8">
-                        <div class="section-head-s7">
-                            <h2 class="section-title-s7 animated" data-animate="fadeInUp" data-delay=".1">Executive team</h2>
-                            <p class="animated" data-animate="fadeInUp" data-delay=".2">The EASTPAC Team combines a passion for esports, industry experise &amp; proven record in finance, development, marketing & licensing.</p>
+                        <div class="section-head-s7" id="txt-team">
+                            <h2 class="section-title-s7 animated" data-animate="fadeInUp" data-delay=".1">{!!
+                                LandingPageContent::getJsonData('team', 'team', 'title')
+                            !!}</h2>
+                            <p class="animated" data-animate="fadeInUp" data-delay=".2">{!!
+                                LandingPageContent::getJsonData('team', 'team', 'content')
+                            !!}</p>
                         </div>
+                        @role('administrator')
+                        <div class="row" style="">
+                            <div class="col-md-12" style="margin-bottom:40px;">
+                                <a href="#" style="color:blue;" id="edit-team" onclick="return false;"><i class="fa fa-pencil"> Edit</i></a>
+                                <a href="#" style="display:none;color:blue;" id="save-team" onclick="return false;"><i class="fa fa-save"> Save </i> </a>
+                                <a href="#" style="display:none;color:blue;" id="cancel-team" onclick="return false;"><i class="fa fa-times" style=""> Cancel</i> </a>
+                            </div>
+                        </div>
+                        @endrole
                     </div>
                 </div>
                 <div class="row justify-content-center text-center">
@@ -1155,10 +1310,23 @@
 		<div class="container">
 			<div class="row justify-content-center text-center">
 				<div class="col-md-7">
-					<div class="section-head-s7">
-						<h2 class="section-title-s7 animated text-section" data-animate="fadeInUp" data-delay=".1">Frequently asked questions</h2>
-						<p class="animated text-section" data-animate="fadeInUp" data-delay=".2">Below we’ve provided a bit of EASTCOIN, EAST Token, cryptocurrencies, and few others. If you have any other questions, please get in touch using the contact form below.</p>
-					</div>
+					<div class="section-head-s7" id="txt-faq">
+						<h2 class="section-title-s7 animated text-section" data-animate="fadeInUp" data-delay=".1">{!!
+                            LandingPageContent::getJsonData('faq', 'faq', 'title')
+                        !!}</h2>
+						<p class="animated text-section" data-animate="fadeInUp" data-delay=".2">{!!
+                            LandingPageContent::getJsonData('faq', 'faq', 'content')
+                        !!}</p>
+                    </div>
+                    @role('administrator')
+                    <div class="row" style="">
+                        <div class="col-md-12" style="margin-bottom:40px;">
+                            <a href="#" style="color:blue;" id="edit-faq" onclick="return false;"><i class="fa fa-pencil"> Edit</i></a>
+                            <a href="#" style="display:none;color:blue;" id="save-faq" onclick="return false;"><i class="fa fa-save"> Save </i> </a>
+                            <a href="#" style="display:none;color:blue;" id="cancel-faq" onclick="return false;"><i class="fa fa-times" style=""> Cancel</i> </a>
+                        </div>
+                    </div>
+                    @endrole
 				</div>
 			</div>
 			<div class="row align-items-center justify-content-center">
@@ -1653,6 +1821,64 @@
 
         // End Edit About 2
 
+        // Beneffit
+        var beneffit_temp = "";
+        $('#edit-beneffit').click(function(){
+            $('#txt-beneffit h2').attr('contenteditable', 'true');
+            $('#txt-beneffit p').attr('contenteditable', 'true');
+            $('#txt-beneffit').css('border','1px solid blue');
+            $('#txt-beneffit').focus();
+            $(this).hide();
+            $('#save-beneffit').show();
+            $('#cancel-beneffit').show();
+            beneffit_temp = $('#txt-beneffit').html();
+        });
+
+        $('#save-beneffit').click(function(){
+            $.ajax({
+                method: "put",
+                url: '{{route('editcontent.update')}}',
+                data: {
+                    _token: '{{csrf_token()}}',
+                    key: 'beneffit',
+                    jdata: { "beneffit": { "title": $('#txt-beneffit h2').text(), "content" : $('#txt-beneffit p').text() } }
+                },
+            }).done(function(res) {
+                swal({
+                    title: res.title,
+                    text: res.msg,
+                    icon: res.icon,
+                    type: res.type
+                }).then(function(){
+                    $('#txt-beneffit').show();
+                    $('#txt-beneffit').html($('#txt-beneffit').html());
+                    $('#txt-beneffit h2').attr('contenteditable', 'false');
+                    $('#txt-beneffit p').attr('contenteditable', 'false');
+                    $('#edit-beneffit').show();
+                    $('#save-beneffit').hide();
+                    $('#cancel-beneffit').hide();
+                    $('#txt-beneffit').css('border','none');
+                })
+
+            });
+
+        });
+
+        $('#cancel-beneffit').click(function(){
+            $('#txt-beneffit').show();
+            $('#txt-beneffit').html(beneffit_temp);
+            $('#txt-beneffit h2').attr('contenteditable', 'false');
+            $('#txt-beneffit p').attr('contenteditable', 'false');
+            $('#edit-beneffit').show();
+            $('#save-beneffit').hide();
+            $('#cancel-beneffit').hide();
+            $('#txt-beneffit').css('border','none');
+        });
+
+        // End Beneffit
+
+        // banner
+
         var txt_banner_1_temp = "";
         $('#txt-banner-1').click(function() {
             txt_banner_1_temp = $('#txt-banner-1').html();
@@ -1703,6 +1929,716 @@
             });
         });
         // End Text Banner 1
+
+        // Token 1
+        var token_1_temp = ""
+        $('#edit-token-1').click(function() {
+            $('#edit-token-1').hide();
+            $('#txt-token-1 h5').attr('contenteditable', 'true');
+            $('#txt-token-1 span').attr('contenteditable', 'true');
+            $('#txt-token-1').css('border','1px solid yellow');
+            $('#txt-token-1').focus();
+            $('#save-token-1').show();
+            $('#cancel-token-1').show();
+            token_1_temp = $('#txt-token-1').html();
+        });
+
+        $('#cancel-token-1').click(function() {
+            $('#edit-token-1').show();
+            $('#txt-token-1').html(token_1_temp);
+            $('#txt-token-1 h5').attr('contenteditable', 'false');
+            $('#txt-token-1 span').attr('contenteditable', 'false');
+            $('#txt-token-1').css('border','none');
+            $('#save-token-1').hide();
+            $('#cancel-token-1').hide();
+        });
+
+        $('#save-token-1').click(function() {
+            $.ajax({
+                method: "put",
+                url: '{{route('editcontent.update')}}',
+                data: {
+                    _token: '{{csrf_token()}}',
+                    key: 'token_1',
+                    jdata: {
+                        "token_1": {
+                                "txt_1" : $('#txt-token-1 h5').text(),
+                                "txt_2" : $('#txt-token-1 span').text(),
+                            }
+                    }
+                }
+            }).done(function(res) {
+                swal({
+                    title: res.title,
+                    text: res.msg,
+                    icon: res.icon,
+                    type: res.type
+                }).then(function(){
+                    $('#txt-token-1').css('border', 'none');
+                    $('#save-token-1').hide();
+                    $('#cancel-token-1').hide();
+                    $('#edit-token-1').show();
+                    if(res.type == 'error') {
+                        $('#txt-token-1').html(token_1_temp);
+                        $('#txt-token-1 h5').attr('contenteditable', 'false');
+                        $('#txt-token-1 span').attr('contenteditable', 'false');
+                    } else {
+                        $('#txt-token-1').html($('#txt-token-1').html());
+                        $('#txt-token-1 h5').attr('contenteditable', 'false');
+                        $('#txt-token-1 span').attr('contenteditable', 'false');
+
+                    }
+
+                })
+
+            });
+        });
+        // End Token 1
+
+        // Token 2
+        var token_2_temp = ""
+        $('#edit-token-2').click(function() {
+            $('#edit-token-2').hide();
+            token_2_temp = $('#txt-token-2').html();
+            $('#txt-token-2 h5').attr('contenteditable', 'true');
+            $('#txt-token-2 span').attr('contenteditable', 'true');
+            $('#txt-token-2').css('border','1px solid yellow');
+            $('#txt-token-2').focus();
+            $('#save-token-2').show();
+            $('#cancel-token-2').show();
+        });
+
+        $('#cancel-token-2').click(function() {
+            $('#edit-token-2').show();
+            $('#txt-token-2').html(token_2_temp);
+            $('#txt-token-2 h5').attr('contenteditable', 'false');
+            $('#txt-token-2 span').attr('contenteditable', 'false');
+            $('#txt-token-2').css('border','none');
+            $('#save-token-2').hide();
+            $('#cancel-token-2').hide();
+        });
+
+        $('#save-token-2').click(function() {
+            $.ajax({
+                method: "put",
+                url: '{{route('editcontent.update')}}',
+                data: {
+                    _token: '{{csrf_token()}}',
+                    key: 'token_2',
+                    jdata: {
+                        "token_2": {
+                                "txt_1" : $('#txt-token-2 h5').text(),
+                                "txt_2" : $('#txt-token-2 span').text(),
+                            }
+                    }
+                }
+            }).done(function(res) {
+                swal({
+                    title: res.title,
+                    text: res.msg,
+                    icon: res.icon,
+                    type: res.type
+                }).then(function(){
+                    $('#txt-token-2').css('border', 'none');
+                    $('#save-token-2').hide();
+                    $('#cancel-token-2').hide();
+                    $('#edit-token-2').show();
+                    if(res.type == 'error') {
+                        $('#txt-token-2').html(token_2_temp);
+                        $('#txt-token-2 h5').attr('contenteditable', 'false');
+                        $('#txt-token-2 span').attr('contenteditable', 'false');
+                    } else {
+                        $('#txt-token-2').html($('#txt-token-2').html());
+                        $('#txt-token-2 h5').attr('contenteditable', 'false');
+                        $('#txt-token-2 span').attr('contenteditable', 'false');
+
+                    }
+
+                })
+
+            });
+        });
+        // End Token 2
+
+        // Token 3
+        var token_3_temp = ""
+        $('#edit-token-3').click(function() {
+            $('#edit-token-3').hide();
+            $('#txt-token-3 h5').attr('contenteditable', 'true');
+            $('#txt-token-3 span').attr('contenteditable', 'true');
+            $('#txt-token-3').css('border','1px solid yellow');
+            $('#txt-token-3').focus();
+            $('#save-token-3').show();
+            $('#cancel-token-3').show();
+            token_3_temp = $('#txt-token-3').html();
+        });
+
+        $('#cancel-token-3').click(function() {
+            $('#edit-token-3').show();
+            $('#txt-token-3 h5').attr('contenteditable', 'false');
+            $('#txt-token-3 span').attr('contenteditable', 'false');
+            $('#txt-token-3').css('border','none');
+            $('#save-token-3').hide();
+            $('#cancel-token-3').hide();
+            $('#txt-token-3').html(token_3_temp);
+        });
+
+        $('#save-token-3').click(function() {
+            $.ajax({
+                method: "put",
+                url: '{{route('editcontent.update')}}',
+                data: {
+                    _token: '{{csrf_token()}}',
+                    key: 'token_3',
+                    jdata: {
+                        "token_3": {
+                                "txt_1" : $('#txt-token-3 h5').text(),
+                                "txt_2" : $('#txt-token-3 span').text(),
+                            }
+                    }
+                }
+            }).done(function(res) {
+                swal({
+                    title: res.title,
+                    text: res.msg,
+                    icon: res.icon,
+                    type: res.type
+                }).then(function(){
+                    $('#txt-token-3').css('border', 'none');
+                    $('#save-token-3').hide();
+                    $('#cancel-token-3').hide();
+                    $('#edit-token-3').show();
+                    if(res.type == 'error') {
+                        $('#txt-token-3').html(token_3_temp);
+                        $('#txt-token-3 h5').attr('contenteditable', 'false');
+                        $('#txt-token-3 span').attr('contenteditable', 'false');
+                    } else {
+                        $('#txt-token-3').html($('#txt-token-3').html());
+                        $('#txt-token-3 h5').attr('contenteditable', 'false');
+                        $('#txt-token-3 span').attr('contenteditable', 'false');
+
+                    }
+
+                })
+
+            });
+        });
+        // End Token 3
+
+        // Token 4
+        var token_4_temp = ""
+        $('#edit-token-4').click(function() {
+            $('#edit-token-4').hide();
+            $('#txt-token-4 h5').attr('contenteditable', 'true');
+            $('#txt-token-4 span').attr('contenteditable', 'true');
+            $('#txt-token-4').css('border','1px solid yellow');
+            $('#txt-token-4').focus();
+            $('#save-token-4').show();
+            $('#cancel-token-4').show();
+            token_4_temp = $('#txt-token-4').html();
+        });
+
+        $('#cancel-token-4').click(function() {
+            $('#edit-token-4').show();
+            $('#txt-token-4 h5').attr('contenteditable', 'false');
+            $('#txt-token-4 span').attr('contenteditable', 'false');
+            $('#txt-token-4').css('border','none');
+            $('#save-token-4').hide();
+            $('#cancel-token-4').hide();
+            $('#txt-token-4').html(token_4_temp);
+        });
+
+        $('#save-token-4').click(function() {
+            $.ajax({
+                method: "put",
+                url: '{{route('editcontent.update')}}',
+                data: {
+                    _token: '{{csrf_token()}}',
+                    key: 'token_4',
+                    jdata: {
+                        "token_4": {
+                                "txt_1" : $('#txt-token-4 h5').text(),
+                                "txt_2" : $('#txt-token-4 span').text(),
+                            }
+                    }
+                }
+            }).done(function(res) {
+                swal({
+                    title: res.title,
+                    text: res.msg,
+                    icon: res.icon,
+                    type: res.type
+                }).then(function(){
+                    $('#txt-token-4').css('border', 'none');
+                    $('#save-token-4').hide();
+                    $('#cancel-token-4').hide();
+                    $('#edit-token-4').show();
+                    if(res.type == 'error') {
+                        $('#txt-token-4').html(token_4_temp);
+                        $('#txt-token-4 h5').attr('contenteditable', 'false');
+                        $('#txt-token-4 span').attr('contenteditable', 'false');
+                    } else {
+                        $('#txt-token-4').html($('#txt-token-4').html());
+                        $('#txt-token-4 h5').attr('contenteditable', 'false');
+                        $('#txt-token-4 span').attr('contenteditable', 'false');
+
+                    }
+
+                })
+
+            });
+        });
+        // End Token 4
+
+        // Token 11
+        var token_11_temp = ""
+        $('#edit-token-11').click(function() {
+            $('#edit-token-11').hide();
+            token_11_temp = $('#txt-token-11').html();
+            $('#txt-token-11 h2').attr('contenteditable', 'true');
+            $('#txt-token-11 p').attr('contenteditable', 'true');
+            $('#txt-token-11').css('border','1px solid yellow');
+            $('#txt-token-11').focus();
+            $('#save-token-11').show();
+            $('#cancel-token-11').show();
+
+        });
+
+        $('#cancel-token-11').click(function() {
+            $('#edit-token-11').show();
+            $('#txt-token-11').html(token_11_temp);
+            $('#txt-token-11 h2').attr('contenteditable', 'false');
+            $('#txt-token-11 p').attr('contenteditable', 'false');
+            $('#txt-token-11').css('border','none');
+            $('#save-token-11').hide();
+            $('#cancel-token-11').hide();
+        });
+
+        $('#save-token-11').click(function() {
+            $.ajax({
+                method: "put",
+                url: '{{route('editcontent.update')}}',
+                data: {
+                    _token: '{{csrf_token()}}',
+                    key: 'token_11',
+                    jdata: {
+                        "token_11": {
+                                "title" : $('#txt-token-11 h2').text(),
+                                "content" : $('#txt-token-11 p').text(),
+                            }
+                    }
+                }
+            }).done(function(res) {
+                swal({
+                    title: res.title,
+                    text: res.msg,
+                    icon: res.icon,
+                    type: res.type
+                }).then(function(){
+                    $('#txt-token-11').css('border', 'none');
+                    $('#save-token-11').hide();
+                    $('#cancel-token-11').hide();
+                    $('#edit-token-11').show();
+                    if(res.type == 'error') {
+                        $('#txt-token-11').html(token_11_temp);
+                        $('#txt-token-11 h2').attr('contenteditable', 'false');
+                        $('#txt-token-11 p').attr('contenteditable', 'false');
+                    } else {
+                        $('#txt-token-11').html($('#txt-token-11').html());
+                        $('#txt-token-11 h2').attr('contenteditable', 'false');
+                        $('#txt-token-11 p').attr('contenteditable', 'false');
+
+                    }
+
+                })
+
+            });
+        });
+        // End Token 11
+
+        // Token 21
+        var token_21_temp = ""
+        $('#edit-token-21').click(function() {
+            $('#edit-token-21').hide();
+            token_21_temp = $('#txt-token-21').html();
+            $('#txt-token-21 h5').attr('contenteditable', 'true');
+            $('#txt-token-21 p').attr('contenteditable', 'true');
+            $('#txt-token-21').css('border','1px solid yellow');
+            $('#txt-token-21').focus();
+            $('#save-token-21').show();
+            $('#cancel-token-21').show();
+        });
+
+        $('#cancel-token-21').click(function() {
+            $('#edit-token-21').show();
+            $('#txt-token-21').html(token_21_temp);
+            $('#txt-token-21 h5').attr('contenteditable', 'false');
+            $('#txt-token-21 p').attr('contenteditable', 'false');
+            $('#txt-token-21').css('border','none');
+            $('#save-token-21').hide();
+            $('#cancel-token-21').hide();
+        });
+
+        $('#save-token-21').click(function() {
+            $.ajax({
+                method: "put",
+                url: '{{route('editcontent.update')}}',
+                data: {
+                    _token: '{{csrf_token()}}',
+                    key: 'token_21',
+                    jdata: {
+                        "token_21": {
+                                "title" : $('#txt-token-21 h5').text(),
+                                "content" : $('#txt-token-21 p').text(),
+                            }
+                    }
+                }
+            }).done(function(res) {
+                swal({
+                    title: res.title,
+                    text: res.msg,
+                    icon: res.icon,
+                    type: res.type
+                }).then(function(){
+                    $('#txt-token-21').css('border', 'none');
+                    $('#save-token-21').hide();
+                    $('#cancel-token-21').hide();
+                    $('#edit-token-21').show();
+                    if(res.type == 'error') {
+                        $('#txt-token-21').html(token_21_temp);
+                        $('#txt-token-21 h5').attr('contenteditable', 'false');
+                        $('#txt-token-21 p').attr('contenteditable', 'false');
+                    } else {
+                        $('#txt-token-21').html($('#txt-token-21').html());
+                        $('#txt-token-21 h5').attr('contenteditable', 'false');
+                        $('#txt-token-21 p').attr('contenteditable', 'false');
+                    }
+
+                })
+
+            });
+        });
+        // End Token 21
+
+        // Token 22
+        var token_21_temp = ""
+        $('#edit-token-22').click(function() {
+            $('#edit-token-22').hide();
+            token_22_temp = $('#txt-token-22').html();
+            $('#txt-token-22 h5').attr('contenteditable', 'true');
+            $('#txt-token-22 p').attr('contenteditable', 'true');
+            $('#txt-token-22').css('border','1px solid yellow');
+            $('#txt-token-22').focus();
+            $('#save-token-22').show();
+            $('#cancel-token-22').show();
+        });
+
+        $('#cancel-token-22').click(function() {
+            $('#edit-token-22').show();
+            $('#txt-token-22').html(token_22_temp);
+            $('#txt-token-22 h5').attr('contenteditable', 'false');
+            $('#txt-token-22 p').attr('contenteditable', 'false');
+            $('#txt-token-22').css('border','none');
+            $('#save-token-22').hide();
+            $('#cancel-token-22').hide();
+        });
+
+        $('#save-token-22').click(function() {
+            $.ajax({
+                method: "put",
+                url: '{{route('editcontent.update')}}',
+                data: {
+                    _token: '{{csrf_token()}}',
+                    key: 'token_22',
+                    jdata: {
+                        "token_22": {
+                                "title" : $('#txt-token-22 h5').text(),
+                                "content" : $('#txt-token-22 p').text(),
+                            }
+                    }
+                }
+            }).done(function(res) {
+                swal({
+                    title: res.title,
+                    text: res.msg,
+                    icon: res.icon,
+                    type: res.type
+                }).then(function(){
+                    $('#txt-token-22').css('border', 'none');
+                    $('#save-token-22').hide();
+                    $('#cancel-token-22').hide();
+                    $('#edit-token-22').show();
+                    if(res.type == 'error') {
+                        $('#txt-token-22').html(token_22_temp);
+                        $('#txt-token-22 h5').attr('contenteditable', 'false');
+                        $('#txt-token-22 p').attr('contenteditable', 'false');
+                    } else {
+                        $('#txt-token-22').html($('#txt-token-22').html());
+                        $('#txt-token-22 h5').attr('contenteditable', 'false');
+                        $('#txt-token-22 p').attr('contenteditable', 'false');
+                    }
+
+                })
+
+            });
+        });
+        // End Token 22
+
+        // Token 23
+        var token_21_temp = ""
+        $('#edit-token-23').click(function() {
+            $('#edit-token-23').hide();
+            token_23_temp = $('#txt-token-23').html();
+            $('#txt-token-23 h5').attr('contenteditable', 'true');
+            $('#txt-token-23 p').attr('contenteditable', 'true');
+            $('#txt-token-23').css('border','1px solid yellow');
+            $('#txt-token-23').focus();
+            $('#save-token-23').show();
+            $('#cancel-token-23').show();
+        });
+
+        $('#cancel-token-23').click(function() {
+            $('#edit-token-23').show();
+            $('#txt-token-23').html(token_23_temp);
+            $('#txt-token-23 h5').attr('contenteditable', 'false');
+            $('#txt-token-23 p').attr('contenteditable', 'false');
+            $('#txt-token-23').css('border','none');
+            $('#save-token-23').hide();
+            $('#cancel-token-23').hide();
+        });
+
+        $('#save-token-23').click(function() {
+            $.ajax({
+                method: "put",
+                url: '{{route('editcontent.update')}}',
+                data: {
+                    _token: '{{csrf_token()}}',
+                    key: 'token_23',
+                    jdata: {
+                        "token_23": {
+                                "title" : $('#txt-token-23 h5').text(),
+                                "content" : $('#txt-token-23 p').text(),
+                            }
+                    }
+                }
+            }).done(function(res) {
+                swal({
+                    title: res.title,
+                    text: res.msg,
+                    icon: res.icon,
+                    type: res.type
+                }).then(function(){
+                    $('#txt-token-23').css('border', 'none');
+                    $('#save-token-23').hide();
+                    $('#cancel-token-23').hide();
+                    $('#edit-token-23').show();
+                    if(res.type == 'error') {
+                        $('#txt-token-23').html(token_23_temp);
+                        $('#txt-token-23 h5').attr('contenteditable', 'false');
+                        $('#txt-token-23 p').attr('contenteditable', 'false');
+                    } else {
+                        $('#txt-token-23').html($('#txt-token-23').html());
+                        $('#txt-token-23 h5').attr('contenteditable', 'false');
+                        $('#txt-token-23 p').attr('contenteditable', 'false');
+                    }
+
+                })
+
+            });
+        });
+        // End Token 23
+
+        // Token 24
+        var token_24_temp = ""
+        $('#edit-token-24').click(function() {
+            $('#edit-token-24').hide();
+            token_24_temp = $('#txt-token-24').html();
+            $('#txt-token-24 h5').attr('contenteditable', 'true');
+            $('#txt-token-24 p').attr('contenteditable', 'true');
+            $('#txt-token-24').css('border','1px solid yellow');
+            $('#txt-token-24').focus();
+            $('#save-token-24').show();
+            $('#cancel-token-24').show();
+        });
+
+        $('#cancel-token-24').click(function() {
+            $('#edit-token-24').show();
+            $('#txt-token-24').html(token_24_temp);
+            $('#txt-token-24 h5').attr('contenteditable', 'false');
+            $('#txt-token-24 p').attr('contenteditable', 'false');
+            $('#txt-token-24').css('border','none');
+            $('#save-token-24').hide();
+            $('#cancel-token-24').hide();
+        });
+
+        $('#save-token-24').click(function() {
+            $.ajax({
+                method: "put",
+                url: '{{route('editcontent.update')}}',
+                data: {
+                    _token: '{{csrf_token()}}',
+                    key: 'token_24',
+                    jdata: {
+                        "token_24": {
+                                "title" : $('#txt-token-24 h5').text(),
+                                "content" : $('#txt-token-24 p').text(),
+                            }
+                    }
+                }
+            }).done(function(res) {
+                swal({
+                    title: res.title,
+                    text: res.msg,
+                    icon: res.icon,
+                    type: res.type
+                }).then(function(){
+                    $('#txt-token-24').css('border', 'none');
+                    $('#save-token-24').hide();
+                    $('#cancel-token-24').hide();
+                    $('#edit-token-24').show();
+                    if(res.type == 'error') {
+                        $('#txt-token-24').html(token_24_temp);
+                        $('#txt-token-24 h5').attr('contenteditable', 'false');
+                        $('#txt-token-24 p').attr('contenteditable', 'false');
+                    } else {
+                        $('#txt-token-24').html($('#txt-token-24').html());
+                        $('#txt-token-24 h5').attr('contenteditable', 'false');
+                        $('#txt-token-24 p').attr('contenteditable', 'false');
+                    }
+
+                })
+
+            });
+        });
+        // End Token 24
+
+        // Team
+        var team_temp = ""
+        $('#edit-team').click(function() {
+            $('#edit-team').hide();
+            team_temp = $('#txt-team').html();
+            $('#txt-team h2').attr('contenteditable', 'true');
+            $('#txt-team p').attr('contenteditable', 'true');
+            $('#txt-team').css('border','1px solid yellow');
+            $('#txt-team').focus();
+            $('#save-team').show();
+            $('#cancel-team').show();
+        });
+
+        $('#cancel-team').click(function() {
+            $('#edit-team').show();
+            $('#txt-team').html(team_temp);
+            $('#txt-team h2').attr('contenteditable', 'false');
+            $('#txt-team p').attr('contenteditable', 'false');
+            $('#txt-team').css('border','none');
+            $('#save-team').hide();
+            $('#cancel-team').hide();
+        });
+
+        $('#save-team').click(function() {
+            $.ajax({
+                method: "put",
+                url: '{{route('editcontent.update')}}',
+                data: {
+                    _token: '{{csrf_token()}}',
+                    key: 'team',
+                    jdata: {
+                        "team": {
+                                "title" : $('#txt-team h2').text(),
+                                "content" : $('#txt-team p').text(),
+                            }
+                    }
+                }
+            }).done(function(res) {
+                swal({
+                    title: res.title,
+                    text: res.msg,
+                    icon: res.icon,
+                    type: res.type
+                }).then(function(){
+                    $('#txt-team').css('border', 'none');
+                    $('#save-team').hide();
+                    $('#cancel-team').hide();
+                    $('#edit-team').show();
+                    if(res.type == 'error') {
+                        $('#txt-team').html(team_temp);
+                        $('#txt-team h2').attr('contenteditable', 'false');
+                        $('#txt-team p').attr('contenteditable', 'false');
+                    } else {
+                        $('#txt-team').html($('#txt-team').html());
+                        $('#txt-team h2').attr('contenteditable', 'false');
+                        $('#txt-team p').attr('contenteditable', 'false');
+                    }
+
+                })
+
+            });
+        });
+        // End Team
+
+        // Faq
+        var team_temp = ""
+        $('#edit-faq').click(function() {
+            $('#edit-faq').hide();
+            faq_temp = $('#txt-faq').html();
+            $('#txt-faq h2').attr('contenteditable', 'true');
+            $('#txt-faq p').attr('contenteditable', 'true');
+            $('#txt-faq').css('border','1px solid yellow');
+            $('#txt-faq').focus();
+            $('#save-faq').show();
+            $('#cancel-faq').show();
+        });
+
+        $('#cancel-faq').click(function() {
+            $('#edit-faq').show();
+            $('#txt-faq').html(faq_temp);
+            $('#txt-faq h2').attr('contenteditable', 'false');
+            $('#txt-faq p').attr('contenteditable', 'false');
+            $('#txt-faq').css('border','none');
+            $('#save-faq').hide();
+            $('#cancel-faq').hide();
+        });
+
+        $('#save-faq').click(function() {
+            $.ajax({
+                method: "put",
+                url: '{{route('editcontent.update')}}',
+                data: {
+                    _token: '{{csrf_token()}}',
+                    key: 'faq',
+                    jdata: {
+                        "faq": {
+                                "title" : $('#txt-faq h2').text(),
+                                "content" : $('#txt-faq p').text(),
+                            }
+                    }
+                }
+            }).done(function(res) {
+                swal({
+                    title: res.title,
+                    text: res.msg,
+                    icon: res.icon,
+                    type: res.type
+                }).then(function(){
+                    $('#txt-faq').css('border', 'none');
+                    $('#save-faq').hide();
+                    $('#cancel-faq').hide();
+                    $('#edit-faq').show();
+                    if(res.type == 'error') {
+                        $('#txt-faq').html(faq_temp);
+                        $('#txt-faq h2').attr('contenteditable', 'false');
+                        $('#txt-faq p').attr('contenteditable', 'false');
+                    } else {
+                        $('#txt-faq').html($('#txt-faq').html());
+                        $('#txt-faq h2').attr('contenteditable', 'false');
+                        $('#txt-faq p').attr('contenteditable', 'false');
+                    }
+
+                })
+
+            });
+        });
+        // End Faq
 
 
     </script>
