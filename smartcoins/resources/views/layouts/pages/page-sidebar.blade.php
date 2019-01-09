@@ -85,6 +85,21 @@
                     <li class=""><a href="{{ route('admin.usermanage') }}"><i class="fa fa-circle-o"></i> Manage User</a></li>
                 </ul>
             </li>
+            <li class="treeview
+                {{ (Route::currentRouteName() == "whitePaper.index") ? 'active' : '' }}">
+                <a href="#">
+                <i class="fa fa-key"></i> <span>Media</span>
+                <span class="pull-right-container">
+                    <i class="fa fa-angle-left pull-right"></i>
+                </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li class=""><a href="{{ route('whitePaper.index') }}"><i class="fa fa-circle-o"></i> File</a></li>
+                    <li class=""><a href="{{ route('images.index') }}"><i class="fa fa-circle-o"></i> Images</a></li>
+                    
+                        
+                </ul>
+            </li>
             <li class="{{ (Route::currentRouteName() == "admin.config.index") ? 'active' : '' }}"><a href="{{route('admin.config.index')}}"><i class="fa fa-gears"></i> <span>Site Config</span></a></li>
             @endrole
         </ul>

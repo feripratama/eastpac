@@ -103,6 +103,24 @@ Route::middleware(['auth','role:administrator'])->prefix('administrator')->group
     // bounty
     Route::get('/bounty', 'AdministratorController@bountyIndex')->name('admin.bounty');
     Route::post('/bounty/approve', 'AdministratorController@bountyApprove')->name('admin.bounty.approve');
+
+    //White Paper
+    Route::get('/white-paper', 'WhitePaperController@index')->name('whitePaper.index');
+    Route::get('/white-paper/create', 'WhitePaperController@create')->name('whitePaper.create');
+    Route::post('/white-paper/store', 'WhitePaperController@store')->name('whitePaper.store');
+    Route::post('white-paper/upload', 'WhitePaperController@upload')->name('uploadWhitePaper');
+    Route::get('/white-paper/edit/{id}', 'WhitePaperController@edit')->name('whitePaper.edit');
+    Route::post('/white-paper/update/{id}', 'WhitePaperController@update')->name('whitePaper.update');
+    Route::get('white-paper/delete/{id}', 'WhitePaperController@destroy')->name('WhitePaper.delete');
+
+    //Images
+    Route::get('/images', 'ImageController@index')->name('images.index');
+    Route::get('/images/create', 'ImageController@create')->name('images.create');
+    Route::post('/images/store', 'ImageController@store')->name('images.store');
+    Route::post('images/upload', 'ImageController@upload')->name('images.upload');
+    Route::get('/images/edit/{id}', 'ImageController@edit')->name('images.edit');
+    Route::post('/images/update/{id}', 'ImageController@update')->name('images.update');
+    Route::get('images/delete/{id}', 'ImageController@destroy')->name('images.destroy');
 });
 
 Route::middleware(['auth','role:administrator'])
