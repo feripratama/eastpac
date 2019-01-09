@@ -39,7 +39,7 @@ class LandingPageContentsTableSeeder extends Seeder
                 'key' => 'banner_1',
                 'json_data' => '{"banner_1":{"txt":"EASTPAC ICO STARTING SOON"}}',
                 'created_at' => '2019-01-09 00:00:00',
-                'updated_at' => '2019-01-08 09:24:33',
+                'updated_at' => '2019-01-09 12:41:21',
             ),
             3 => 
             array (
@@ -136,6 +136,14 @@ class LandingPageContentsTableSeeder extends Seeder
                 'json_data' => '{"faq":{"title":"Frequently asked questions","content":"Below we\\u2019ve provided a bit of EASTCOIN, EAST Token, cryptocurrencies, and few others. If you have any other questions, please get in touch using the contact form below."}}',
                 'created_at' => '2019-01-09 00:00:00',
                 'updated_at' => '2019-01-09 07:05:55',
+            ),
+            15 => 
+            array (
+                'id' => 16,
+                'key' => 'banner_2',
+                'json_data' => '{"banner_2":{"txt":"900,000 TAKENS ALREADY SOLD OUT"}}',
+                'created_at' => '2019-01-09 00:00:00',
+                'updated_at' => '2019-01-09 12:38:37',
             ),
         ));
         

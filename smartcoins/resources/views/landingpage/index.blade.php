@@ -26,6 +26,61 @@
         .text-section {
             color: #f9464a !important;
         }
+        .flip-logo{ animation: fliplogo 3s; }
+        @keyframes fliplogo{
+            0%{
+                transform: rotateY(0deg);
+            }
+            100%{
+                transform: rotateY(360deg);
+            }
+		}
+		
+		.info{
+			border-radius: 5px;
+			background-color: #ffffffcf;
+			visibility: visible;
+			animation-delay: 1.35s;
+			color: #8c282f;
+			padding: 5px 10px;
+			
+		}
+		.social-bottom{
+			flex-direction: row;
+			display: flex;
+			padding: 10px 0px;
+			margin-top: 10px;
+		}
+		.social-bottom li{
+			display: list-item;
+			margin: 0px 5px;		
+        }
+		.social-bottom a{
+			color: #fff;
+		    text-align: center;
+    		line-height: 24px;
+			width: 24px;
+			display: block;
+		    
+        }
+		.contact-info li span{
+			line-height: 15px;
+			font-size: 13px;
+		}
+		.contact-info li{
+			text-align: center;
+            font-weight: 500;	
+            width:33.33%;
+        }  
+        
+        .btn-edit{
+            background: #5cb85c !important;
+            padding: 6px 12px;
+            min-width: auto;
+            line-height: 10px;
+            margin-right: 0px;
+            border-radius: 12px !important;
+        }
     </style>
 </head>
 
@@ -92,8 +147,8 @@
                                 <h1 class="animated" data-animate="fadeInUp" data-delay="1.25" id="txt-banner-1">{!!LandingPageContent::getJsonData('banner_1', 'banner_1', 'txt')!!}<br class="d-none d-xl-block"></h1>
                                 <div class="row" id="txt-banner-1-ctrl" style="display:none">
                                     <div class="col-md-12">
-                                        <a href="#" id="txt-banner-1-cancel" class="pull-right" style="color:white;"> <i class="fas fa-times"> </i> cancel </a>&nbsp;
-                                        <a href="#" id="txt-banner-1-save" class="pull-right" style="color:white;"> <i class="fas fa-save"> </i> save </a>
+                                        <a href="#" id="txt-banner-1-cancel" class="btn btn-success btn-edit pull-right" style="color:white;"> <i class="fas fa-times"> </i> cancel </a>&nbsp;
+                                        <a href="#" id="txt-banner-1-save" class="btn btn-success btn-edit pull-right" style="color:white;"> <i class="fas fa-save"> </i> save </a>
                                     </div>
                                 </div>
                                 @else
@@ -104,7 +159,21 @@
                                     <br class="d-none d-xl-block">
                                 </h1>
                                 @endrole
-                                <h3>900,000 TAKENS ALREADY SOLD OUT</h3>
+                                @role('administrator')
+                                <h3 id="txt-banner-2">{!!
+                                        LandingPageContent::getJsonData('banner_2', 'banner_2', 'txt')
+                                    !!}</h3>
+                                <div class="row" id="txt-banner-2-ctrl" style="display:none">
+                                    <div class="col-md-12">
+                                        <a href="#" id="txt-banner-2-cancel" class="btn btn-success btn-edit pull-right" style="color:white;"> <i class="fas fa-times"> </i> cancel </a>&nbsp;
+                                        <a href="#" id="txt-banner-2-save" class="btn btn-success btn-edit pull-right" style="color:white;"> <i class="fas fa-save"> </i> save </a>
+                                    </div>
+                                </div>
+                                @else
+                                <h3 id="txt-banner-2">{!!
+                                        LandingPageContent::getJsonData('banner_2', 'banner_2', 'txt')
+                                    !!}</h3>
+                                @endrole
 								<div class="gaps size-1x d-none d-md-block"></div>
 								<p class="lead animated" data-animate="fadeInUp" data-delay="1.35">The next offer will start again at 21:30</p>
 								<div class="gaps size-1x d-none d-md-block"></div>
@@ -195,9 +264,9 @@
                     @role('administrator')
                     <div class="row">
                         <div class="col-md-12 text-center">
-                            <a href="#" style="color:blue;" id="edit-about-1" onclick="return false;"><i class="fa fa-pencil"> Edit</i></a>
-                            <a href="#" style="display:none;color:blue;" id="save-about-1" onclick="return false;"><i class="fa fa-save"> Save</i></a>
-                            <a href="#" style="display:none;color:red;" id="cancel-about-1" onclick="return false;"><i class="fa fa-times"> Cancel</i></a>
+                            <a href="#" class="btn btn-success btn-edit pull-right" style="color:blue;" id="edit-about-1" onclick="return false;"><i class="fa fa-pencil"> Edit</i></a>
+                            <a href="#" class="btn btn-success btn-edit pull-right" style="display:none;color:blue;" id="save-about-1" onclick="return false;"><i class="fa fa-save"> Save</i></a>
+                            <a href="#" class="btn btn-success btn-edit pull-right" style="display:none;color:red;" id="cancel-about-1" onclick="return false;"><i class="fa fa-times"> Cancel</i></a>
                         </div>
                     </div>
                     @endrole
@@ -248,9 +317,9 @@
                     @role('administrator')
                     <div class="row">
                         <div class="col-md-12">
-                            <a href="#" style="color:blue;" id="edit-about-2" onclick="return false;"><i class="fa fa-pencil"> Edit</i></a>
-                            <a href="#" style="display:none;color:blue;" id="save-about-2" onclick="return false;"><i class="fa fa-save"> Save </i> </a>
-                            <a href="#" style="display:none;color:red;" id="cancel-about-2" onclick="return false;"><i class="fa fa-times" style=""> Cancel</i> </a>
+                            <a href="#" class="btn btn-success btn-edit pull-right" style="color:blue;" id="edit-about-2" onclick="return false;"><i class="fa fa-pencil"> Edit</i></a>
+                            <a href="#" class="btn btn-success btn-edit pull-right" style="display:none;color:blue;" id="save-about-2" onclick="return false;"><i class="fa fa-save"> Save </i> </a>
+                            <a href="#" class="btn btn-success btn-edit pull-right" style="display:none;color:red;" id="cancel-about-2" onclick="return false;"><i class="fa fa-times" style=""> Cancel</i> </a>
                         </div>
                     </div>
                     @endrole
@@ -282,9 +351,9 @@
                     @role('administrator')
                     <div class="row">
                         <div class="col-md-12">
-                            <a href="#" style="color:blue;" id="edit-beneffit" onclick="return false;"><i class="fa fa-pencil"> Edit</i></a>
-                            <a href="#" style="display:none;color:blue;" id="save-beneffit" onclick="return false;"><i class="fa fa-save"> Save </i> </a>
-                            <a href="#" style="display:none;color:red;" id="cancel-beneffit" onclick="return false;"><i class="fa fa-times" style=""> Cancel</i> </a>
+                            <a href="#" class="btn btn-success btn-edit pull-right" style="color:blue;" id="edit-beneffit" onclick="return false;"><i class="fa fa-pencil"> Edit</i></a>
+                            <a href="#" class="btn btn-success btn-edit pull-right" style="display:none;color:blue;" id="save-beneffit" onclick="return false;"><i class="fa fa-save"> Save </i> </a>
+                            <a href="#" class="btn btn-success btn-edit pull-right" style="display:none;color:red;" id="cancel-beneffit" onclick="return false;"><i class="fa fa-times" style=""> Cancel</i> </a>
                         </div>
                     </div>
                     @endrole
@@ -378,9 +447,9 @@
                         @role('administrator')
                         <div class="row">
                             <div class="col-md-12">
-                                <a href="#" style="color:yellow;" id="edit-token-1" onclick="return false;"><i class="fa fa-pencil"> Edit</i></a>
-                                <a href="#" style="display:none;color:yellow;" id="save-token-1" onclick="return false;"><i class="fa fa-save"> Save </i> </a>
-                                <a href="#" style="display:none;color:yellow;" id="cancel-token-1" onclick="return false;"><i class="fa fa-times" style=""> Cancel</i> </a>
+                                <a href="#" class="btn btn-success btn-edit" style="color:yellow;" id="edit-token-1" onclick="return false;"><i class="fa fa-pencil"> Edit</i></a>
+                                <a href="#" class="btn btn-success btn-edit" style="display:none;color:yellow;" id="save-token-1" onclick="return false;"><i class="fa fa-save"> Save </i> </a>
+                                <a href="#" class="btn btn-success btn-edit" style="display:none;color:yellow;" id="cancel-token-1" onclick="return false;"><i class="fa fa-times" style=""> Cancel</i> </a>
                             </div>
                         </div>
                         @endrole
@@ -399,9 +468,9 @@
                         @role('administrator')
                         <div class="row">
                             <div class="col-md-12">
-                                <a href="#" style="color:yellow;" id="edit-token-2" onclick="return false;"><i class="fa fa-pencil"> Edit</i></a>
-                                <a href="#" style="display:none;color:yellow;" id="save-token-2" onclick="return false;"><i class="fa fa-save"> Save </i> </a>
-                                <a href="#" style="display:none;color:yellow;" id="cancel-token-2" onclick="return false;"><i class="fa fa-times" style=""> Cancel</i> </a>
+                                <a href="#" class="btn btn-success btn-edit" style="color:yellow;" id="edit-token-2" onclick="return false;"><i class="fa fa-pencil"> Edit</i></a>
+                                <a href="#" class="btn btn-success btn-edit" style="display:none;color:yellow;" id="save-token-2" onclick="return false;"><i class="fa fa-save"> Save </i> </a>
+                                <a href="#" class="btn btn-success btn-edit" style="display:none;color:yellow;" id="cancel-token-2" onclick="return false;"><i class="fa fa-times" style=""> Cancel</i> </a>
                             </div>
                         </div>
                         @endrole
@@ -420,9 +489,9 @@
                         @role('administrator')
                         <div class="row">
                             <div class="col-md-12">
-                                <a href="#" style="color:yellow;" id="edit-token-3" onclick="return false;"><i class="fa fa-pencil"> Edit</i></a>
-                                <a href="#" style="display:none;color:yellow;" id="save-token-3" onclick="return false;"><i class="fa fa-save"> Save </i> </a>
-                                <a href="#" style="display:none;color:yellow;" id="cancel-token-3" onclick="return false;"><i class="fa fa-times" style=""> Cancel</i> </a>
+                                <a href="#" class="btn btn-success btn-edit" style="color:yellow;" id="edit-token-3" onclick="return false;"><i class="fa fa-pencil"> Edit</i></a>
+                                <a href="#" class="btn btn-success btn-edit" style="display:none;color:yellow;" id="save-token-3" onclick="return false;"><i class="fa fa-save"> Save </i> </a>
+                                <a href="#" class="btn btn-success btn-edit" style="display:none;color:yellow;" id="cancel-token-3" onclick="return false;"><i class="fa fa-times" style=""> Cancel</i> </a>
                             </div>
                         </div>
                         @endrole
@@ -441,9 +510,9 @@
                         @role('administrator')
                         <div class="row">
                             <div class="col-md-12">
-                                <a href="#" style="color:yellow;" id="edit-token-4" onclick="return false;"><i class="fa fa-pencil"> Edit</i></a>
-                                <a href="#" style="display:none;color:yellow;" id="save-token-4" onclick="return false;"><i class="fa fa-save"> Save </i> </a>
-                                <a href="#" style="display:none;color:yellow;" id="cancel-token-4" onclick="return false;"><i class="fa fa-times" style=""> Cancel</i> </a>
+                                <a href="#" class="btn btn-success btn-edit" style="color:yellow;" id="edit-token-4" onclick="return false;"><i class="fa fa-pencil"> Edit</i></a>
+                                <a href="#" class="btn btn-success btn-edit" style="display:none;color:yellow;" id="save-token-4" onclick="return false;"><i class="fa fa-save"> Save </i> </a>
+                                <a href="#" class="btn btn-success btn-edit" style="display:none;color:yellow;" id="cancel-token-4" onclick="return false;"><i class="fa fa-times" style=""> Cancel</i> </a>
                             </div>
                         </div>
                         @endrole
@@ -677,9 +746,9 @@
                     @role('administrator')
                     <div class="row">
                         <div class="col-md-12">
-                            <a href="#" style="color:blue;" id="edit-token-11" onclick="return false;"><i class="fa fa-pencil"> Edit</i></a>
-                            <a href="#" style="display:none;color:blue;" id="save-token-11" onclick="return false;"><i class="fa fa-save"> Save </i> </a>
-                            <a href="#" style="display:none;color:blue;" id="cancel-token-11" onclick="return false;"><i class="fa fa-times" style=""> Cancel</i> </a>
+                            <a href="#" class="btn btn-success btn-edit pull-right" style="color:blue;" id="edit-token-11" onclick="return false;"><i class="fa fa-pencil"> Edit</i></a>
+                            <a href="#" class="btn btn-success btn-edit pull-right" style="display:none;color:blue;" id="save-token-11" onclick="return false;"><i class="fa fa-save"> Save </i> </a>
+                            <a href="#" class="btn btn-success btn-edit pull-right" style="display:none;color:blue;" id="cancel-token-11" onclick="return false;"><i class="fa fa-times" style=""> Cancel</i> </a>
                         </div>
                     </div>
                     @endrole
@@ -703,9 +772,9 @@
                             @role('administrator')
                             <div class="row">
                                 <div class="col-md-12">
-                                    <a href="#" style="color:blue;" id="edit-token-21" onclick="return false;"><i class="fa fa-pencil"> Edit</i></a>
-                                    <a href="#" style="display:none;color:blue;" id="save-token-21" onclick="return false;"><i class="fa fa-save"> Save </i> </a>
-                                    <a href="#" style="display:none;color:blue;" id="cancel-token-21" onclick="return false;"><i class="fa fa-times" style=""> Cancel</i> </a>
+                                    <a href="#" class="btn btn-success btn-edit pull-right" style="color:blue;" id="edit-token-21" onclick="return false;"><i class="fa fa-pencil"> Edit</i></a>
+                                    <a href="#" class="btn btn-success btn-edit pull-right" style="display:none;color:blue;" id="save-token-21" onclick="return false;"><i class="fa fa-save"> Save </i> </a>
+                                    <a href="#" class="btn btn-success btn-edit pull-right" style="display:none;color:blue;" id="cancel-token-21" onclick="return false;"><i class="fa fa-times" style=""> Cancel</i> </a>
                                 </div>
                             </div>
                             @endrole
@@ -725,9 +794,9 @@
                             @role('administrator')
                             <div class="row">
                                 <div class="col-md-12">
-                                    <a href="#" style="color:blue;" id="edit-token-22" onclick="return false;"><i class="fa fa-pencil"> Edit</i></a>
-                                    <a href="#" style="display:none;color:blue;" id="save-token-22" onclick="return false;"><i class="fa fa-save"> Save </i> </a>
-                                    <a href="#" style="display:none;color:blue;" id="cancel-token-22" onclick="return false;"><i class="fa fa-times" style=""> Cancel</i> </a>
+                                    <a href="#" class="btn btn-success btn-edit pull-right" style="color:blue;" id="edit-token-22" onclick="return false;"><i class="fa fa-pencil"> Edit</i></a>
+                                    <a href="#" class="btn btn-success btn-edit pull-right" style="display:none;color:blue;" id="save-token-22" onclick="return false;"><i class="fa fa-save"> Save </i> </a>
+                                    <a href="#" class="btn btn-success btn-edit pull-right" style="display:none;color:blue;" id="cancel-token-22" onclick="return false;"><i class="fa fa-times" style=""> Cancel</i> </a>
                                 </div>
                             </div>
                             @endrole
@@ -747,9 +816,9 @@
                             @role('administrator')
                             <div class="row">
                                 <div class="col-md-12">
-                                    <a href="#" style="color:blue;" id="edit-token-23" onclick="return false;"><i class="fa fa-pencil"> Edit</i></a>
-                                    <a href="#" style="display:none;color:blue;" id="save-token-23" onclick="return false;"><i class="fa fa-save"> Save </i> </a>
-                                    <a href="#" style="display:none;color:blue;" id="cancel-token-23" onclick="return false;"><i class="fa fa-times" style=""> Cancel</i> </a>
+                                    <a href="#" class="btn btn-success btn-edit pull-right" style="color:blue;" id="edit-token-23" onclick="return false;"><i class="fa fa-pencil"> Edit</i></a>
+                                    <a href="#" class="btn btn-success btn-edit pull-right" style="display:none;color:blue;" id="save-token-23" onclick="return false;"><i class="fa fa-save"> Save </i> </a>
+                                    <a href="#" class="btn btn-success btn-edit pull-right" style="display:none;color:blue;" id="cancel-token-23" onclick="return false;"><i class="fa fa-times" style=""> Cancel</i> </a>
                                 </div>
                             </div>
                             @endrole
@@ -769,9 +838,9 @@
                             @role('administrator')
                             <div class="row">
                                 <div class="col-md-12">
-                                    <a href="#" style="color:blue;" id="edit-token-24" onclick="return false;"><i class="fa fa-pencil"> Edit</i></a>
-                                    <a href="#" style="display:none;color:blue;" id="save-token-24" onclick="return false;"><i class="fa fa-save"> Save </i> </a>
-                                    <a href="#" style="display:none;color:blue;" id="cancel-token-24" onclick="return false;"><i class="fa fa-times" style=""> Cancel</i> </a>
+                                    <a href="#" class="btn btn-success btn-edit pull-right" style="color:blue;" id="edit-token-24" onclick="return false;"><i class="fa fa-pencil"> Edit</i></a>
+                                    <a href="#" class="btn btn-success btn-edit pull-right" style="display:none;color:blue;" id="save-token-24" onclick="return false;"><i class="fa fa-save"> Save </i> </a>
+                                    <a href="#" class="btn btn-success btn-edit pull-right" style="display:none;color:blue;" id="cancel-token-24" onclick="return false;"><i class="fa fa-times" style=""> Cancel</i> </a>
                                 </div>
                             </div>
                             @endrole
@@ -953,9 +1022,9 @@
                         @role('administrator')
                         <div class="row" style="">
                             <div class="col-md-12" style="margin-bottom:40px;">
-                                <a href="#" style="color:blue;" id="edit-team" onclick="return false;"><i class="fa fa-pencil"> Edit</i></a>
-                                <a href="#" style="display:none;color:blue;" id="save-team" onclick="return false;"><i class="fa fa-save"> Save </i> </a>
-                                <a href="#" style="display:none;color:blue;" id="cancel-team" onclick="return false;"><i class="fa fa-times" style=""> Cancel</i> </a>
+                                <a href="#" class="btn btn-success btn-edit" style="color:blue;" id="edit-team" onclick="return false;"><i class="fa fa-pencil"> Edit</i></a>
+                                <a href="#" class="btn btn-success btn-edit" style="display:none;color:blue;" id="save-team" onclick="return false;"><i class="fa fa-save"> Save </i> </a>
+                                <a href="#" class="btn btn-success btn-edit" style="display:none;color:blue;" id="cancel-team" onclick="return false;"><i class="fa fa-times" style=""> Cancel</i> </a>
                             </div>
                         </div>
                         @endrole
@@ -1321,9 +1390,9 @@
                     @role('administrator')
                     <div class="row" style="">
                         <div class="col-md-12" style="margin-bottom:40px;">
-                            <a href="#" style="color:blue;" id="edit-faq" onclick="return false;"><i class="fa fa-pencil"> Edit</i></a>
-                            <a href="#" style="display:none;color:blue;" id="save-faq" onclick="return false;"><i class="fa fa-save"> Save </i> </a>
-                            <a href="#" style="display:none;color:blue;" id="cancel-faq" onclick="return false;"><i class="fa fa-times" style=""> Cancel</i> </a>
+                            <a href="#" class="btn btn-success btn-edit" style="color:blue;" id="edit-faq" onclick="return false;"><i class="fa fa-pencil"> Edit</i></a>
+                            <a href="#" class="btn btn-success btn-edit" style="display:none;color:blue;" id="save-faq" onclick="return false;"><i class="fa fa-save"> Save </i> </a>
+                            <a href="#" class="btn btn-success btn-edit" style="display:none;color:blue;" id="cancel-faq" onclick="return false;"><i class="fa fa-times" style=""> Cancel</i> </a>
                         </div>
                     </div>
                     @endrole
@@ -2639,6 +2708,57 @@
             });
         });
         // End Faq
+
+        // Banner 2
+        var banner_2_temp = "";
+        $('#txt-banner-2').click(function() {
+            banner_2_temp = $(this).html();
+            $(this).attr('contenteditable', 'true');
+            $(this).css('border', '1px solid yellow');
+            $('#txt-banner-2-ctrl').show();
+        });
+
+        $('#txt-banner-2-cancel').click(function() {
+            $('#txt-banner-2-ctrl').hide();
+            $('#txt-banner-2').css('border', 'none');
+            $('#txt-banner-2').html(banner_2_temp);
+            $('#txt-banner-2').attr('contenteditable', 'false');
+        });
+
+        $('#txt-banner-2-save').click(function() {            
+            $.ajax({
+                method: "put",
+                url: '{{route('editcontent.update')}}',
+                data: {
+                    _token: '{{csrf_token()}}',
+                    key: 'banner_2',
+                    jdata: {
+                        "banner_2": {
+                                "txt" : $('#txt-banner-2').text(),                                
+                            }
+                    }
+                }
+            }).done(function(res) {
+                swal({
+                    title: res.title,
+                    text: res.msg,
+                    icon: res.icon,
+                    type: res.type
+                }).then(function(){
+                    $('#txt-banner-2-ctrl').hide();
+                    $('#txt-banner-2').css('border', 'none');
+                    $('#txt-banner-2').attr('contenteditable', 'false');
+                    if(res.type == 'error') {
+                        $('#txt-banner-2').html(faq_temp);                        
+                    } else {
+                        $('#txt-banner-2').html($('#txt-banner-2').html());
+                    }
+
+                })
+
+            });
+        });
+        // End Banner 2
 
 
     </script>
