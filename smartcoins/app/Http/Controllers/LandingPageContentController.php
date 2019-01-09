@@ -11,8 +11,6 @@ class LandingPageContentController extends Controller
 {
     public function update(Request $request)
     {
-        // dd(json_encode($request->jdata));
-
         $validator = Validator::make($request->all(),[
             'key' => 'required',
             'jdata' => 'required'
