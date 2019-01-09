@@ -21,3 +21,4 @@ Route.get('/', () => {
 });
 
 Route.get('create-wallet','WalletController.CreateWallet').prefix('api');
+Route.get('send-transaction','WalletController.SendTransaction').prefix('api');
