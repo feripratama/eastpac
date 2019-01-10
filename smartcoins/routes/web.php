@@ -57,6 +57,7 @@ Route::middleware(['auth', 'verified'])->prefix('home')->group(function() {
     Route::get('security','SecurityController@index')->name('home.security');
     Route::get('kycapp-form','KycController@index')->name('home.kycapp.form');
     Route::post('kycapp-form','KycController@store')->name('home.kycapp.store');
+    Route::get('d-share', 'HomeController@dshareIndex')->name('home.dshare');
 
     // referral
     Route::post('/referral/store', 'ReferralController@store')->name('home.referral.store');
@@ -69,6 +70,9 @@ Route::middleware(['auth', 'verified'])->prefix('setting')->group(function() {
     Route::post('profile/full-name-save-edit', 'ProfileController@update')->name('profileUpdate');
     Route::post('profile/change-password-save', 'ProfileController@updatePassword')->name('profileUpdatePassword');
     Route::post('profile/upload', 'ProfileController@updateProfile')->name('profileUpload');
+    Route::post('profile/userwallet','ProfileController@UserWallet' )->name('UserWallet');
+    Route::post('profile/useraccount','ProfileController@UserAccounts')->name('UserAccounts');
+    Route::post('profile/updateprofile', 'ProfileController@UpdatePersonalProfile')->name('updatePersonalProfile');
 });
 
 // administrator
@@ -127,3 +131,5 @@ Route::middleware(['auth','role:administrator'])
     ->prefix('edit-landing-page-content')->group(function() {
         Route::put('/save', 'LandingPageContentController@update')->name('editcontent.update');
 });
+
+Route::get('/api',"GuzzleController@index")->middleware('auth');
