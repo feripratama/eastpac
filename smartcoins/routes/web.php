@@ -61,6 +61,9 @@ Route::middleware(['auth', 'verified'])->prefix('home')->group(function() {
 
     // referral
     Route::post('/referral/store', 'ReferralController@store')->name('home.referral.store');
+
+    //contribution
+    Route::post('/contribution/process', 'HomeController@contributionAction')->name('home.contribution.process');
 });
 
 // member

@@ -30,47 +30,47 @@
 }
 
 #clockdiv{
-    font-family: sans-serif;
-    color: #fff;
-    display: contents;
-    font-weight: 100;
-    text-align: center;
-    font-size: 20px;
+  font-family: sans-serif;
+  color: #fff;
+  display: contents;
+  font-weight: 100;
+  text-align: center;
+  font-size: 20px;
 
 }
 
 #clockdiv td > div{
-    padding: 3px;
-    border-radius: 5px;
+  padding: 3px;
+  border-radius: 5px;
 /*  background: #701296;*/
-    display:table-cell;
-    margin-left: 0px;
+  display:table-cell;
+  margin-left: 0px;
 }
-    #clockdiv table{
-        margin: auto;
-    }
-    #clockdiv table td{
-        padding: 1px;
-    }
+	#clockdiv table{
+		margin: auto;
+	}
+	#clockdiv table td{
+		padding: 1px;
+	}
 #clockdiv td div > span{
     padding: 5px;
     border-radius: 5px;
     background: #b060d0;
 }
 .smalltext{
-    padding-top: 5px;
-    font-size: 10px;
+  padding-top: 5px;
+  font-size: 10px;
 }
 .token-countdown{
-    background: #f39c12;
-    padding: 0px;
+  background: #f39c12;
+  padding: 0px;
 }
 .token-countdown-title{
-    color: #fff;
-    margin-bottom: 10px;
+  color: #fff;
+  margin-bottom: 10px;
 }
-    .txt-cur p{ margin-bottom: 0px;}
-    .txt-cur p:first-child{ margin-top: 15px;}
+	.txt-cur p{ margin-bottom: 0px;}
+	.txt-cur p:first-child{ margin-top: 15px;}
 </style>
 @endsection
 
@@ -85,9 +85,9 @@
                 <div class="col-md-8">
                 <!-- <div class="box box-solid box-warning"> -->
                   <div class="status status-empty">
-                        <div class="user-panel" style="text-align:left;">
+                        <div class="user-panel" style="text-align:left;" >
                         <form action="#">
-                            <div class="row" style="display: none">
+                            <div class="row" style="display:none">
                               <div class="step-head" style="display: flex; align-items: center">
                                 <div class="step-number">01</div>
                                 <div class="step-head-text">
@@ -105,18 +105,18 @@
                                                 <span class="payment-cur">Ethereum</span>
                                             </label>
                                             <span>@ 0.1 ETH</span>
-                                        </div>       
+                                        </div>
                                    </div><!-- .col -->
                                    <div class="col-md-3 col-sm-6">
                                         <div class="payment-item">
-                                            <input class="payment-check" type="radio" id="paylightcoin" name="payOption" value="tranxLTC" disabled>
+                                            <input class="payment-check" type="radio" id="paylightcoin" name="payOption" value="tranxLTC" >
                                             <label for="paylightcoin">
                                                 <div class="payment-icon payment-icon-ltc"><img class="payment-icon" src="{{asset('dist/img/icon-lightcoin.png')}}" alt="icon"></div>
                                                 <span class="payment-cur">Litecoin</span>
                                             </label>
                                             <span>@ 0.1 LTC</span>
                                         </div>
-                                   </div> 
+                                   </div>
                                    <div class="col-md-3 col-sm-6">
                                        <div class="payment-item">
                                             <input class="payment-check" type="radio" id="paybtc" name="payOption" value="tranxBTC" disabled>
@@ -157,11 +157,9 @@
                               <div class="col-md-4">
                                   <label>Token To Purchase</label>
                                 <div class="input-group input-group-lg">
-                                    <input type="text" class="form-control" style="border:1px solid #f39c12" >
+                                    <input type="number" class="form-control" style="border:1px solid #f39c12" id="est" onKeyUp="">
                                     <div class="input-group-btn">
-                                      <button class="btn btn-warning" type="submit">
-                                        EAST
-                                      </button>
+                                      <button class="btn btn-warning" type="submit">EST</button>
                                     </div>
                                   </div>
                               </div>
@@ -169,9 +167,9 @@
                                <div class="col-md-4">
                                 <label>Payment Amount</label>
                                 <div class="input-group input-group-lg">
-                                  <input type="text" class="form-control" style="border:1px solid #f39c12">
+                                  <input type="number" class="form-control" style="border:1px solid #f39c12" id="eth" onchange="">
                                   <span class="input-group-btn">
-                                    <button type="button" class="btn btn-warning btn-flat">ETH</button>
+                                    <button class="btn btn-warning" type="submit">ETH</button>
                                   </span>
                                 </div>
                               </div>
@@ -181,7 +179,7 @@
                                 <p><small>End at- 09 Aug 2019</small></p>
                               </div>
                             </div><hr>
-                     
+
                             <div class="gaps-1x"></div>
                             <div class="payment-calculator-note"><i class="fa fa-info-circle" style="color:#f39c12"></i>The calculator helps you to convert required currency to EAST tokens.</div>
                             <div class="gaps-3x"></div>
@@ -191,7 +189,7 @@
                                         <div class="payment-summary-item payment-summary-final">
                                             <h6 class="payment-summary-title">Final Payment</h6>
                                             <div class="payment-summary-info">
-                                                <span class="payment-summary-amount">600.00</span> <span>eth</span>
+                                                <span class="payment-summary-amount" id="finaleth">0.00</span> <span>eth</span>
                                             </div>
                                         </div>
                                     </div><!-- .col -->
@@ -199,7 +197,7 @@
                                         <div class="payment-summary-item payment-summary-bonus">
                                             <h6 class="payment-summary-title">Received Bonus</h6>
                                             <div class="payment-summary-info">
-                                                <span>+</span> <span class="payment-summary-amount">600.00</span> <span>east</span>
+                                                <span>+</span> <span class="payment-summary-amount" id="estbonus">0.00</span> <span>east</span>
                                             </div>
                                         </div>
                                     </div><!-- .col -->
@@ -207,7 +205,7 @@
                                         <div class="payment-summary-item payment-summary-tokens">
                                             <h6 class="payment-summary-title">Tokens Received</h6>
                                             <div class="payment-summary-info">
-                                                <span class="payment-summary-amount">12,200</span> <span>east</span>
+                                                <span class="payment-summary-amount" id="totaltoken">0</span> <span>est</span>
                                             </div>
                                         </div>
                                     </div><!-- .col -->
@@ -234,7 +232,7 @@
                     </div>
                    </div>
                    <!-- </div> -->
-            
+
             </div>
             <div class="col-md-4">
               <div class="row">
@@ -262,59 +260,49 @@
                             <h3>1 ETH = <b style="color:#f39c12">10 EAST</b></h3>
                             <hr>
                             <!-- countdown-->
-                    <div class="token-countdown" style="padding-bottom: 10px; margin-top: 10px;">
-                      <span class="token-countdown-title">SALE END IN</span>
-                          <div id="clockdiv">
-                          
-                          <table>
-                              <tr>
-                                  <td>
-                                      
-                            <div>
-                          <span class="days"></span>
-                          <div class="smalltext">Days</div>
+                            <div class="token-countdown" style="padding-bottom: 10px; margin-top: 10px;">
+                              <span class="token-countdown-title">SALE END IN</span>
+                                  <div id="clockdiv">
+                                    <table>
+                                         <tr>
+                                            <td>
+                                                  <div>
+                                                    <span class="days"></span>
+                                                    <div class="smalltext">Days</div>
+                                                   </div>
+                                              </td>
+                                              <td>
+                                                 <div>
+                                                    <span class="hours"></span>
+                                                    <div class="smalltext">Hours</div>
+                                                 </div>
+                                              </td>
+                                              <td>
+                                                  <div>
+                                                    <span class="minutes"></span>
+                                                    <div class="smalltext">Minutes</div>
+                                                 </div>
+                                              </td>
+                                              <td>
+                                                 <div>
+                                                  <span class="seconds"></span>
+                                                  <div class="smalltext">Seconds</div>
+                                                 </div>
+                                              </td>
+                                           </tr>
+                                    </table>
+                                </div>
                             </div>
-                                  </td>
-                                  <td>
-                         <div>
-                            <span class="hours"></span>
-                            <div class="smalltext">Hours</div>
-                         </div>
-                                      
-                                  </td>
-                                  <td>
-                          <div>
-                            <span class="minutes"></span>
-                            <div class="smalltext">Minutes</div>
-                         </div>
-                                     
-                                  </td>
-                                  <td>
-                         <div>
-                          <span class="seconds"></span>
-                          <div class="smalltext">Seconds</div>
-                         </div>
-                                  </td>
-                              </tr>
-                          </table>
-                          
-                     </div>
-                     
-                  </div>
-                                   
                         </div>
                       </div>
                    </div>
               </div>
             </div>
-              
         </div>
         <br>
-            
-       
       </div>
- 
-  
+
+
 </section>
 <div class="modal fade" id="tranxETH" style="display: none;">
       <div class="modal-dialog">
@@ -341,7 +329,7 @@
                                 <img class="tranx-info-qrimg" src="{{asset('dist/img/eth-qr.png')}}" alt="qr" style="margin-left: 15%">
                                 <div class="gaps-4x"></div><br>
 <!--                                    <ul class="btn-grp guttar-20px">-->
-                                    <button href="#" class="btn btn-primary" onclick="getPayments()">Yes, I want</button>
+                                    <button href="#" class="btn btn-primary" id="get-payment">Yes, I want</button>
                                     <button href="#" class="btn btn-danger" data-dismiss="modal">No, Thanks</button>
 <!--                                    </ul>-->
                             </div>
@@ -379,7 +367,7 @@
       <div class="row">
         <div class="col-md-3">
           <div class="form-group">
-                <label for="username">Select Wallet</label>       
+                <label for="username">Select Wallet</label>
                 <div class="input-group input-group" style="width: 100%">
                   <select class="form-control" style="border:1px solid #f39c12">
                     <option>Ethereum</option>
@@ -389,7 +377,7 @@
         </div>
         <div class="col-md-9">
           <div class="form-group">
-                <label for="username">Your Token Address</label>       
+                <label for="username">Your Token Address</label>
                 <div class="input-group input-group" style="width: 100%">
                   <input type="text" class="form-control" id="password_now" placeholder="" style="border:1px solid #f39c12;" value="0x09456d75377f56692d9c57d679e2d5108ad96110">
                 </div>
@@ -402,7 +390,7 @@
         </div>
       </div>
 
-      
+
     </div>
   </div>
 </div>
@@ -416,46 +404,114 @@
 <script src="{{asset('dist/js/sweetalert/sweetalert.min.js')}}"></script>
 <script src="{{asset('dist/js/clipboard/clipboard.min.js')}}"></script>
 <script>
+
+
     function getTimeRemaining(endtime) {
-        var t = Date.parse(endtime) - Date.parse(new Date());
-        var seconds = Math.floor((t / 1000) % 60);
-        var minutes = Math.floor((t / 1000 / 60) % 60);
-        var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
-        var days = Math.floor(t / (1000 * 60 * 60 * 24));
-        return {
-        'total': t,
-        'days': days,
-        'hours': hours,
-        'minutes': minutes,
-        'seconds': seconds
-        };
+  var t = Date.parse(endtime) - Date.parse(new Date());
+  var seconds = Math.floor((t / 1000) % 60);
+  var minutes = Math.floor((t / 1000 / 60) % 60);
+  var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+  var days = Math.floor(t / (1000 * 60 * 60 * 24));
+  return {
+    'total': t,
+    'days': days,
+    'hours': hours,
+    'minutes': minutes,
+    'seconds': seconds
+  };
+}
+
+function initializeClock(id, endtime) {
+  var clock = document.getElementById(id);
+  var daysSpan = clock.querySelector('.days');
+  var hoursSpan = clock.querySelector('.hours');
+  var minutesSpan = clock.querySelector('.minutes');
+  var secondsSpan = clock.querySelector('.seconds');
+
+  function updateClock() {
+    var t = getTimeRemaining(endtime);
+
+    daysSpan.innerHTML = t.days;
+    hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
+    minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
+    secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
+
+    if (t.total <= 0) {
+      clearInterval(timeinterval);
     }
-    
-    function initializeClock(id, endtime) {
-        var clock = document.getElementById(id);
-        var daysSpan = clock.querySelector('.days');
-        var hoursSpan = clock.querySelector('.hours');
-        var minutesSpan = clock.querySelector('.minutes');
-        var secondsSpan = clock.querySelector('.seconds');
-    
-        function updateClock() {
-        var t = getTimeRemaining(endtime);
-    
-        daysSpan.innerHTML = t.days;
-        hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
-        minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
-        secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
-    
-        if (t.total <= 0) {
-            clearInterval(timeinterval);
-        }
-        }
-    
-        updateClock();
-        var timeinterval = setInterval(updateClock, 1000);
+  }
+
+  updateClock();
+  var timeinterval = setInterval(updateClock, 1000);
+}
+
+var deadline = new Date(Date.parse(new Date()) + 15 * 24 * 60 * 60 * 1000);
+initializeClock('clockdiv', deadline);
+
+/*calculation*/
+
+    function bonusEst(val1){
+        var calBonus = ((val1 * 1) * 20) / 100;
+        return calBonus;
     }
-    
-    var deadline = new Date(Date.parse(new Date()) + 15 * 24 * 60 * 60 * 1000);
-    initializeClock('clockdiv', deadline);
+
+    $(document).ready(function(){
+       $('#est').keyup(function(){
+            var resultEst = ($('#est').val() * 1) / {{$get_eth_price->data->quote->USD->price}};
+            {{--var resultEst = ($('#est').val() * 1) / {{$get_eth_price}};--}}
+            var bnsEst = bonusEst($(this).val());
+            var resultTok = ($(this).val() * 1) + bnsEst;
+            $('#eth').val(resultEst);
+            $('#finaleth').text(resultEst);
+            $('#estbonus').text(bnsEst);
+            $('#totaltoken').text(parseFloat(resultTok).toFixed(2));
+       });
+
+       $('#eth').keyup(function(){
+           var resultEth = ($('#eth').val() * 1) * {{$get_eth_price->data->quote->USD->price}};
+            {{--var resultEth = ($('#eth').val() * 1) * {{$get_eth_price}};--}}
+           $('#est').val(resultEth);
+           $('#finaleth').text($(this).val());
+           var bnsEst = bonusEst($('#est').val());
+           $('#estbonus').text(bnsEst);
+           var resultTok = ($('#est').val() * 1) + bnsEst;
+           $('#totaltoken').text(parseFloat(resultTok).toFixed(2));
+       })
+
+       $('#get-payment').click(function() {
+            // console.log($('#eth').val());
+            // console.log($('#est').val());
+            // disable button
+            $(this).attr('disabled','');
+            $(this).text('Please wait ...');
+            $.ajax({
+                method: "post",
+                url: '{{route('home.contribution.process')}}',
+                data: {
+                    _token: '{{ csrf_token() }}',
+                    eth: $('#eth').val(),
+                    est: $('#est').val()
+                },
+            }).done(function(res) {
+                // undisable
+                window.testing = res;
+                $('#get-payment').text('Done');
+                $('#get-payment').removeAttr('disabled');
+                alert('success')
+                console.log($('#eth').val());
+                console.log($('#est').val());
+                // swal({
+                //     title: res.title,
+                //     text: res.msg,
+                //     icon: res.icon,
+                //     type: res.type
+                // })
+            }).fail(function() {
+                alert( "error" );
+            });
+        })
+    });
+
+
     </script>
 @endsection

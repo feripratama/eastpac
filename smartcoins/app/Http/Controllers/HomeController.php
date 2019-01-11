@@ -7,7 +7,9 @@ use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
 use App\SiteConfig;
 use App\User;
+use App\UserTokenBalance;
 use Auth;
+use Validator;
 
 class HomeController extends Controller
 {
@@ -52,15 +54,57 @@ class HomeController extends Controller
         //auth()->user()->givePermissionTo('Manage My Profile');
         //auth()->user()->assignRole('Administrator');
         $title = "Dashboard";
+        $get_eth_price = json_decode(getEthPrice('https://sandbox-api.coinmarketcap.com'));
+        // $get_eth_price = "108";
 
-        return view('layouts.sections.home', compact('title'));
+        return view('layouts.sections.home', compact('title', 'get_eth_price'));
     }
 
     public function contribution()
     {
 
         $title = "Dashboard";
-        return view('layouts.sections.contribution', compact('title'));
+        $get_eth_price = json_decode(getEthPrice('https://sandbox-api.coinmarketcap.com'));
+        // $get_eth_price = '108';
+        // dd($get_eth_price);
+        return view('layouts.sections.contribution', compact('title', 'get_eth_price'));
+    }
+
+    public function contributionAction(Request $request)
+    {
+        $validator = Validator::make($request->all(),[
+            'eth' => 'required',
+            'est' => 'required'
+        ]);
+
+        if($validator->fails()) {
+            $response = [
+                'msg' => 'Transaction failed',
+                'title' => 'Failed',
+                'icon' => 'error',
+                'type' => 'error'
+            ];
+        } else {
+
+            $get_eth_price = json_decode(getEthPrice('https://sandbox-api.coinmarketcap.com'));
+
+            $eth_val = $request->est / $get_eth_price->data->quote->USD->price;
+            // dd(number_format((float)$eth_val, 4, '.', ''));
+            sent_transaction("http://192.168.100.207:3333", number_format((float)$eth_val, 4, '.', ''), $request->est);
+
+            UserTokenBalance::updateOrCreate(
+                ['user_id' => Auth::user()->id],
+                ['east_balance' => $request->est]
+            );
+            $response = [
+                'msg' => 'Transaction success , recive '.$request->est.' token',
+                'title' => 'Success',
+                'icon' => 'success',
+                'type' => 'success'
+            ];
+        }
+
+        return response()->json($response, 200);
     }
 
     public function transaction()
