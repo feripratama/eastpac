@@ -93,7 +93,9 @@
                         <div class="tile-bubbles"></div>
                         <h1 class="tile-title">1 ETH = 1000 EAST</h1>
                         {{-- <h6 class="tile-info">1 ETH = 156.89 USD</h6> --}}
-                        <h6 class="tile-info">1 ETH = {{$get_eth_price->data->quote->USD->price}} USD</h6>
+
+                        <h6 class="tile-info">1 ETH = {{number_format((float)$get_eth_price->data->quote->USD->price, 2, '.', '')}} USD</h6>
+                        {{-- <h6 class="tile-info">1 ETH = {{$get_eth_price}} USD</h6> --}}
                     </div>
                 </div><!-- end exchange -->
             </div>

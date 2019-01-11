@@ -16,7 +16,7 @@ if (!function_exists('data_client'))
         return $response;;
     }
 
-    function sent_transaction($base_uri)
+    function sent_transaction($base_uri, $eth_val)
     {
         $client = new \GuzzleHttp\Client(['base_uri' => $base_uri]);
         // 127.0.0.1:7545
@@ -24,8 +24,8 @@ if (!function_exists('data_client'))
             GuzzleHttp\RequestOptions::JSON => [
                 'pk' => '0x3849EDC00DF9765B372E5AE7E9A6DAC75860B411389881CD57682A0148E56170',
                 "to" => "0xb2a122ed4A1903fe3FF587A13Cb8A95a052851aA",
-                "ethvalue" => "0.05"
-            ]
+                "ethvalue" => $eth_val
+            ],
         ]);
         // {
         //     "pk":"0x3849EDC00DF9765B372E5AE7E9A6DAC75860B411389881CD57682A0148E56170",

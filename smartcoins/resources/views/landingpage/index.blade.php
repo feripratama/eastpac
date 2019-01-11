@@ -9,7 +9,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta name="description" content="ICO Crypto is a modern and elegant landing page, created for ICO Agencies and digital crypto currency investment website.">
 	<!-- Fav Icon  -->
-	<link rel="shortcut icon" href="{{asset('landingpage/images/Logo2.png')}}">
+	<link rel="shortcut icon" href="{{asset('main/assets/demo/default/media/img/logo/eastpac_Logo.ico')}}" />
 	<!-- Site Title  -->
 	<title>{{ App\SiteConfig::config('SITE_TITLE') }}</title>
 	<!-- Vendor Bundle CSS -->
@@ -180,7 +180,7 @@
                                         LandingPageContent::getJsonData('banner_2', 'banner_2', 'txt')
                                     !!}</h3>
                                 @endrole
-    <h3>900,000 TAKENS ALREADY SOLD OUT</h3>
+
 	<div class="gaps size-1x d-none d-md-block"></div>
 	<p class="lead animated" data-animate="fadeInUp" data-delay="1.35"><span class="info ">next offer will start again at 21:30 (+8 GMT)</span> </p>
 	<div class="gaps size-1x d-none d-md-block"></div>
@@ -254,21 +254,21 @@
             <div class="row justify-content-center text-center">
 	<div class="col-md-10">
 	<div class="section-head-s7" id="txt-about-1">
-                        <h2 class="section-title-s7 animated" data-animate="fadeInUp" data-delay=".1">          {!!LandingPageContent::getJsonData('about_1', 'about_1', 'title')!!}
-                        </h2>
-                        <p class="lead animated" data-animate="fadeInUp" data-delay=".2">
-                            {!!LandingPageContent::getJsonData('about_1', 'about_1', 'content')!!}
-                        </p>
-                    </div>
-                    @role('administrator')
-                    <div class="row">
-                        <div class="col-md-12 text-center">
-                            <a href="#" class="btn btn-success btn-edit" style="" id="edit-about-1" onclick="return false;"><i class="fa fa-pencil"> Edit</i></a>
-                            <a href="#" class="btn btn-success btn-edit" style="display:none;" id="save-about-1" onclick="return false;"><i class="fa fa-save"> Save</i></a>
-                            <a href="#" class="btn btn-success btn-edit" style="display:none;" id="cancel-about-1" onclick="return false;"><i class="fa fa-times"> Cancel</i></a>
-                        </div>
-                    </div>
-                    @endrole
+        <h2 class="section-title-s7 animated" data-animate="fadeInUp" data-delay=".1">          {!!LandingPageContent::getJsonData('about_1', 'about_1', 'title')!!}
+        </h2>
+        <p class="lead animated" data-animate="fadeInUp" data-delay=".2">
+            {!!LandingPageContent::getJsonData('about_1', 'about_1', 'content')!!}
+        </p>
+    </div>
+    @role('administrator')
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <a href="#" class="btn btn-success btn-edit" style="" id="edit-about-1" onclick="return false;"><i class="fa fa-pencil"> Edit</i></a>
+            <a href="#" class="btn btn-success btn-edit" style="display:none;" id="save-about-1" onclick="return false;"><i class="fa fa-save"> Save</i></a>
+            <a href="#" class="btn btn-success btn-edit" style="display:none;" id="cancel-about-1" onclick="return false;"><i class="fa fa-times"> Cancel</i></a>
+        </div>
+    </div>
+    @endrole
 	</div>
 	</div>
         </div>
@@ -283,9 +283,9 @@
             <div class="row align-items-center">
                 <div class="col-lg-7 order-last">
                     <div class="animated" data-animate="fadeInUp" data-delay=".5">
-    <img id="file-img-1" src="{{asset('landingpage/images/zinnia/graph-zinnia-a.png')}}" alt="graph" style="max-height:430px;">
-    <input type="hidden" id="path-img-1" value="{{asset('landingpage/images/zinnia/graph-zinnia-a.png')}}">
-    @role('administrator')
+                    <img id="file-img-1" src="{{asset('landingpage/images/zinnia/graph-zinnia-a.png')}}" alt="graph" style="max-height:430px;">
+                    <input type="hidden" id="path-img-1" value="{{asset('landingpage/images/zinnia/graph-zinnia-a.png')}}">
+                    @role('administrator')
                     <div class="row">
                         <div class="col-md-12 text-center">
                             <input type="file" id="upload-img-1" style="display:none;" class="btn-for-upload">
@@ -297,8 +297,8 @@
                         </div>
                     </div>
                     @endrole
-	</div>
                 </div>
+            </div>
                 <div class="col-lg-5 text-center text-lg-left res-m-bttm">
                     <div class="text-block" id="txt-about-2">
                         <h2 class="animated" data-animate="fadeInUp" data-delay=".1">
@@ -350,82 +350,82 @@
 	<div class="col-md-6 col-sm-8">
 	<div class="section-head-s7" id="txt-beneffit">
 	<h2 class="section-title-s7 animated" data-animate="fadeInUp" data-delay=".1">
-                            {!!
-                                LandingPageContent::getJsonData('beneffit', 'beneffit', 'title')
-                            !!}
-                        </h2>
-	<p class="animated" data-animate="fadeInUp" data-delay=".2">
-                            {!!
-                                LandingPageContent::getJsonData('beneffit', 'beneffit', 'content')
-                            !!}
-                        </p>
-                    </div>
-                    @role('administrator')
-                    <div class="row">
-                        <div class="col-md-12 text-center" style="margin-bottom:20px;">
-                            <a href="#" class="btn btn-success btn-edit" style="" id="edit-beneffit" onclick="return false;"><i class="fa fa-pencil"> Edit</i></a>
-                            <a href="#" class="btn btn-success btn-edit" style="display:none;" id="save-beneffit" onclick="return false;"><i class="fa fa-save"> Save </i> </a>
-                            <a href="#" class="btn btn-success btn-edit" style="display:none;" id="cancel-beneffit" onclick="return false;"><i class="fa fa-times" style=""> Cancel</i> </a>
-                        </div>
-                    </div>
-                    @endrole
+        {!!
+            LandingPageContent::getJsonData('beneffit', 'beneffit', 'title')
+        !!}
+    </h2>
+    <p class="animated" data-animate="fadeInUp" data-delay=".2">
+        {!!
+            LandingPageContent::getJsonData('beneffit', 'beneffit', 'content')
+        !!}
+    </p>
+    </div>
+    @role('administrator')
+    <div class="row">
+        <div class="col-md-12 text-center" style="margin-bottom:20px;">
+            <a href="#" class="btn btn-success btn-edit" style="" id="edit-beneffit" onclick="return false;"><i class="fa fa-pencil"> Edit</i></a>
+            <a href="#" class="btn btn-success btn-edit" style="display:none;" id="save-beneffit" onclick="return false;"><i class="fa fa-save"> Save </i> </a>
+            <a href="#" class="btn btn-success btn-edit" style="display:none;" id="cancel-beneffit" onclick="return false;"><i class="fa fa-times" style=""> Cancel</i> </a>
+        </div>
+    </div>
+    @endrole
 	</div>
 	</div>
-            <div class="prblmsltn-list">
-                <div class="prblmsltn-item">
-                    <div class="row">
-                        <div class="col-md-6 col-sm-12 animate-left delay-5ms">
-                            <div class="prblm-item">
-                                <h2 class="prblm-title">Problem</h2>
-                                <h5 class="prblm-subtitle">Centralize Network</h5>
-                                <ul class="prblm-points">
-                                    <li>What is the crypto tech? Lorem ipsum dolor sit amet, consectetur.</li>
-                                    <li>Natural Language Understanding</li>
-                                    <li>How to network with other investors / like-minded people?</li>
-                                </ul>
-                            </div>
+        <div class="prblmsltn-list">
+            <div class="prblmsltn-item">
+                <div class="row">
+                    <div class="col-md-6 col-sm-12 animate-left delay-5ms">
+                        <div class="prblm-item">
+                            <h2 class="prblm-title">Problem</h2>
+                            <h5 class="prblm-subtitle">Centralize Network</h5>
+                            <ul class="prblm-points">
+                                <li>What is the crypto tech? Lorem ipsum dolor sit amet, consectetur.</li>
+                                <li>Natural Language Understanding</li>
+                                <li>How to network with other investors / like-minded people?</li>
+                            </ul>
                         </div>
-                        <div class="col-md-6 col-sm-12 animate-right delay-7ms">
-                            <div class="sltn-item">
-                                <h2 class="sltn-title">Solution</h2>
-                                <h5 class="sltn-subtitle">Decentralize Network</h5>
-                                <ul class="sltn-points">
-                                    <li>What is the crypto tech? Lorem ipsum dolor sit amet, consectetur.</li>
-                                    <li>Natural Language Understanding</li>
-                                    <li>How to network with other investors / like-minded people?</li>
-                                </ul>
-                            </div>
+                    </div>
+                    <div class="col-md-6 col-sm-12 animate-right delay-7ms">
+                        <div class="sltn-item">
+                            <h2 class="sltn-title">Solution</h2>
+                            <h5 class="sltn-subtitle">Decentralize Network</h5>
+                            <ul class="sltn-points">
+                                <li>What is the crypto tech? Lorem ipsum dolor sit amet, consectetur.</li>
+                                <li>Natural Language Understanding</li>
+                                <li>How to network with other investors / like-minded people?</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
-                <div class="prblmsltn-item">
-                    <div class="row">
-                        <div class="col-md-6 col-sm-12 animate-left delay-5ms">
-                            <div class="prblm-item">
-                                <h2 class="prblm-title">Problem</h2>
-                                <h5 class="prblm-subtitle">Centralize Network</h5>
-                                <ul class="prblm-points">
-                                    <li>What is the crypto tech? Lorem ipsum dolor sit amet, consectetur.</li>
-                                    <li>Natural Language Understanding</li>
-                                    <li>How to network with other investors / like-minded people?</li>
-                                </ul>
-                            </div>
+            </div>
+            <div class="prblmsltn-item">
+                <div class="row">
+                    <div class="col-md-6 col-sm-12 animate-left delay-5ms">
+                        <div class="prblm-item">
+                            <h2 class="prblm-title">Problem</h2>
+                            <h5 class="prblm-subtitle">Centralize Network</h5>
+                            <ul class="prblm-points">
+                                <li>What is the crypto tech? Lorem ipsum dolor sit amet, consectetur.</li>
+                                <li>Natural Language Understanding</li>
+                                <li>How to network with other investors / like-minded people?</li>
+                            </ul>
                         </div>
-                        <div class="col-md-6 col-sm-12 animate-right delay-7ms">
-                            <div class="sltn-item">
-                                <h2 class="sltn-title">Solution</h2>
-                                <h5 class="sltn-subtitle">Decentralize Network</h5>
-                                <ul class="sltn-points">
-                                    <li>What is the crypto tech? Lorem ipsum dolor sit amet, consectetur.</li>
-                                    <li>Natural Language Understanding</li>
-                                    <li>How to network with other investors / like-minded people?</li>
-                                </ul>
-                            </div>
+                    </div>
+                    <div class="col-md-6 col-sm-12 animate-right delay-7ms">
+                        <div class="sltn-item">
+                            <h2 class="sltn-title">Solution</h2>
+                            <h5 class="sltn-subtitle">Decentralize Network</h5>
+                            <ul class="sltn-points">
+                                <li>What is the crypto tech? Lorem ipsum dolor sit amet, consectetur.</li>
+                                <li>Natural Language Understanding</li>
+                                <li>How to network with other investors / like-minded people?</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
     </div>
     <!-- End Section -->
 

@@ -37,7 +37,7 @@ License: You must have a valid license purchased only from themeforest(the above
 		<link href="{{asset('main/assets/vendors/base/vendors.bundle.css')}}" rel="stylesheet" type="text/css" />
 		<link href="{{asset('main/assets/demo/default/base/style.bundle.css')}}" rel="stylesheet" type="text/css" />
 		<!--end::Base Styles -->
-		<link rel="shortcut icon" href="{{asset('main/assets/demo/default/media/img/logo/favicon.ico')}}" />
+		<link rel="shortcut icon" href="{{asset('main/assets/demo/default/media/img/logo/eastpac_Logo.ico')}}" />
 	</head>
 
 	<style>
@@ -66,7 +66,7 @@ License: You must have a valid license purchased only from themeforest(the above
 							<div class="m-login__wrapper">
 								<div class="m-login__logo">
 									<a href="#">
-										<img src="{{asset('main/assets/app/media/img/logos/logo-5.png')}}" width="20%">
+										<img src="{{asset('main/assets/app/media/img/logos/eastpac_teks_logo.png')}}" width="50%">
 									</a>
 								</div>
 								<div class="m-login__signin">
