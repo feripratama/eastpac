@@ -11,9 +11,12 @@ app.use(express.json());
 var routes = require("./api/routes/route.js")
     routes(app);
 
-app.listen(ports);
-console.log('*****************************************************')
-console.log('* East PAC node server  running on PORT :' + ports );
-console.log('*****************************************************')
+if(app.listen(ports)){
+    console.log('*****************************************************')
+    console.log('* East PAC node server  running on PORT : ' + ports );
+    console.log('*****************************************************')
+}else{
+    console.log('Error bro')
+}
 
 

@@ -221,24 +221,24 @@
                                             <div class="col-md-12">
                                                 <div class="form-group">
                                                     <label>Wallet Address</label>
-                                                    <input type="text" class="form-control" placeholder="Enter Your Wallet Address..." name="walletaddress">
+                                                    <input disabled type="text" class="form-control" placeholder="Enter Your Wallet Address..." name="walletaddress" value="{{ App\UserWallet::where('user_id', Auth::user()->id)->first()->wallet_address }}">
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="row">
+                                        {{--  <div class="row">
                                             <div class="col-md-12">
                                                 <div class="form-group">
                                                     <label>Tipe</label>
                                                     <input type="text" class="form-control" placeholder="Enter Your tipe..." name="tipe">
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="row">
+                                        </div>  --}}
+                                        {{--  <div class="row">
                                             <div class="col-md-6">
                                                 <button type="submit" class="btn btn-warning">Save</button>
                                             </div>
 
-                                        </div>
+                                        </div>  --}}
                                     </form>
                                 </div>
                                 <!-- /.tab-pane -->

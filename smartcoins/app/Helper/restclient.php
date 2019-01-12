@@ -1,28 +1,29 @@
 <?php
 if (!function_exists('data_client'))
 {
-    function data_client($base_uri)
+    function data_client($base_uri, $upw)
     {
         $client = new \GuzzleHttp\Client(['base_uri' => $base_uri]);
         // 127.0.0.1:7545
         $response = $client->get('api/create-wallet',[
             GuzzleHttp\RequestOptions::JSON => [
-                'upw' => 'dirahasiakan aja',
+                'upw' => $upw,
             ]
         ]);
         $response = $response->getBody()->getContents();
-        echo '<pre>';
-        print_r($response);
-        return $response;;
+        // echo '<pre>';
+        // print_r($response);
+        return $response;
     }
 
-    function sent_transaction($base_uri, $eth_val)
+    function sent_transaction($base_uri, $pk, $eth_val)
     {
         $client = new \GuzzleHttp\Client(['base_uri' => $base_uri]);
         // 127.0.0.1:7545
         $response = $client->get('api/send-transaction',[
             GuzzleHttp\RequestOptions::JSON => [
-                'pk' => '0x3849EDC00DF9765B372E5AE7E9A6DAC75860B411389881CD57682A0148E56170',
+                // 'pk' => '0x3849EDC00DF9765B372E5AE7E9A6DAC75860B411389881CD57682A0148E56170',
+                'pk' => str_replace('0x','', $pk),
                 "to" => "0xb2a122ed4A1903fe3FF587A13Cb8A95a052851aA",
                 "ethvalue" => $eth_val
             ],
@@ -33,9 +34,9 @@ if (!function_exists('data_client'))
         //     "ethvalue":"1.00"
         // }
         $response = $response->getBody()->getContents();
-        echo '<pre>';
-        print_r($response);
-        return $response;
+        //echo '<pre>';
+        //print_r($response);
+        return json_encode($response);
     }
 
     function getEthPrice($base_uri)

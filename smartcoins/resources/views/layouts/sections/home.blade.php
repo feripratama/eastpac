@@ -74,18 +74,24 @@
     <div class="box box-warning">
         <div class="user-panel">
             <div class="row">
-                <div class="col-md-4"><!--start east token-->
+                {{--  <div class="col-md-4"><!--start east token-->
                     <div class="tile-item tile-primary">
                         <div class="tile-bubbles"></div>
                         <h6 class="tile-title">EAST TOKEN BALANCE</h6>
-                        <h1 class="tile-info">120,000,000 EAST</h1>
+                        <h1 class="tile-info token-supply"></h1>
                     </div>
-                </div><!-- end east token -->
+                </div><!-- end east token -->  --}}
                 <div class="col-md-4"><!-- start eth contribution -->
                     <div class="tile-item tile-primary">
                         <div class="tile-bubbles"></div>
                         <h6 class="tile-title">YOUR CONTRIBUTION</h6>
-                        <h1 class="tile-info">1256 ETH</h1>
+                        <h1 class="tile-info">
+                            @if(App\UserTokenBalance::where('user_id', Auth::user()->id)->count() != 0)
+                            {{ App\UserTokenBalance::where('user_id', Auth::user()->id)->first()->east_balance }} EAST
+                            @else
+                            0 EAST
+                            @endif
+                        </h1>
                     </div>
                 </div><!-- end eth contribution -->
                 <div class="col-md-4"><!-- start exchange -->
@@ -165,7 +171,7 @@
                         <div class="box-body">
                             <ul class="progress-info">
                                 <li><span>Raised</span> 2,758 TWZ</li>
-                                <li class="text-right"><span>TOTAL</span> 1,500,000 TWZ</li>
+                                <li class="text-right"><span>TOTAL</span> <span class="token-supply"></span></li>
                             </ul>
                             <div class="progress-bar" style="width: 100%">
                                 <div class="progress-hcap" data-percent="83" style="width: 83%;"><div>Hard cap <span>1,400,000</span></div></div>

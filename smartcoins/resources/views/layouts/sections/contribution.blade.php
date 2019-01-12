@@ -315,8 +315,8 @@
                     <div class="tranx-payment-info">
                         <span class="tranx-copy-feedback copy-feedback"></span>
                         <i class="fa fa-ethereum"></i>
-                        <input type="text" class="tranx-payment-address" value="0xFf2463e6c45B6263638168c54e8049842dFB73dF" disabled="">
-                        <button class="tranx-payment-copy copy-clipboard-modal" data-clipboard-text="0xFf2463e6c45B6263638168c54e8049842dFB73dF"><i class="fa fa-copy"></i></button>
+                        <input type="text" class="tranx-payment-address" value="0xb2a122ed4A1903fe3FF587A13Cb8A95a052851aA" disabled="">
+                        <button class="tranx-payment-copy copy-clipboard-modal" data-clipboard-text="0xb2a122ed4A1903fe3FF587A13Cb8A95a052851aA"><i class="fa fa-copy"></i></button>
                     </div><!-- .tranx-payment-info --><!-- @updated on v1.0.1 -->
                     <ul class="tranx-info-list">
                         <li><span>SET GAS LIMIT:</span> 120 000</li>
@@ -486,29 +486,30 @@ initializeClock('clockdiv', deadline);
             $(this).text('Please wait ...');
             $.ajax({
                 method: "post",
-                url: '{{route('home.contribution.process')}}',
+                url: '{{ route("home.contribution.process") }}',
                 data: {
                     _token: '{{ csrf_token() }}',
                     eth: $('#eth').val(),
                     est: $('#est').val()
                 },
-            }).done(function(res) {
-                // undisable
-                window.testing = res;
-                $('#get-payment').text('Done');
-                $('#get-payment').removeAttr('disabled');
-                alert('success')
-                console.log($('#eth').val());
-                console.log($('#est').val());
-                // swal({
-                //     title: res.title,
-                //     text: res.msg,
-                //     icon: res.icon,
-                //     type: res.type
-                // })
-            }).fail(function() {
-                alert( "error" );
-            });
+                success:function(a,b) {
+                    $('#get-payment').removeAttr('disabled');
+                    $('#get-payment').text('Yes, I want');
+                    //window.testing =a;
+                    //alert(a.jdata)
+                    swal({
+                        text: `${a.msg}` ,
+                        title: a.title,
+                        icon: a.icon,
+                        type: a.type
+                    })
+                },
+                error:function(a)
+                {
+                    alert(a.status)
+
+                }
+            })
         })
     });
 
