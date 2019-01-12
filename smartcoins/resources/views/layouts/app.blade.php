@@ -97,6 +97,20 @@
             $(".se-pre-con").fadeOut("slow");
         });
     </script>
+
+    <script>
+        $(function(){
+            $.ajax({
+                url:'https://rinkeby.etherscan.io/api?module=stats&action=tokensupply&contractaddress=0xff2463e6c45b6263638168c54e8049842dfb73df&apikey=WY7RIZZNXCRUFMYG5VKIXHGQV6M76GIHA3',
+                success:function(a)
+                {
+                    $('.token-supply').text(a.result + ' EAST')
+                }
+            })
+
+        })
+    </script>
+
     @yield('script')
 </body>
 </html>

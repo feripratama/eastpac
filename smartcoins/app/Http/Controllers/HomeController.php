@@ -8,6 +8,7 @@ use Spatie\Permission\Models\Permission;
 use App\SiteConfig;
 use App\User;
 use App\UserTokenBalance;
+use App\UserWallet;
 use Auth;
 use Validator;
 
@@ -85,22 +86,29 @@ class HomeController extends Controller
                 'type' => 'error'
             ];
         } else {
-
+            $old_balance_check = UserTokenBalance::where('user_id', Auth::user()->id);
+            if($old_balance_check->count() == 0)
+            {
+                $old_balance = 0;
+            } else {
+                $old_balance = UserTokenBalance::where('user_id', Auth::user()->id)->first()->east_balance;
+            }
             $get_eth_price = json_decode(getEthPrice('https://sandbox-api.coinmarketcap.com'));
-
+            $pk = UserWallet::where('user_id', Auth::user()->id)->first()->private_key;
             $eth_val = $request->est / $get_eth_price->data->quote->USD->price;
             // dd(number_format((float)$eth_val, 4, '.', ''));
-            sent_transaction("http://192.168.100.207:3333", number_format((float)$eth_val, 4, '.', ''), $request->est);
+            $jdata = sent_transaction("http://127.0.0.1:3333", $pk, number_format((float)$eth_val, 4, '.', ''), $request->est);
 
             UserTokenBalance::updateOrCreate(
                 ['user_id' => Auth::user()->id],
-                ['east_balance' => $request->est]
+                ['east_balance' => ($request->est + $old_balance)]
             );
             $response = [
                 'msg' => 'Transaction success , recive '.$request->est.' token',
                 'title' => 'Success',
                 'icon' => 'success',
-                'type' => 'success'
+                'type' => 'success',
+                'jdata' => $jdata
             ];
         }
 

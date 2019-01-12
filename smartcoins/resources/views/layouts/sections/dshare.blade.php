@@ -75,7 +75,14 @@
                                     <div class="tile-item tile-primary">
                                         <div class="tile-bubbles"></div>
                                         <h6 class="tile-title">YOUR D-SHARE</h6>
-                                        <h4 class="tile-info">1250</h4>
+                                        <h4 class="tile-info">
+                                            @if(App\Dshare::where('user_id', Auth::user()->id)->count() != 0)
+                                                {{ App\Dshare::where('user_id', Auth::user()->id)->sum('dshare') }} EAST
+                                            @else
+                                                0 EAST
+                                            @endif
+
+                                        </h4>
                                     </div>
                                 </div><!-- .col -->
 
@@ -83,7 +90,13 @@
                                     <div class="tile-item tile-primary">
                                         <div class="tile-bubbles"></div>
                                         <h6 class="tile-title">YOUR EAST BALANCE</h6>
-                                        <h4 class="tile-info">120,000 EAST</h4>
+                                        <h4 class="tile-info">
+                                                @if(App\UserTokenBalance::where('user_id', Auth::user()->id)->count() != 0)
+                                                {{ App\UserTokenBalance::where('user_id', Auth::user()->id)->first()->east_balance }} EAST
+                                                @else
+                                                0 EAST
+                                                @endif
+                                        </h4>
                                     </div>
                                 </div><!-- .col -->
                                 <div class="col-md-4">

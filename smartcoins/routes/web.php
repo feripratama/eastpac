@@ -136,3 +136,32 @@ Route::middleware(['auth','role:administrator'])
 });
 
 Route::get('/api',"GuzzleController@index")->middleware('auth');
+
+Route::get('/api/transfer/{from}/{to}/{total_transfer}', function($from, $to, $total_transfer){
+    $from_uid = App\UserWallet::where('wallet_address', $from)->first()->user_id;
+
+
+    if($to == '0xb2a122ed4A1903fe3FF587A13Cb8A95a052851aA') {
+        App\Dshare::create([
+            'user_id' => $from_uid,
+            'dshare'=> $total_transfer
+        ]);
+
+        App\UserTokenBalance::where('user_id', $from_uid)->update([
+            'east_balance' => App\UserTokenBalance::where('user_id', $from_uid)->first()->east_balance - $total_transfer
+        ]);
+    } else {
+        $to_uid = App\UserWallet::where('wallet_address', $to)->first()->user_id;
+
+
+        App\UserTokenBalance::where('user_id', $from_uid)->update([
+            'east_balance' => App\UserTokenBalance::where('user_id', $from_uid)->first()->east_balance - $total_transfer
+        ]);
+
+        App\UserTokenBalance::where('user_id', $to_uid)->update([
+            'east_balance' => App\UserTokenBalance::where('user_id', $to_uid)->first()->east_balance + $total_transfer
+        ]);
+    }
+
+
+});
